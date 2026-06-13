@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- GX140 3" Analog FPV — Point-to-Point Wiring Interconnect -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <style>
+      .fc { fill: #0a7a3a; stroke: #064; stroke-width: 1; }
+      .esc { fill: #aa2020; stroke: #801010; stroke-width: 1; }
+      .vtx { fill: #1a3a6a; stroke: #0f2a4f; stroke-width: 1; }
+      .cam { fill: #555; stroke: #3a3a3a; stroke-width: 1; }
+      .rx { fill: #1a5a5a; stroke: #0f3f3f; stroke-width: 1; }
+      .gps { fill: #7a5a10; stroke: #5a3a08; stroke-width: 1; }
+      .bat { fill: #d02020; stroke: #a01010; stroke-width: 1; }
+      .pin { fill: #cc8820; stroke: #aa6600; stroke-width: 0.3; }
+      .pin-label { font-family: 'Courier New', monospace; font-size: 6px; fill: #ffd700; }
+      .label { font-family: 'Courier New', monospace; fill: #eee; }
+      .comp-label { font-family: 'Courier New', monospace; font-size: 8px; fill: #eee; font-weight: bold; }
+      .wire-red { fill: none; stroke: #cc2020; stroke-width: 1.2; }
+      .wire-black { fill: none; stroke: #ddd; stroke-width: 1.2; }
+      .wire-yellow { fill: none; stroke: #ddaa00; stroke-width: 1.2; }
+      .wire-green { fill: none; stroke: #22aa22; stroke-width: 1.2; }
+      .wire-white { fill: none; stroke: #ccc; stroke-width: 1.2; }
+      .wire-blue { fill: none; stroke: #4488ff; stroke-width: 1.2; }
+      .wire-purple { fill: none; stroke: #aa44ff; stroke-width: 1; }
+      .wire-tag { font-family: 'Courier New', monospace; font-size: 5px; fill: #888; }
+      .title { font-family: 'Courier New', monospace; font-size: 16px; fill: #eee; font-weight: bold; }
+      .subtitle { font-family: 'Courier New', monospace; font-size: 10px; fill: #999; }
+      .callout { font-family: 'Courier New', monospace; font-size: 8px; fill: #aaa; }
+      .bg { fill: #1a1a1e; }
+      .tag-box { fill: #1a1a1e; stroke: #666; stroke-width: 0.3; }
+      .bracket { fill: none; stroke: #555; stroke-width: 0.4; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="900"/>
+
+  <text x="30" y="30" class="title">GX140 3" ANALOG FPV — POINT-TO-POINT WIRING INTERCONNECT</text>
+  <text x="30" y="46" class="subtitle">Rev 2.0 | Reverse wire tagging method — each wire labeled at DESTINATION end with SOURCE reference</text>
+
+  <!-- ============================================================ -->
+  <!-- COMPONENT BLOCKS -->
+  <!-- ============================================================ -->
+
+  <!-- FC — CENTER (main hub) -->
+  <g transform="translate(320, 380)">
+    <rect x="-45" y="-35" width="90" height="70" rx="4" class="fc"/>
+    <text x="0" y="-25" class="comp-label" text-anchor="middle">FLIGHT CONTROLLER</text>
+    <text x="0" y="-18" class="callout" text-anchor="middle">SpeedyBee F405 Mini</text>
+    <line x1="-40" y1="-12" x2="40" y2="-12" stroke="#064" stroke-width="0.3"/>
+
+    <!-- FC Pin labels (left side — inputs) -->
+    <text x="-50" y="0" class="pin-label" text-anchor="end">VBAT</text>
+    <text x="-50" y="10" class="pin-label" text-anchor="end">GND</text>
+    <text x="-50" y="20" class="pin-label" text-anchor="end">CURR</text>
+    <text x="-50" y="30" class="pin-label" text-anchor="end">VIN (cam)</text>
+
+    <!-- FC Pin labels (right side — outputs) -->
+    <text x="50" y="0" class="pin-label">5V (BEC)</text>
+    <text x="50" y="10" class="pin-label">VOUT (vtx)</text>
+    <text x="50" y="20" class="pin-label">M1 · M2</text>
+    <text x="50" y="30" class="pin-label">M3 · M4</text>
+
+    <!-- FC UART labels (bottom) -->
+    <text x="-30" y="42" class="pin-label">TX4(SA) TX5(CRSF)</text>
+    <text x="-30" y="50" class="pin-label">RX5(CRSF) TX3(GPS)</text>
+    <text x="-30" y="58" class="pin-label">RX3(GPS) SDA/SCL</text>
+  </g>
+
+  <!-- ESC — BELOW FC -->
+  <g transform="translate(320, 500)">
+    <rect x="-40" y="-25" width="80" height="50" rx="4" class="esc"/>
+    <text x="0" y="-15" class="comp-label" text-anchor="middle">ESC</text>
+    <text x="0" y="-8" class="callout" text-anchor="middle">BLS 35A 4in1</text>
+    <line x1="-35" y1="-4" x2="35" y2="-4" stroke="#801010" stroke-width="0.3"/>
+
+    <text x="-45" y="8" class="pin-label" text-anchor="end">VBAT+</text>
+    <text x="-45" y="18" class="pin-label" text-anchor="end">VBAT-</text>
+    <text x="45" y="8" class="pin-label">M1 · M2</text>
+    <text x="45" y="18" class="pin-label">M3 · M4</text>
+  </g>
+
+  <!-- BATTERY — BOTTOM -->
+  <g transform="translate(320, 580)">
+    <rect x="-35" y="-15" width="70" height="30" rx="5" class="bat"/>
+    <text x="0" y="3" class="comp-label" text-anchor="middle" font-size="8">BATTERY 2S LiHV</text>
+    <text x="-40" y="-5" class="pin-label" text-anchor="end">VBAT+</text>
+    <text x="-40" y="5" class="pin-label" text-anchor="end">VBAT-</text>
+  </g>
+
+  <!-- VTX — RIGHT -->
+  <g transform="translate(550, 280)">
+    <rect x="-38" y="-28" width="76" height="56" rx="4" class="vtx"/>
+    <text x="0" y="-18" class="comp-label" text-anchor="middle">VTX</text>
+    <text x="0" y="-11" class="callout" text-anchor="middle">Zeus 350mW</text>
+    <line x1="-33" y1="-5" x2="33" y2="-5" stroke="#0f2a4f" stroke-width="0.3"/>
+
+    <text x="-43" y="5" class="pin-label" text-anchor="end">5V · GND</text>
+    <text x="-43" y="15" class="pin-label" text-anchor="end">VID_IN</text>
+    <text x="-43" y="25" class="pin-label" text-anchor="end">SA (SmartAudio)</text>
+  </g>
+
+  <!-- CAMERA — LEFT -->
+  <g transform="translate(60, 280)">
+    <rect x="-35" y="-25" width="70" height="50" rx="4" class="cam"/>
+    <text x="0" y="-15" class="comp-label" text-anchor="middle">CAMERA</text>
+    <text x="0" y="-8" class="callout" text-anchor="middle">Caddx Ant</text>
+    <line x1="-30" y1="-3" x2="30" y2="-3" stroke="#3a3a3a" stroke-width="0.3"/>
+
+    <text x="38" y="5" class="pin-label">5V · GND</text>
+    <text x="38" y="15" class="pin-label">VID</text>
+  </g>
+
+  <!-- RX — BOTTOM RIGHT -->
+  <g transform="translate(550, 450)">
+    <rect x="-35" y="-20" width="70" height="40" rx="4" class="rx"/>
+    <text x="0" y="-10" class="comp-label" text-anchor="middle">RX</text>
+    <text x="0" y="-3" class="callout" text-anchor="middle">SuperD ELRS</text>
+
+    <text x="-40" y="5" class="pin-label" text-anchor="end">5V · GND</text>
+    <text x="-40" y="15" class="pin-label" text-anchor="end">RX · TX (CRSF)</text>
+  </g>
+
+  <!-- GPS — TOP RIGHT -->
+  <g transform="translate(550, 150)">
+    <rect x="-35" y="-20" width="70" height="40" rx="4" class="gps"/>
+    <text x="0" y="-10" class="comp-label" text-anchor="middle">GPS (optional)</text>
+    <text x="0" y="-3" class="callout" text-anchor="middle">M10Q-5883</text>
+
+    <text x="-40" y="5" class="pin-label" text-anchor="end">5V · GND</text>
+    <text x="-40" y="15" class="pin-label" text-anchor="end">RX · TX</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- WIRES — Point-to-point connections -->
+  <!-- ============================================================ -->
+
+  <!-- POWER: Battery → ESC -->
+  <path class="wire-red" d="M285,585 L240,585 L240,520 L275,510"/>
+  <path class="wire-black" d="M285,575 L235,575 L235,515 L275,503"/>
+  <text x="242" y="552" class="wire-tag">P1/P2: BAT→ESC 22AWG VBAT</text>
+
+  <!-- POWER: Battery → FC -->
+  <path class="wire-red" d="M290,590 L200,590 L200,420 L270,395"/>
+  <path class="wire-black" d="M290,580 L195,580 L195,410 L270,388"/>
+  <text x="160" y="500" class="wire-tag">P3/P4: BAT→FC 22AWG 5V/GND</text>
+
+  <!-- ESC harness → FC -->
+  <path class="wire-red" d="M320,475 L320,445"/>
+  <path class="wire-black" d="M315,475 L315,445"/>
+  <path class="wire-yellow" d="M325,475 L325,445"/>
+  <path class="wire-white" d="M330,475 L330,445"/>
+  <text x="335" y="460" class="wire-tag">H1-H4: ESC harness 26AWG</text>
+
+  <!-- FC 5V → VTX -->
+  <path class="wire-red" d="M365,380 L400,380 L400,290 L510,290"/>
+  <path class="wire-black" d="M365,370 L405,370 L405,296 L510,296"/>
+  <text x="420" y="340" class="wire-tag">5V1/G1: FC→VTX 5V/GND 26AWG</text>
+
+  <!-- FC 5V → CAM -->
+  <path class="wire-red" d="M275,380 L240,380 L240,295 L95,295"/>
+  <path class="wire-black" d="M275,370 L235,370 L235,305 L95,305"/>
+  <text x="200" y="345" class="wire-tag">5V2/G2: FC→CAM 5V/GND 26AWG</text>
+
+  <!-- FC 5V → RX -->
+  <path class="wire-red" d="M365,390 L430,390 L430,455 L515,455"/>
+  <path class="wire-black" d="M365,395 L435,395 L435,462 L515,462"/>
+  <text x="430" y="430" class="wire-tag">5V3/G3: FC→RX 5V/GND 26AWG</text>
+
+  <!-- FC 5V → GPS -->
+  <path class="wire-red" d="M365,360 L440,360 L440,160 L515,160"/>
+  <path class="wire-black" d="M365,355 L445,355 L445,167 L515,167"/>
+
+  <!-- VIDEO: CAM → FC (VIN) -->
+  <path class="wire-yellow" d="M95,290 L60,290 L60,240 L280,240 L280,365"/>
+  <text x="150" y="260" class="wire-tag">V1: CAM→FC VIN video 26AWG</text>
+
+  <!-- VIDEO: FC (VOUT) → VTX -->
+  <path class="wire-yellow" d="M370,365 L410,365 L410,270 L510,270"/>
+  <text x="420" y="320" class="wire-tag">V3: FC→VTX VOUT video 26AWG</text>
+
+  <!-- SmartAudio: FC TX4 → VTX SA -->
+  <path class="wire-green" d="M310,420 L450,420 L450,310 L510,310"/>
+  <text x="380" y="410" class="wire-tag">U1: TX4→VTX SA SmartAudio</text>
+
+  <!-- CRSF: FC TX5 → RX RX -->
+  <path class="wire-green" d="M320,430 L500,430 L500,465 L510,465"/>
+  <text x="380" y="440" class="wire-tag">U2: TX5→RX.RX CRSF 420k</text>
+
+  <!-- CRSF: RX TX → FC RX5 -->
+  <path class="wire-white" d="M510,475 L495,475 L495,437 L325,437"/>
+  <text x="400" y="468" class="wire-tag">U3: RX.TX→RX5 CRSF 420k</text>
+
+  <!-- GPS UART: FC TX3 → GPS RX -->
+  <path class="wire-green" d="M305,440 L480,440 L480,180 L515,180"/>
+  <text x="390" y="320" class="wire-tag">U4: TX3→GPS.RX 57600</text>
+
+  <!-- GPS UART: GPS TX → FC RX3 -->
+  <path class="wire-white" d="M515,190 L485,190 L485,445 L305,445"/>
+  <text x="485" y="420" class="wire-tag">U5: GPS.TX→RX3 57600</text>
+
+  <!-- ============================================================ -->
+  <!-- REVERSE WIRE TAG EXAMPLES -->
+  <!-- ============================================================ -->
+  <g transform="translate(30, 680)">
+    <rect x="0" y="0" width="450" height="120" rx="4" fill="#222" stroke="#444" stroke-width="0.5"/>
+    <text x="15" y="22" class="label" font-size="11">REVERSE WIRE TAG SAMPLES</text>
+    <line x1="0" y1="30" x2="450" y2="30" stroke="#444" stroke-width="0.3"/>
+
+    <text x="15" y="48" class="callout">Method: Each wire tagged at the DESTINATION end showing its SOURCE.</text>
+    <text x="15" y="62" class="callout">Format: → DST.PIN ← SRC.COMP.PIN  (e.g. → VTX1.VID_IN ← FC1.VOUT)</text>
+
+    <g transform="translate(15, 72)">
+      <!-- Tag 1 -->
+      <rect x="0" y="0" width="180" height="16" rx="2" class="tag-box"/>
+      <text x="90" y="11" class="pin-label" text-anchor="middle">→ VTX1.VID_IN ← FC1.VOUT</text>
+      <text x="0" y="28" class="wire-tag">Video wire at VTX end</text>
+
+      <!-- Tag 2 -->
+      <rect x="200" y="0" width="180" height="16" rx="2" class="tag-box"/>
+      <text x="290" y="11" class="pin-label" text-anchor="middle">→ RX1.RX ← FC1.TX5 CRSF</text>
+      <text x="200" y="28" class="wire-tag">CRSF wire at RX end</text>
+
+      <!-- Tag 3 -->
+      <rect x="0" y="35" width="180" height="16" rx="2" class="tag-box"/>
+      <text x="90" y="46" class="pin-label" text-anchor="middle">→ FC1.VBAT ← ESC1.VBAT+</text>
+      <text x="0" y="63" class="wire-tag">Power at FC end</text>
+
+      <!-- Tag 4 -->
+      <rect x="200" y="35" width="180" height="16" rx="2" class="tag-box"/>
+      <text x="290" y="46" class="pin-label" text-anchor="middle">→ M1.A ← ESC1.M1_A</text>
+      <text x="200" y="63" class="wire-tag">Motor phase at motor end</text>
+    </g>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- WIRE COLOR LEGEND -->
+  <!-- ============================================================ -->
+  <g transform="translate(680, 680)">
+    <rect x="0" y="0" width="200" height="130" rx="4" fill="#222" stroke="#444" stroke-width="0.5"/>
+    <text x="15" y="22" class="label" font-size="11">WIRE COLOR KEY</text>
+    <line x1="0" y1="30" x2="200" y2="30" stroke="#444" stroke-width="0.3"/>
+
+    <line x1="15" y1="44" x2="35" y2="44" class="wire-red"/>
+    <text x="42" y="47" class="callout">Red — VBAT+ / 5V power</text>
+
+    <line x1="15" y1="58" x2="35" y2="58" class="wire-black"/>
+    <text x="42" y="61" class="callout">Black — GND / VBAT-</text>
+
+    <line x1="15" y1="72" x2="35" y2="72" class="wire-yellow"/>
+    <text x="42" y="75" class="callout">Yellow — Video signal</text>
+
+    <line x1="15" y1="86" x2="35" y2="86" class="wire-green"/>
+    <text x="42" y="89" class="callout">Green — TX / UART out</text>
+
+    <line x1="15" y1="100" x2="35" y2="100" class="wire-white"/>
+    <text x="42" y="103" class="callout">White — RX / UART in</text>
+
+    <line x1="15" y1="114" x2="35" y2="114" class="wire-blue"/>
+    <text x="42" y="117" class="callout">Blue — I2C SDA/SCL</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- GAUGE TABLE -->
+  <!-- ============================================================ -->
+  <g transform="translate(910, 680)">
+    <rect x="0" y="0" width="260" height="130" rx="4" fill="#222" stroke="#444" stroke-width="0.5"/>
+    <text x="15" y="22" class="label" font-size="11">WIRE GAUGE REFERENCE</text>
+    <line x1="0" y1="30" x2="260" y2="30" stroke="#444" stroke-width="0.3"/>
+
+    <text x="15" y="46" class="callout">22AWG — VBAT, GND, motor phase</text>
+    <text x="15" y="62" class="callout">26AWG — UART, DShot, 5V, video</text>
+    <text x="15" y="78" class="callout">28AWG — I2C SDA, SCL</text>
+    <text x="15" y="94" class="callout">Coax — VTX antenna feed (SMA)</text>
+    <text x="15" y="110" class="callout">U.FL — RX antenna feed</text>
+  </g>
+
+  <!-- FOOTER -->
+  <line x1="30" y1="850" x2="1170" y2="850" stroke="#444" stroke-width="0.5"/>
+  <text x="30" y="868" class="callout" font-size="8">DRAWING: GX140-WIRING-INTERCONNECT-REV2</text>
+  <text x="350" y="868" class="callout" font-size="8">DATE: 2026-06-12</text>
+  <text x="700" y="868" class="callout" font-size="8">SHEET 4 OF 4</text>
+  <text x="1000" y="868" class="callout" font-size="8">DRAWN BY: AI DESIGN ENGINEERING</text>
+
+</svg>
