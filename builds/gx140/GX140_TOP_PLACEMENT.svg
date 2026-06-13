@@ -1,203 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- GX140 3" Analog FPV — Top-Down Component Placement -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841 594" width="841" height="594">
   <defs>
     <style>
-      .frame { fill: #333; stroke: #222; stroke-width: 0.8; }
-      .arm { fill: #3a3a3a; stroke: #222; stroke-width: 0.6; }
-      .fc-outline { fill: none; stroke: #0a7a3a; stroke-width: 2; stroke-dasharray: 6,3; }
-      .esc-outline { fill: none; stroke: #aa2020; stroke-width: 2; stroke-dasharray: 6,3; }
-      .vtx-outline { fill: none; stroke: #1a3a6a; stroke-width: 2; stroke-dasharray: 6,3; }
-      .cam-outline { fill: none; stroke: #555; stroke-width: 2; stroke-dasharray: 6,3; }
-      .rx-outline { fill: none; stroke: #1a5a5a; stroke-width: 2; stroke-dasharray: 6,3; }
-      .gps-outline { fill: none; stroke: #7a5a10; stroke-width: 2; stroke-dasharray: 6,3; }
-      .bat-outline { fill: none; stroke: #d02020; stroke-width: 2; stroke-dasharray: 6,3; }
-      .motor-point { fill: #4a4a50; stroke: #333; stroke-width: 0.5; }
-      .label { font-family: 'Courier New', monospace; fill: #eee; }
-      .label-small { font-family: 'Courier New', monospace; fill: #999; font-size: 8px; }
-      .dim { font-family: 'Courier New', monospace; fill: #888; font-size: 7px; }
-      .dim-line { stroke: #555; stroke-width: 0.4; }
-      .title { font-family: 'Courier New', monospace; font-size: 16px; fill: #eee; font-weight: bold; }
-      .subtitle { font-family: 'Courier New', monospace; font-size: 10px; fill: #999; }
-      .leader { stroke: #666; stroke-width: 0.5; fill: none; }
-      .bg { fill: #1a1a1e; }
-      .callout { font-family: 'Courier New', monospace; font-size: 9px; fill: #ccc; }
-      .callout-line { stroke: #666; stroke-width: 0.5; stroke-dasharray: 3,2; fill: none; }
+      .bg { fill: #fff; }
+      .border { fill: none; stroke: #000; stroke-width: 1; }
+      .frame { fill: #d0d0d0; stroke: #000; stroke-width: 1.2; }
+      .arm { fill: #c8c8c8; stroke: #000; stroke-width: 0.8; }
+      .fc-dash { fill: none; stroke: #0a7a3a; stroke-width: 1.5; stroke-dasharray: 4,2; }
+      .esc-dash { fill: none; stroke: #aa2020; stroke-width: 1.5; stroke-dasharray: 4,2; }
+      .vtx-dash { fill: none; stroke: #1a4a8a; stroke-width: 1.5; stroke-dasharray: 4,2; }
+      .cam-dash { fill: none; stroke: #666; stroke-width: 1.5; stroke-dasharray: 4,2; }
+      .rx-dash { fill: none; stroke: #1a6a6a; stroke-width: 1.5; stroke-dasharray: 4,2; }
+      .gps-dash { fill: none; stroke: #8a6a18; stroke-width: 1.5; stroke-dasharray: 4,2; }
+      .bat-dash { fill: none; stroke: #cc3030; stroke-width: 1.5; stroke-dasharray: 4,2; }
+      .motor-pnt { fill: #888; stroke: #000; stroke-width: 0.8; }
+      .line-dim { fill: none; stroke: #000; stroke-width: 0.3; }
+      .line-ext { fill: none; stroke: #000; stroke-width: 0.2; }
+      .line-center { fill: none; stroke: #000; stroke-width: 0.2; stroke-dasharray: 8,2,2,2; }
+      .label { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 3.5px; fill: #000; }
+      .label-sm { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 2.8px; fill: #000; }
+      .label-lg { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 5px; fill: #000; font-weight: bold; }
+      .dim { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 3px; fill: #000; }
     </style>
-    <marker id="arrow" viewBox="0 0 8 8" refX="8" refY="4" markerWidth="5" markerHeight="5" orient="auto">
-      <path d="M0,0 L8,4 L0,8 Z" fill="#666"/>
+    <marker id="arr" viewBox="0 0 6 6" refX="6" refY="3" markerWidth="3.5" markerHeight="3.5" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#000"/>
     </marker>
-    <marker id="dim-arrow-start" viewBox="0 0 8 8" refX="0" refY="4" markerWidth="4" markerHeight="4" orient="auto">
-      <path d="M8,0 L0,4 L8,8 Z" fill="#555"/>
-    </marker>
-    <marker id="dim-arrow-end" viewBox="0 0 8 8" refX="8" refY="4" markerWidth="4" markerHeight="4" orient="auto">
-      <path d="M0,0 L8,4 L0,8 Z" fill="#555"/>
+    <marker id="arr-start" viewBox="0 0 6 6" refX="0" refY="3" markerWidth="3.5" markerHeight="3.5" orient="auto">
+      <path d="M6,0 L0,3 L6,6 Z" fill="#000"/>
     </marker>
   </defs>
 
-  <!-- Background -->
-  <rect class="bg" width="1200" height="900"/>
+  <rect class="bg" width="841" height="594"/>
+  <rect x="15" y="15" width="811" height="564" class="border"/>
 
-  <!-- TITLE -->
-  <text x="30" y="30" class="title">GX140 3" ANALOG FPV — COMPONENT PLACEMENT (TOP VIEW)</text>
-  <text x="30" y="46" class="subtitle">Rev 2.0 | All dimensions in mm | True-X layout, 140mm wheelbase | Twin 20x20 stack</text>
+  <!-- ============ TITLE BLOCK ============ -->
+  <g transform="translate(15, 529)">
+    <line x1="0" y1="0" x2="811" y2="0" class="line-thick"/>
+    <line x1="200" y1="0" x2="200" y2="50"/>
+    <line x1="400" y1="0" x2="400" y2="50"/>
+    <line x1="550" y1="0" x2="550" y2="50"/>
+    <line x1="650" y1="0" x2="650" y2="50"/>
+    <line x1="711" y1="0" x2="711" y2="50"/>
+    <line x1="0" y1="15" x2="200" y2="15"/>
+    <line x1="400" y1="15" x2="550" y2="15"/>
+    <line x1="400" y1="35" x2="550" y2="35"/>
+    <text x="4" y="11" class="label">GX140 3in ANALOG FPV</text>
+    <text x="4" y="28" class="label-sm">Frame: GX140 140mm | AUW ~190g</text>
+    <text x="204" y="11" class="label-sm">DRAWN BY</text>
+    <text x="204" y="28" class="label">AI Design Eng.</text>
+    <text x="404" y="11" class="label-sm">DATE</text>
+    <text x="404" y="28" class="label">2026-06-12</text>
+    <text x="404" y="46" class="label-sm">SCALE: 1:1</text>
+    <text x="554" y="11" class="label-sm">DWG NO</text>
+    <text x="554" y="28" class="label">GX140-TOP-02</text>
+    <text x="654" y="11" class="label-sm">REV</text>
+    <text x="654" y="28" class="label-lg">2.0</text>
+    <text x="715" y="11" class="label-sm">SHEET</text>
+    <text x="715" y="28" class="label">2 / 4</text>
+  </g>
 
-  <!-- ============================================================ -->
-  <!-- FRAME — Top View (centered) -->
-  <!-- ============================================================ -->
-  <g transform="translate(450, 420)">
+  <text x="420" y="30" class="label-lg" text-anchor="middle">GX140 3in ANALOG FPV — COMPONENT PLACEMENT (TOP VIEW)</text>
 
+  <!-- ============ CENTER LINES ============ -->
+  <line x1="180" y1="295" x2="520" y2="295" class="line-center"/>
+  <line x1="350" y1="130" x2="350" y2="480" class="line-center"/>
+
+  <!-- ============ FRAME (centered approx 350, 295) ============ -->
+  <g transform="translate(350, 295)">
     <!-- Main body -->
-    <path d="M-50,-40 L50,-40 L55,-35 L55,35 L50,40 L-50,40 L-55,35 L-55,-35 Z" class="frame"/>
-
+    <rect x="-45" y="-38" width="90" height="76" rx="4" class="frame"/>
     <!-- Arms -->
-    <g class="arm">
-      <!-- M1 arm (top-right) -->
-      <polygon points="40,-30 100,-70 106,-58 44,-18"/>
-      <!-- M2 arm (top-left) -->
-      <polygon points="-40,-30 -100,-70 -106,-58 -44,-18"/>
-      <!-- M3 arm (bottom-left) -->
-      <polygon points="-40,30 -100,70 -106,58 -44,18"/>
-      <!-- M4 arm (bottom-right) -->
-      <polygon points="40,30 100,70 106,58 44,18"/>
-    </g>
+    <polygon points="35,-28 90,-65 96,-52 40,-16" class="arm"/>
+    <polygon points="-35,-28 -90,-65 -96,-52 -40,-16" class="arm"/>
+    <polygon points="-35,28 -90,65 -96,52 -40,16" class="arm"/>
+    <polygon points="35,28 90,65 96,52 40,16" class="arm"/>
 
-    <!-- ============ COMPONENT OUTLINES ============ -->
+    <!-- === COMPONENT OUTLINES (dashed) === -->
+    <rect x="-13" y="-13" width="26" height="26" rx="2" class="fc-dash"/>
+    <rect x="-13" y="-13" width="26" height="26" rx="1" class="esc-dash" stroke-dashoffset="3"/>
+    <rect x="-10" y="18" width="20" height="18" rx="2" class="vtx-dash"/>
+    <rect x="-10" y="-28" width="20" height="16" rx="2" class="cam-dash"/>
+    <path d="M-28,-5 L-16,-5 L-16,7 L-22,10 L-28,7 Z" class="rx-dash"/>
+    <rect x="-12" y="-46" width="24" height="14" rx="2" class="gps-dash"/>
+    <rect x="-20" y="-20" width="40" height="40" rx="4" class="bat-dash"/>
 
-    <!-- FC + ESC Stack (20x20) -->
-    <rect x="-14" y="-14" width="28" height="28" rx="2" class="fc-outline"/>
-    <rect x="-14" y="-14" width="28" height="28" rx="1" class="esc-outline" stroke-dashoffset="4"/>
+    <!-- === MOTORS === -->
+    <g transform="translate(82, -52)"><circle cx="0" cy="0" r="7" class="motor-pnt"/><circle cx="0" cy="0" r="2.5" fill="#fff"/></g>
+    <g transform="translate(-82, -52)"><circle cx="0" cy="0" r="7" class="motor-pnt"/><circle cx="0" cy="0" r="2.5" fill="#fff"/></g>
+    <g transform="translate(-82, 52)"><circle cx="0" cy="0" r="7" class="motor-pnt"/><circle cx="0" cy="0" r="2.5" fill="#fff"/></g>
+    <g transform="translate(82, 52)"><circle cx="0" cy="0" r="7" class="motor-pnt"/><circle cx="0" cy="0" r="2.5" fill="#fff"/></g>
 
-    <!-- VTX (under top plate rear) -->
-    <rect x="-12" y="18" width="24" height="20" rx="2" class="vtx-outline"/>
+    <!-- Motor labels -->
+    <text x="82" y="-40" class="label-sm" text-anchor="middle">M1 FL</text>
+    <text x="-82" y="-40" class="label-sm" text-anchor="middle">M2 FR</text>
+    <text x="-82" y="64" class="label-sm" text-anchor="middle">M3 RL</text>
+    <text x="82" y="64" class="label-sm" text-anchor="middle">M4 RR</text>
 
-    <!-- Camera (front) -->
-    <rect x="-12" y="-28" width="24" height="16" rx="2" class="cam-outline"/>
-
-    <!-- RX (left side) -->
-    <path d="M-32,-6 L-18,-6 L-18,8 L-25,12 L-32,8 Z" class="rx-outline"/>
-
-    <!-- GPS (rear mast, above) -->
-    <rect x="-14" y="-48" width="28" height="16" rx="2" class="gps-outline"/>
-
-    <!-- Battery (under) -->
-    <rect x="-22" y="-22" width="44" height="44" rx="4" class="bat-outline"/>
-
-    <!-- ============ MOTOR MOUNTS ============ -->
-    <g>
-      <!-- M1 -->
-      <circle cx="88" cy="-60" r="8" class="motor-point"/>
-      <circle cx="88" cy="-60" r="3" fill="#222"/>
-      <text x="88" y="-46" class="label" font-size="10" text-anchor="middle">M1</text>
-      <text x="88" y="-38" class="label-small" text-anchor="middle">FL CCW</text>
-
-      <!-- M2 -->
-      <circle cx="-88" cy="-60" r="8" class="motor-point"/>
-      <circle cx="-88" cy="-60" r="3" fill="#222"/>
-      <text x="-88" y="-46" class="label" font-size="10" text-anchor="middle">M2</text>
-      <text x="-88" y="-38" class="label-small" text-anchor="middle">FR CW</text>
-
-      <!-- M3 -->
-      <circle cx="-88" cy="60" r="8" class="motor-point"/>
-      <circle cx="-88" cy="60" r="3" fill="#222"/>
-      <text x="-88" y="74" class="label" font-size="10" text-anchor="middle">M3</text>
-      <text x="-88" y="82" class="label-small" text-anchor="middle">RL CCW</text>
-
-      <!-- M4 -->
-      <circle cx="88" cy="60" r="8" class="motor-point"/>
-      <circle cx="88" cy="60" r="3" fill="#222"/>
-      <text x="88" y="74" class="label" font-size="10" text-anchor="middle">M4</text>
-      <text x="88" y="82" class="label-small" text-anchor="middle">RR CW</text>
-    </g>
-
-    <!-- ============ DIMENSION LINES ============ -->
+    <!-- === DIMENSIONS === -->
     <!-- Wheelbase diagonal -->
-    <line x1="88" y1="-60" x2="-88" y2="60" class="dim-line" stroke-dasharray="4,3"/>
-    <text x="5" y="5" class="dim" transform="rotate(45, 5, 5)">140mm</text>
+    <line x1="82" y1="-52" x2="-82" y2="52" class="line-dim" stroke-dasharray="3,2"/>
+    <text x="5" y="5" class="dim" transform="rotate(42, 5, 5)">140mm WB</text>
 
-    <!-- Center to motor (radius) -->
-    <line x1="0" y1="0" x2="88" y2="-60" class="dim-line"/>
-    <line x1="0" y1="0" x2="-10" y2="0" class="dim-line"/>
-    <text x="35" y="-25" class="dim">70mm</text>
-
-    <!-- Frame width -->
-    <line x1="-55" y1="42" x2="55" y2="42" class="dim-line" marker-start="url(#dim-arrow-start)" marker-end="url(#dim-arrow-end)"/>
-    <text x="0" y="50" class="dim" text-anchor="middle">~100mm</text>
+    <!-- Width -->
+    <line x1="-45" y1="42" x2="45" y2="42" class="line-dim" marker-start="url(#arr-start)" marker-end="url(#arr)"/>
+    <text x="0" y="50" class="dim" text-anchor="middle">~90mm</text>
 
     <!-- Stack pattern -->
-    <line x1="-14" y1="-16" x2="14" y2="-16" class="dim-line" marker-start="url(#dim-arrow-start)" marker-end="url(#dim-arrow-end)"/>
-    <text x="0" y="-18" class="dim" text-anchor="middle">20mm</text>
+    <line x1="-13" y1="-18" x2="13" y2="-18" class="line-dim" marker-start="url(#arr-start)" marker-end="url(#arr)"/>
+    <text x="0" y="-20" class="dim" text-anchor="middle">20mm</text>
 
-    <!-- ============ CALLOUT LEADERS ============ -->
+    <!-- === CALLOUT LEADERS === -->
+    <line x1="13" y1="-13" x2="40" y2="-25" class="line-dim"/>
+    <text x="42" y="-28" class="label-sm">FC + ESC (20×20 stack)</text>
 
-    <!-- FC callout -->
-    <line x1="14" y1="-14" x2="35" y2="-30" class="callout-line" marker-end="url(#arrow)"/>
-    <text x="37" y="-33" class="callout">FC (SpeedyBee F405 Mini)</text>
-    <text x="37" y="-23" class="dim">1.6mm PCB, AT7456E OSD</text>
+    <line x1="-10" y1="27" x2="-35" y2="42" class="line-dim"/>
+    <text x="-98" y="39" class="label-sm">VTX (rear)</text>
 
-    <!-- ESC callout -->
-    <line x1="14" y1="14" x2="35" y2="30" class="callout-line" marker-end="url(#arrow)"/>
-    <text x="37" y="27" class="callout">ESC (BLS 35A 4in1)</text>
-    <text x="37" y="37" class="dim">DShot600, BLHeli_S</text>
+    <line x1="-10" y1="-28" x2="-35" y2="-42" class="line-dim"/>
+    <text x="-95" y="-45" class="label-sm">CAM (front, TPU wedge)</text>
 
-    <!-- VTX callout -->
-    <line x1="-12" y1="28" x2="-30" y2="45" class="callout-line" marker-end="url(#arrow)"/>
-    <text x="-142" y="42" class="callout">VTX (HGLRC Zeus 350mW)</text>
-    <text x="-142" y="52" class="dim">SmartAudio 2.1, SMA antenna</text>
+    <line x1="-28" y1="1" x2="-48" y2="1" class="line-dim"/>
+    <text x="-95" y="-3" class="label-sm">RX (side, foam tape)</text>
 
-    <!-- Camera callout -->
-    <line x1="-12" y1="-28" x2="-30" y2="-45" class="callout-line" marker-end="url(#arrow)"/>
-    <text x="-142" y="-48" class="callout">CAM (Caddx Ant 1200TVL)</text>
-    <text x="-142" y="-38" class="dim">TPU wedge, 1.8mm / 2.1mm lens</text>
+    <line x1="12" y1="-46" x2="35" y2="-55" class="line-dim"/>
+    <text x="37" y="-58" class="label-sm">GPS (top mast)</text>
 
-    <!-- RX callout -->
-    <line x1="-32" y1="2" x2="-55" y2="5" class="callout-line" marker-end="url(#arrow)"/>
-    <text x="-150" y="2" class="callout">RX (SuperD ELRS)</text>
-    <text x="-150" y="12" class="dim">CRSF 420k, diversity 2.4G</text>
+    <line x1="-20" y1="-20" x2="-45" y2="-35" class="line-dim"/>
+    <text x="-105" y="-38" class="label-sm">BATTERY (under frame)</text>
 
-    <!-- GPS callout -->
-    <line x1="14" y1="-48" x2="35" y2="-60" class="callout-line" marker-end="url(#arrow)"/>
-    <text x="37" y="-63" class="callout">GPS (M10Q-5883, optional)</text>
-    <text x="37" y="-53" class="dim">Top mast, +QMC5883L compass</text>
-
-    <!-- Battery callout -->
-    <line x1="-22" y1="-22" x2="-50" y2="-40" class="callout-line" marker-end="url(#arrow)"/>
-    <text x="-145" y="-43" class="callout">BATTERY (under frame)</text>
-    <text x="-145" y="-33" class="dim">2S 550mAh LiHV, XT30</text>
-
-    <!-- Antenna callouts -->
-    <circle cx="-88" cy="-60" r="12" fill="none" stroke="#8a5a10" stroke-width="0.8" stroke-dasharray="2,2"/>
-    <circle cx="-88" cy="60" r="12" fill="none" stroke="#8a5a10" stroke-width="0.8" stroke-dasharray="2,2"/>
-    <circle cx="88" cy="-60" r="12" fill="none" stroke="#8a5a10" stroke-width="0.8" stroke-dasharray="2,2"/>
-
-    <!-- Antenna type labels -->
-    <text x="-88" y="-73" class="dim" text-anchor="middle">RX ANT1</text>
-    <text x="-88" y="-66" class="dim" text-anchor="middle" font-size="6">(vertical L)</text>
-    <text x="88" y="-73" class="dim" text-anchor="middle">VTX ANT</text>
-    <text x="88" y="-66" class="dim" text-anchor="middle" font-size="6">(SMA RHCP)</text>
-    <text x="-88" y="73" class="dim" text-anchor="middle">RX ANT2</text>
-    <text x="-88" y="80" class="dim" text-anchor="middle" font-size="6">(horizontal)</text>
-
+    <!-- Antenna marks -->
+    <circle cx="82" cy="-52" r="11" fill="none" stroke="#000" stroke-width="0.3" stroke-dasharray="2,2"/>
+    <circle cx="-82" cy="-52" r="11" fill="none" stroke="#000" stroke-width="0.3" stroke-dasharray="2,2"/>
+    <circle cx="-82" cy="52" r="11" fill="none" stroke="#000" stroke-width="0.3" stroke-dasharray="2,2"/>
+    <text x="82" y="-66" class="dim" text-anchor="middle">VTX ANT</text>
+    <text x="-82" y="-66" class="dim" text-anchor="middle">RX ANT1 V</text>
+    <text x="-82" y="66" class="dim" text-anchor="middle">RX ANT2 H</text>
   </g>
 
-  <!-- ============================================================ -->
   <!-- NOTES -->
-  <!-- ============================================================ -->
-  <g transform="translate(30, 750)">
-    <text x="0" y="0" class="callout" font-size="10">NOTES:</text>
-    <text x="0" y="14" class="dim">1. All components mounted on GX140 140mm carbon frame (4mm body, 2.5mm arms)</text>
-    <text x="0" y="24" class="dim">2. FC + ESC use 20x20mm mounting pattern with M2 nylon standoffs</text>
-    <text x="0" y="34" class="dim">3. Battery mounted under bottom plate, secured with 2x 20mm straps</text>
-    <text x="0" y="44" class="dim">4. RX antennas mounted 90° apart for polarization diversity</text>
-    <text x="0" y="54" class="dim">5. GPS mounted on mast above frame for clear sky view</text>
-    <text x="0" y="64" class="dim">6. VTX antenna is SMA-connected Foxeer Lollipop RHCP on rear plate</text>
-  </g>
-
-  <!-- FOOTER -->
-  <line x1="30" y1="850" x2="1170" y2="850" stroke="#444" stroke-width="0.5"/>
-  <text x="30" y="868" class="callout" font-size="8">DRAWING: GX140-TOP-PLACEMENT-REV2</text>
-  <text x="350" y="868" class="callout" font-size="8">DATE: 2026-06-12</text>
-  <text x="700" y="868" class="callout" font-size="8">SHEET 2 OF 4</text>
-  <text x="1000" y="868" class="callout" font-size="8">DRAWN BY: AI DESIGN ENGINEERING</text>
-
+  <text x="25" y="520" class="label-sm">NOTES: 1) ALL DIMS IN mm  2) 20×20mm STACK PATTERN  3) BATTERY UNDERNEATH  4) ANTENNAS 90° APART</text>
 </svg>

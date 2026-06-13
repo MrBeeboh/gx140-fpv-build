@@ -1,284 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- GX140 3" Analog FPV — Stack Assembly Section View -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841 594" width="841" height="594">
   <defs>
     <style>
-      .fc { fill: #0a7a3a; stroke: #064; stroke-width: 0.8; }
-      .esc { fill: #aa2020; stroke: #801010; stroke-width: 0.8; }
-      .plate { fill: #333; stroke: #222; stroke-width: 0.8; }
-      .standoff { fill: #b8a04a; stroke: #8a7020; stroke-width: 0.5; }
-      .screw { fill: #888; stroke: #666; stroke-width: 0.3; }
-      .label { font-family: 'Courier New', monospace; fill: #eee; }
-      .dim { font-family: 'Courier New', monospace; fill: #888; font-size: 7px; }
-      .dim-line { stroke: #555; stroke-width: 0.3; }
-      .title { font-family: 'Courier New', monospace; font-size: 16px; fill: #eee; font-weight: bold; }
-      .subtitle { font-family: 'Courier New', monospace; font-size: 10px; fill: #999; }
-      .callout { font-family: 'Courier New', monospace; font-size: 9px; fill: #ccc; }
-      .callout-line { stroke: #666; stroke-width: 0.5; stroke-dasharray: 3,2; fill: none; }
-      .bg { fill: #1a1a1e; }
-      .grid { stroke: #2a2a30; stroke-width: 0.3; }
-      .wire { fill: none; stroke-width: 1.5; }
-      .annotation { font-family: 'Courier New', monospace; font-size: 8px; fill: #aaa; }
+      .bg { fill: #fff; }
+      .border { fill: none; stroke: #000; stroke-width: 1; }
+      .line-thick { fill: none; stroke: #000; stroke-width: 1; }
+      .line { fill: none; stroke: #000; stroke-width: 0.6; }
+      .line-dim { fill: none; stroke: #000; stroke-width: 0.3; }
+      .fc { fill: #0a7a3a; stroke: #000; stroke-width: 0.6; }
+      .esc { fill: #aa2020; stroke: #000; stroke-width: 0.6; }
+      .plate { fill: #d0d0d0; stroke: #000; stroke-width: 0.8; }
+      .standoff { fill: #b8a04a; stroke: #000; stroke-width: 0.4; }
+      .screw { fill: #aaa; stroke: #000; stroke-width: 0.3; }
+      .hatch { stroke: #000; stroke-width: 0.2; stroke-dasharray: 1.5,1.5; opacity: 0.4; }
+      .label { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 3.5px; fill: #000; }
+      .label-sm { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 2.8px; fill: #000; }
+      .label-lg { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 5px; fill: #000; font-weight: bold; }
+      .dim { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 3px; fill: #000; }
     </style>
-    <marker id="arrow" viewBox="0 0 8 8" refX="8" refY="4" markerWidth="5" markerHeight="5" orient="auto">
-      <path d="M0,0 L8,4 L0,8 Z" fill="#666"/>
+    <marker id="arr" viewBox="0 0 6 6" refX="6" refY="3" markerWidth="3.5" markerHeight="3.5" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#000"/>
+    </marker>
+    <marker id="arr-start" viewBox="0 0 6 6" refX="0" refY="3" markerWidth="3.5" markerHeight="3.5" orient="auto">
+      <path d="M6,0 L0,3 L6,6 Z" fill="#000"/>
     </marker>
   </defs>
 
-  <rect class="bg" width="1200" height="900"/>
+  <rect class="bg" width="841" height="594"/>
+  <rect x="15" y="15" width="811" height="564" class="border"/>
 
-  <text x="30" y="30" class="title">GX140 3" ANALOG FPV — STACK ASSEMBLY (SIDE SECTION)</text>
-  <text x="30" y="46" class="subtitle">Rev 2.0 | Exploded view showing mounting order, standoffs, and fasteners | 20x20mm pattern</text>
+  <!-- ============ TITLE BLOCK ============ -->
+  <g transform="translate(15, 529)">
+    <line x1="0" y1="0" x2="811" y2="0"/>
+    <line x1="200" y1="0" x2="200" y2="50"/>
+    <line x1="400" y1="0" x2="400" y2="50"/>
+    <line x1="550" y1="0" x2="550" y2="50"/>
+    <line x1="650" y1="0" x2="650" y2="50"/>
+    <line x1="711" y1="0" x2="711" y2="50"/>
+    <line x1="0" y1="15" x2="200" y2="15"/>
+    <line x1="400" y1="15" x2="550" y2="15"/>
+    <line x1="400" y1="35" x2="550" y2="35"/>
+    <text x="4" y="11" class="label">GX140 3in ANALOG FPV</text>
+    <text x="4" y="28" class="label-sm">Frame: GX140 140mm | AUW ~190g</text>
+    <text x="204" y="11" class="label-sm">DRAWN BY</text>
+    <text x="204" y="28" class="label">AI Design Eng.</text>
+    <text x="404" y="11" class="label-sm">DATE</text>
+    <text x="404" y="28" class="label">2026-06-12</text>
+    <text x="404" y="46" class="label-sm">SCALE: NTS</text>
+    <text x="554" y="11" class="label-sm">DWG NO</text>
+    <text x="554" y="28" class="label">GX140-STACK-03</text>
+    <text x="654" y="11" class="label-sm">REV</text>
+    <text x="654" y="28" class="label-lg">2.0</text>
+    <text x="715" y="11" class="label-sm">SHEET</text>
+    <text x="715" y="28" class="label">3 / 4</text>
+  </g>
 
-  <!-- ============================================================ -->
-  <!-- MAIN STACK VIEW -->
-  <!-- ============================================================ -->
-  <g transform="translate(350, 480)">
+  <text x="420" y="30" class="label-lg" text-anchor="middle">GX140 3in ANALOG FPV — STACK ASSEMBLY (SECTION VIEW)</text>
+
+  <!-- ============ MAIN STACK VIEW ============ -->
+  <g transform="translate(300, 310)">
 
     <!-- Vertical centerline -->
-    <line x1="0" y1="-280" x2="0" y2="40" class="grid"/>
+    <line x1="0" y1="-220" x2="0" y2="30" class="line-dim" stroke-dasharray="10,3,2,3"/>
 
-    <!-- ========== LEVEL 0: BOTTOM PLATE ========== -->
-    <g transform="translate(0, 20)">
-      <rect x="-70" y="-4" width="140" height="8" rx="1" class="plate"/>
-      <text x="-75" y="3" class="callout" text-anchor="end" font-size="9">BOTTOM PLATE</text>
-      <text x="-75" y="12" class="dim" text-anchor="end">2mm carbon fiber</text>
+    <!-- === BOTTOM PLATE === -->
+    <g transform="translate(0, 18)">
+      <rect x="-55" y="-3" width="110" height="6" rx="0.5" class="plate"/>
+      <line x1="-54" y1="-3" x2="54" y2="-3" class="hatch"/>
+      <line x1="-54" y1="0" x2="54" y2="0" class="hatch"/>
+      <line x1="-54" y1="3" x2="54" y2="3" class="hatch"/>
     </g>
 
-    <!-- ========== LEVEL 1: FRAME MAIN PLATE ========== -->
+    <!-- === MAIN FRAME === -->
     <g transform="translate(0, 0)">
-      <rect x="-75" y="-6" width="150" height="12" rx="1" class="plate"/>
-      <text x="-80" y="3" class="callout" text-anchor="end" font-size="9">MAIN PLATE (BODY)</text>
-      <text x="-80" y="12" class="dim" text-anchor="end">4mm carbon fiber</text>
+      <rect x="-60" y="-5" width="120" height="10" rx="0.5" class="plate"/>
+      <line x1="-59" y1="-5" x2="59" y2="-5" class="hatch"/>
+      <line x1="-59" y1="-2" x2="59" y2="-2" class="hatch"/>
+      <line x1="-59" y1="1" x2="59" y2="1" class="hatch"/>
+      <line x1="-59" y1="4" x2="59" y2="4" class="hatch"/>
     </g>
 
-    <!-- ========== LEVEL 2: ESC ========== -->
-    <g transform="translate(0, -25)">
-      <rect x="-60" y="-3" width="120" height="6" rx="0.5" class="esc"/>
-      <!-- Components on ESC -->
-      <rect x="-4" y="-3" width="8" height="6" rx="0.5" fill="#111"/>
-      <rect x="-50" y="-3" width="10" height="2" rx="0.3" fill="#cc8820"/>
-      <rect x="40" y="-3" width="10" height="2" rx="0.3" fill="#cc8820"/>
-
-      <text x="-65" y="1" class="callout" text-anchor="end" font-size="9">ESC — BLS 35A 4in1</text>
-      <text x="-65" y="10" class="dim" text-anchor="end">1.6mm PCB</text>
+    <!-- === ESC === -->
+    <g transform="translate(0, -22)">
+      <rect x="-50" y="-2.5" width="100" height="5" rx="0.3" class="esc"/>
+      <rect x="-4" y="-2.5" width="8" height="5" rx="0.3" fill="#111"/>
     </g>
 
-    <!-- ========== STANDOFFS (ESC → FC) ========== -->
-    <g>
-      <!-- Left standoff -->
-      <g transform="translate(-30, -30)">
-        <rect x="-3" y="0" width="6" height="30" rx="2" class="standoff"/>
-        <!-- Internal threads (crosshatch) -->
-        <line x1="-1" y1="4" x2="1" y2="4" stroke="#8a7020" stroke-width="0.5"/>
-        <line x1="-1" y1="8" x2="1" y2="8" stroke="#8a7020" stroke-width="0.5"/>
-        <line x1="-1" y1="12" x2="1" y2="12" stroke="#8a7020" stroke-width="0.5"/>
-        <line x1="-1" y1="16" x2="1" y2="16" stroke="#8a7020" stroke-width="0.5"/>
-        <line x1="-1" y1="20" x2="1" y2="20" stroke="#8a7020" stroke-width="0.5"/>
-        <line x1="-1" y1="24" x2="1" y2="24" stroke="#8a7020" stroke-width="0.5"/>
-        <line x1="-1" y1="28" x2="1" y2="28" stroke="#8a7020" stroke-width="0.5"/>
-      </g>
-
-      <!-- Right standoff -->
-      <g transform="translate(30, -30)">
-        <rect x="-3" y="0" width="6" height="30" rx="2" class="standoff"/>
-        <line x1="-1" y1="4" x2="1" y2="4" stroke="#8a7020" stroke-width="0.5"/>
-        <line x1="-1" y1="8" x2="1" y2="8" stroke="#8a7020" stroke-width="0.5"/>
-        <line x1="-1" y1="12" x2="1" y2="12" stroke="#8a7020" stroke-width="0.5"/>
-        <line x1="-1" y1="16" x2="1" y2="16" stroke="#8a7020" stroke-width="0.5"/>
-        <line x1="-1" y1="20" x2="1" y2="20" stroke="#8a7020" stroke-width="0.5"/>
-        <line x1="-1" y1="24" x2="1" y2="24" stroke="#8a7020" stroke-width="0.5"/>
-        <line x1="-1" y1="28" x2="1" y2="28" stroke="#8a7020" stroke-width="0.5"/>
-      </g>
-
-      <!-- Standoff dimension -->
-      <line x1="35" y1="-30" x2="50" y2="-30" class="dim-line"/>
-      <line x1="50" y1="-30" x2="50" y2="0" class="dim-line"/>
-      <line x1="35" y1="0" x2="50" y2="0" class="dim-line"/>
-      <text x="52" y="-18" class="dim">M2×6mm</text>
-      <text x="52" y="-10" class="dim">nylon standoff</text>
+    <!-- === STANDOFFS === -->
+    <g transform="translate(-25, -28)">
+      <rect x="-2.5" y="0" width="5" height="24" rx="2" class="standoff"/>
+      <line x1="-2" y1="4" x2="2" y2="4" stroke="#8a7020" stroke-width="0.3"/>
+      <line x1="-2" y1="8" x2="2" y2="8" stroke="#8a7020" stroke-width="0.3"/>
+      <line x1="-2" y1="12" x2="2" y2="12" stroke="#8a7020" stroke-width="0.3"/>
+      <line x1="-2" y1="16" x2="2" y2="16" stroke="#8a7020" stroke-width="0.3"/>
+      <line x1="-2" y1="20" x2="2" y2="20" stroke="#8a7020" stroke-width="0.3"/>
+    </g>
+    <g transform="translate(25, -28)">
+      <rect x="-2.5" y="0" width="5" height="24" rx="2" class="standoff"/>
+      <line x1="-2" y1="4" x2="2" y2="4" stroke="#8a7020" stroke-width="0.3"/>
+      <line x1="-2" y1="8" x2="2" y2="8" stroke="#8a7020" stroke-width="0.3"/>
+      <line x1="-2" y1="12" x2="2" y2="12" stroke="#8a7020" stroke-width="0.3"/>
+      <line x1="-2" y1="16" x2="2" y2="16" stroke="#8a7020" stroke-width="0.3"/>
+      <line x1="-2" y1="20" x2="2" y2="20" stroke="#8a7020" stroke-width="0.3"/>
     </g>
 
-    <!-- ========== LEVEL 3: FC ========== -->
-    <g transform="translate(0, -70)">
-      <rect x="-65" y="-3" width="130" height="6" rx="0.5" class="fc"/>
-      <!-- MCU -->
-      <rect x="-6" y="-3" width="12" height="6" rx="0.5" fill="#111"/>
-      <!-- IMU -->
-      <rect x="15" y="-2" width="4" height="4" rx="0.5" fill="#1a1a2a"/>
-      <!-- USB -->
-      <rect x="-65" y="-2" width="8" height="4" rx="0.3" fill="#888"/>
-
-      <text x="70" y="1" class="callout" font-size="9">FC — SpeedyBee F405 Mini</text>
-      <text x="70" y="10" class="dim">1.6mm PCB, 5V/3A BEC</text>
+    <!-- === FC === -->
+    <g transform="translate(0, -60)">
+      <rect x="-55" y="-2.5" width="110" height="5" rx="0.3" class="fc"/>
+      <rect x="-4" y="-2.5" width="8" height="5" rx="0.3" fill="#111"/>
+      <rect x="-55" y="-1.5" width="5" height="3" rx="0.3" fill="#ccc" stroke="#000" stroke-width="0.3"/>
     </g>
 
-    <!-- ========== FC SCREWS ========== -->
-    <g>
-      <g transform="translate(-30, -75)">
-        <rect x="-2" y="0" width="4" height="5" rx="0.5" class="screw"/>
-      </g>
-      <g transform="translate(30, -75)">
-        <rect x="-2" y="0" width="4" height="5" rx="0.5" class="screw"/>
-      </g>
+    <!-- === FC SCREWS === -->
+    <g transform="translate(-25, -63)">
+      <rect x="-1.5" y="0" width="3" height="3" rx="0.3" class="screw"/>
+    </g>
+    <g transform="translate(25, -63)">
+      <rect x="-1.5" y="0" width="3" height="3" rx="0.3" class="screw"/>
     </g>
 
-    <!-- ========== LEVEL 4: VTX (on top plate) ========== -->
-    <g transform="translate(-50, -70)">
-      <rect x="-20" y="-2" width="40" height="4" rx="0.5" fill="#1a3a6a"/>
-      <rect x="-6" y="-2" width="12" height="4" rx="0.3" fill="#1a1a2a"/>
+    <!-- === HEIGHT DIMENSIONS === -->
+    <line x1="-80" y1="-87" x2="-80" y2="-63" class="line-dim" marker-start="url(#arr-start)" marker-end="url(#arr)"/>
+    <line x1="-80" y1="-57" x2="-80" y2="-26" class="line-dim" marker-start="url(#arr-start)" marker-end="url(#arr)"/>
+    <line x1="-80" y1="-20" x2="-80" y2="16" class="line-dim" marker-start="url(#arr-start)" marker-end="url(#arr)"/>
 
-      <text x="0" y="-7" class="callout" text-anchor="middle" font-size="8">VTX (rear)</text>
-    </g>
-
-    <!-- ========== LEVEL 5: GPS MAST (side) ========== -->
-    <g transform="translate(50, -95)">
-      <rect x="-2" y="0" width="4" height="20" rx="1" class="standoff"/>
-      <rect x="-15" y="-5" width="30" height="5" rx="0.5" fill="#7a5a10"/>
-      <rect x="-5" y="-5" width="10" height="5" rx="0.3" fill="#111"/>
-
-      <text x="0" y="-10" class="callout" text-anchor="middle" font-size="8">GPS mast</text>
-    </g>
-
-    <!-- ========== STACK HEIGHT DIMENSIONS ========== -->
-    <!-- Left side height stack -->
-    <line x1="-100" y1="-170" x2="-100" y2="-73" class="dim-line"/>
-    <line x1="-100" y1="-67" x2="-100" y2="-28" class="dim-line"/>
-    <line x1="-100" y1="-22" x2="-100" y2="20" class="dim-line"/>
-    <line x1="-105" y1="-170" x2="-100" y2="-170" class="dim-line"/>
-    <line x1="-105" y1="-73" x2="-100" y2="-73" class="dim-line"/>
-    <line x1="-105" y1="-67" x2="-100" y2="-67" class="dim-line"/>
-    <line x1="-105" y1="-28" x2="-100" y2="-28" class="dim-line"/>
-    <line x1="-105" y1="-22" x2="-100" y2="-22" class="dim-line"/>
-    <line x1="-105" y1="20" x2="-100" y2="20" class="dim-line"/>
-
-    <text x="-130" y="-168" class="dim">~8mm</text>
-    <text x="-140" y="-50" class="dim">6mm</text>
-    <text x="-140" y="5" class="dim">~8mm</text>
-
+    <text x="-88" y="-76" class="dim">~6mm</text>
+    <text x="-88" y="-44" class="dim">6mm</text>
+    <text x="-88" y="0" class="dim">~8mm</text>
   </g>
 
-  <!-- ============================================================ -->
-  <!-- STACK ORDER TABLE (right side) -->
-  <!-- ============================================================ -->
-  <g transform="translate(720, 100)">
-    <rect x="0" y="0" width="400" height="280" rx="4" fill="#222" stroke="#444" stroke-width="0.5"/>
-    <text x="15" y="22" class="label" font-size="12">STACK LAYER ORDER</text>
-    <line x1="0" y1="30" x2="400" y2="30" stroke="#444" stroke-width="0.3"/>
-
-    <!-- Header -->
-    <text x="15" y="44" class="label" font-size="9">#</text>
-    <text x="40" y="44" class="label" font-size="9">COMPONENT</text>
-    <text x="200" y="44" class="label" font-size="9">THICKNESS (mm)</text>
-    <text x="320" y="44" class="label" font-size="9">FASTENER</text>
-    <line x1="0" y1="48" x2="400" y2="48" stroke="#333" stroke-width="0.3"/>
-
-    <!-- Layer 1 -->
-    <text x="15" y="64" class="dim">1</text>
-    <text x="40" y="64" class="dim">Bottom plate</text>
-    <text x="240" y="64" class="dim" text-anchor="end">2.0</text>
-    <text x="320" y="64" class="dim">—</text>
-
-    <!-- Layer 2 -->
-    <text x="15" y="80" class="dim">2</text>
-    <text x="40" y="80" class="dim">Main frame (4mm CF)</text>
-    <text x="240" y="80" class="dim" text-anchor="end">4.0</text>
-    <text x="320" y="80" class="dim">M2.5×12mm screws</text>
-
-    <!-- Layer 3 -->
-    <text x="15" y="96" class="dim">3</text>
-    <text x="40" y="96" class="dim">ESC — BLS 35A 4in1</text>
-    <text x="240" y="96" class="dim" text-anchor="end">1.6</text>
-    <text x="320" y="96" class="dim">Direct to frame</text>
-
-    <!-- Layer 4 -->
-    <text x="15" y="112" class="dim">4</text>
-    <text x="40" y="112" class="dim">Nylon standoffs</text>
-    <text x="240" y="112" class="dim" text-anchor="end">6.0</text>
-    <text x="320" y="112" class="dim">M2×6mm F-F</text>
-
-    <!-- Layer 5 -->
-    <text x="15" y="128" class="dim">5</text>
-    <text x="40" y="128" class="dim">FC — SpeedyBee F405 Mini</text>
-    <text x="240" y="128" class="dim" text-anchor="end">1.6</text>
-    <text x="320" y="128" class="dim">M2×4mm screws</text>
-
-    <!-- Layer 6 -->
-    <text x="15" y="144" class="dim">6</text>
-    <text x="40" y="144" class="dim">VTX — Zeus 350 (rear)</text>
-    <text x="240" y="144" class="dim" text-anchor="end">1.6</text>
-    <text x="320" y="144" class="dim">M2×5mm</text>
-
-    <!-- Layer 7 -->
-    <text x="15" y="160" class="dim">7</text>
-    <text x="40" y="160" class="dim">CAM — Caddx Ant (front)</text>
-    <text x="240" y="160" class="dim" text-anchor="end">8.0</text>
-    <text x="320" y="160" class="dim">M1.6 nylon</text>
-
-    <!-- Layer 8 -->
-    <text x="15" y="176" class="dim">8</text>
-    <text x="40" y="176" class="dim">RX — SuperD ELRS (side)</text>
-    <text x="240" y="176" class="dim" text-anchor="end">1.2</text>
-    <text x="320" y="176" class="dim">Foam tape / screws</text>
-
-    <!-- Layer 9 -->
-    <text x="15" y="192" class="dim">9</text>
-    <text x="40" y="192" class="dim">GPS — M10Q-5883 (mast)</text>
-    <text x="240" y="192" class="dim" text-anchor="end">1.6</text>
-    <text x="320" y="192" class="dim">M2×8mm standoffs</text>
-
-    <!-- Layer 10 -->
-    <text x="15" y="208" class="dim">10</text>
-    <text x="40" y="208" class="dim">BAT — 2S 550mAh (under)</text>
-    <text x="240" y="208" class="dim" text-anchor="end">12.0</text>
-    <text x="320" y="208" class="dim">Velcro straps</text>
-
-    <line x1="0" y1="216" x2="400" y2="216" stroke="#333" stroke-width="0.3"/>
-
-    <!-- Total -->
-    <text x="15" y="232" class="label" font-size="9">TOTAL STACK HEIGHT</text>
-    <text x="240" y="232" class="label" text-anchor="end">~39.6mm</text>
-    <text x="320" y="232" class="label">(w/o battery)</text>
+  <!-- ============ STACK TABLE ============ -->
+  <g transform="translate(560, 50)">
+    <rect x="0" y="0" width="250" height="220" fill="#f8f8f8" stroke="#000" stroke-width="0.5"/>
+    <text x="4" y="10" class="label" font-weight="bold">STACK LAYER TABLE</text>
+    <line x1="0" y1="14" x2="250" y2="14"/>
+    <text x="4" y="24" class="label-sm" font-weight="bold">#</text>
+    <text x="20" y="24" class="label-sm" font-weight="bold">PART</text>
+    <text x="130" y="24" class="label-sm" font-weight="bold">THK mm</text>
+    <text x="180" y="24" class="label-sm" font-weight="bold">FASTENER</text>
+    <line x1="0" y1="26" x2="250" y2="26"/>
+    <text x="4" y="36" class="label-sm">1</text><text x="20" y="36" class="label-sm">Bottom plate</text><text x="140" y="36" class="label-sm">2.0</text><text x="180" y="36" class="label-sm">—</text>
+    <text x="4" y="48" class="label-sm">2</text><text x="20" y="48" class="label-sm">Main frame CF</text><text x="140" y="48" class="label-sm">4.0</text><text x="180" y="48" class="label-sm">M2.5×12</text>
+    <text x="4" y="60" class="label-sm">3</text><text x="20" y="60" class="label-sm">ESC 4in1</text><text x="140" y="60" class="label-sm">1.6</text><text x="180" y="60" class="label-sm">Direct</text>
+    <text x="4" y="72" class="label-sm">4</text><text x="20" y="72" class="label-sm">Nylon standoff</text><text x="140" y="72" class="label-sm">6.0</text><text x="180" y="72" class="label-sm">M2 F-F</text>
+    <text x="4" y="84" class="label-sm">5</text><text x="20" y="84" class="label-sm">FC F405 Mini</text><text x="140" y="84" class="label-sm">1.6</text><text x="180" y="84" class="label-sm">M2×4</text>
+    <text x="4" y="96" class="label-sm">6</text><text x="20" y="96" class="label-sm">VTX Zeus 350</text><text x="140" y="96" class="label-sm">1.6</text><text x="180" y="96" class="label-sm">M2×5</text>
+    <text x="4" y="108" class="label-sm">7</text><text x="20" y="108" class="label-sm">CAM Caddx Ant</text><text x="140" y="108" class="label-sm">8.0</text><text x="180" y="108" class="label-sm">M1.6 nylon</text>
+    <text x="4" y="120" class="label-sm">8</text><text x="20" y="120" class="label-sm">RX SuperD</text><text x="140" y="120" class="label-sm">1.2</text><text x="180" y="120" class="label-sm">Tape/scr</text>
+    <text x="4" y="132" class="label-sm">9</text><text x="20" y="132" class="label-sm">GPS (opt)</text><text x="140" y="132" class="label-sm">1.6</text><text x="180" y="132" class="label-sm">M2×8</text>
+    <text x="4" y="144" class="label-sm">10</text><text x="20" y="144" class="label-sm">Battery under</text><text x="140" y="144" class="label-sm">12.0</text><text x="180" y="144" class="label-sm">Strap</text>
+    <line x1="0" y1="150" x2="250" y2="150"/>
+    <text x="4" y="162" class="label-sm" font-weight="bold">Stack total</text><text x="140" y="162" class="label-sm" font-weight="bold">~39.6mm</text>
   </g>
 
-  <!-- ============================================================ -->
-  <!-- MOUNTING METHOD LEGEND -->
-  <!-- ============================================================ -->
-  <g transform="translate(720, 420)">
-    <rect x="0" y="0" width="400" height="180" rx="4" fill="#222" stroke="#444" stroke-width="0.5"/>
-    <text x="15" y="22" class="label" font-size="11">MOUNTING METHODS</text>
-    <line x1="0" y1="30" x2="400" y2="30" stroke="#444" stroke-width="0.3"/>
-
-    <text x="15" y="48" class="dim">• FC / ESC: M2 nylon standoffs, 6mm height, 20×20mm pattern</text>
-    <text x="15" y="64" class="dim">• VTX: M2 brass standoffs or 3D-printed TPU mount, rear top plate</text>
-    <text x="15" y="80" class="dim">• Camera: TPU wedge mount, M1.6 nylon screws at mounting tabs</text>
-    <text x="15" y="96" class="dim">• RX: Double-sided foam tape or 3D tray; side-mounted on frame</text>
-    <text x="15" y="112" class="dim">• GPS: M2×8mm nylon standoffs on mast for sky clearance</text>
-    <text x="15" y="128" class="dim">• Battery: 2× 20mm nylon straps through bottom plate slots</text>
-    <text x="15" y="144" class="dim">• Motors: M2×5mm steel screws + Loctite 243 (blue thread lock)</text>
-    <text x="15" y="160" class="dim">• Stack assembly: Nylon hardware throughout for vibration isolation</text>
+  <!-- ============ MOUNTING NOTES ============ -->
+  <g transform="translate(560, 290)">
+    <rect x="0" y="0" width="250" height="120" fill="#f8f8f8" stroke="#000" stroke-width="0.5"/>
+    <text x="4" y="10" class="label" font-weight="bold">MOUNTING METHOD</text>
+    <text x="4" y="24" class="label-sm">FC/ESC: M2 nylon standoffs ×4</text>
+    <text x="4" y="36" class="label-sm">VTX: M2 brass standoffs or TPU</text>
+    <text x="4" y="48" class="label-sm">CAM: TPU wedge, M1.6 screws</text>
+    <text x="4" y="60" class="label-sm">RX: Foam tape or 3D tray</text>
+    <text x="4" y="72" class="label-sm">GPS: Nylon standoffs on mast</text>
+    <text x="4" y="84" class="label-sm">BAT: 2× 20mm straps</text>
+    <text x="4" y="96" class="label-sm">MOT: M2×5 + Loctite 243</text>
+    <text x="4" y="108" class="label-sm">Stack: Nylon throughout (vibe)</text>
   </g>
 
-  <!-- ============================================================ -->
-  <!-- TORQUE SPECS -->
-  <!-- ============================================================ -->
-  <g transform="translate(720, 630)">
-    <rect x="0" y="0" width="400" height="130" rx="4" fill="#222" stroke="#444" stroke-width="0.5"/>
-    <text x="15" y="22" class="label" font-size="11">TORQUE SPECIFICATIONS</text>
-    <line x1="0" y1="30" x2="400" y2="30" stroke="#444" stroke-width="0.3"/>
-
-    <text x="15" y="48" class="dim">• Motor M2×5mm: 0.25 N·m — 1.5mm hex, finger-tight + 1/8 turn</text>
-    <text x="15" y="64" class="dim">• Stack M2 nylon: 0.15 N·m — snug, do not overtighten (strips easily)</text>
-    <text x="15" y="80" class="dim">• Top plate M2.5×10mm: 0.35 N·m — 2.0mm hex</text>
-    <text x="15" y="96" class="dim">• Bottom plate M2.5×12mm: 0.40 N·m — 2.0mm hex</text>
-    <text x="15" y="112" class="dim">• Prop nut M5: Hand-tight + 1/4 turn with wrench</text>
+  <!-- TORQUE -->
+  <g transform="translate(560, 430)">
+    <rect x="0" y="0" width="250" height="80" fill="#f8f8f8" stroke="#000" stroke-width="0.5"/>
+    <text x="4" y="10" class="label" font-weight="bold">TORQUE</text>
+    <text x="4" y="24" class="label-sm">Motor M2×5: 0.25 N·m</text>
+    <text x="4" y="36" class="label-sm">Stack M2 nylon: 0.15 N·m</text>
+    <text x="4" y="48" class="label-sm">Plate M2.5: 0.35–0.4 N·m</text>
+    <text x="4" y="60" class="label-sm">Prop nut: Hand + 1/4 turn</text>
   </g>
 
-  <!-- FOOTER -->
-  <line x1="30" y1="850" x2="1170" y2="850" stroke="#444" stroke-width="0.5"/>
-  <text x="30" y="868" class="callout" font-size="8">DRAWING: GX140-STACK-ASSEMBLY-REV2</text>
-  <text x="350" y="868" class="callout" font-size="8">DATE: 2026-06-12</text>
-  <text x="700" y="868" class="callout" font-size="8">SHEET 3 OF 4</text>
-  <text x="1000" y="868" class="callout" font-size="8">DRAWN BY: AI DESIGN ENGINEERING</text>
-
+  <text x="25" y="520" class="label-sm">NOTES: 1) ALL DIMS IN mm  2) NYLON HARDWARE THROUGHOUT  3) LOCTITE 243 ON MOTOR SCREWS  4) SMOKE STOPPER FIRST POWER-UP</text>
 </svg>

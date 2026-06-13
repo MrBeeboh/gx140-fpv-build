@@ -1,345 +1,253 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- GX140 3" Analog FPV — Exploded ISO Assembly Drawing -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841 594" width="841" height="594">
+  <!-- A3 landscape: 420mm @ 2px/mm -->
+
   <defs>
     <style>
-      .frame { fill: #333; stroke: #222; stroke-width: 0.8; }
-      .arm { fill: #3a3a3a; stroke: #222; stroke-width: 0.6; }
-      .fc { fill: #0a7a3a; stroke: #064; stroke-width: 0.5; }
-      .esc { fill: #aa2020; stroke: #801010; stroke-width: 0.5; }
-      .motor { fill: #4a4a50; stroke: #333; stroke-width: 0.5; }
-      .bell { fill: #3a3a40; stroke: #2a2a2a; stroke-width: 0.4; }
-      .vtx { fill: #1a3a6a; stroke: #0f2a4f; stroke-width: 0.5; }
-      .cam { fill: #555; stroke: #3a3a3a; stroke-width: 0.4; }
-      .rx { fill: #1a5a5a; stroke: #0f3f3f; stroke-width: 0.4; }
-      .gps { fill: #7a5a10; stroke: #5a3a08; stroke-width: 0.4; }
-      .bat { fill: #d02020; stroke: #a01010; stroke-width: 0.6; }
-      .antenna { fill: #8a5a10; stroke: #6a3a08; stroke-width: 0.4; }
-      .standoff { fill: #b8a04a; stroke: #8a7020; stroke-width: 0.3; }
-      .tpu { fill: #5a6a7a; stroke: #3a4a5a; stroke-width: 0.3; }
-      .prop { fill: #2a2e3a; stroke: #1a1e2a; stroke-width: 0.3; opacity: 0.85; }
-      .label { font-family: 'Courier New', monospace; font-size: 10px; fill: #fff; }
-      .label-bg { fill: #222; opacity: 0.85; }
-      .callout { font-family: 'Courier New', monospace; font-size: 9px; fill: #ccc; }
-      .callout-line { stroke: #666; stroke-width: 0.5; stroke-dasharray: 3,2; fill: none; }
-      .title { font-family: 'Courier New', monospace; font-size: 16px; fill: #eee; font-weight: bold; }
-      .subtitle { font-family: 'Courier New', monospace; font-size: 10px; fill: #999; }
-      .bg { fill: #1a1a1e; }
-      .grid { stroke: #2a2a30; stroke-width: 0.3; }
+      .bg { fill: #fff; }
+      .border { fill: none; stroke: #000; stroke-width: 1; }
+      .frame { fill: #d0d0d0; stroke: #000; stroke-width: 1.2; }
+      .arm { fill: #c8c8c8; stroke: #000; stroke-width: 0.8; }
+      .fc { fill: #0a7a3a; stroke: #000; stroke-width: 0.8; }
+      .esc { fill: #aa2020; stroke: #000; stroke-width: 0.8; }
+      .motor { fill: #888; stroke: #000; stroke-width: 0.8; }
+      .bell { fill: #aaa; stroke: #000; stroke-width: 0.5; }
+      .vtx { fill: #1a4a8a; stroke: #000; stroke-width: 0.8; }
+      .cam { fill: #666; stroke: #000; stroke-width: 0.8; }
+      .rx { fill: #1a6a6a; stroke: #000; stroke-width: 0.8; }
+      .gps { fill: #8a6a18; stroke: #000; stroke-width: 0.8; }
+      .bat { fill: #cc3030; stroke: #000; stroke-width: 0.8; }
+      .antenna { fill: #8a6a18; stroke: #000; stroke-width: 0.6; }
+      .standoff { fill: #b8a04a; stroke: #000; stroke-width: 0.5; }
+      .tpu { fill: #6a7a8a; stroke: #000; stroke-width: 0.5; }
+      .line-thick { fill: none; stroke: #000; stroke-width: 1; }
+      .line-thin { fill: none; stroke: #000; stroke-width: 0.4; }
+      .line-hidden { fill: none; stroke: #000; stroke-width: 0.3; stroke-dasharray: 3,2; }
+      .label { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 3.5px; fill: #000; }
+      .label-sm { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 2.8px; fill: #000; }
+      .label-lg { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 5px; fill: #000; font-weight: bold; }
+      .title { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 5px; fill: #000; font-weight: bold; }
+      .title-sm { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 3px; fill: #000; }
     </style>
-    <marker id="arrow" viewBox="0 0 8 8" refX="8" refY="4" markerWidth="5" markerHeight="5" orient="auto">
-      <path d="M0,0 L8,4 L0,8 Z" fill="#666"/>
-    </marker>
   </defs>
 
-  <!-- Background -->
-  <rect class="bg" width="1200" height="900"/>
+  <rect class="bg" width="841" height="594"/>
 
-  <!-- Grid lines -->
-  <g opacity="0.3">
-    <line x1="100" y1="450" x2="1100" y2="450" class="grid"/>
-    <line x1="600" y1="50" x2="600" y2="850" class="grid"/>
+  <!-- Border -->
+  <rect x="15" y="15" width="811" height="564" class="border"/>
+
+  <!-- ============ TITLE BLOCK ============ -->
+  <g transform="translate(15, 529)">
+    <line x1="0" y1="0" x2="811" y2="0" class="line-thick"/>
+    <line x1="0" y1="35" x2="811" y2="35" class="line-thin"/>
+
+    <!-- Block grid -->
+    <line x1="0" y1="0" x2="0" y2="50" class="line-thin"/>
+    <line x1="200" y1="0" x2="200" y2="50" class="line-thin"/>
+    <line x1="400" y1="0" x2="400" y2="50" class="line-thin"/>
+    <line x1="550" y1="0" x2="550" y2="50" class="line-thin"/>
+    <line x1="650" y1="0" x2="650" y2="50" class="line-thin"/>
+    <line x1="711" y1="0" x2="711" y2="50" class="line-thin"/>
+    <line x1="0" y1="15" x2="200" y2="15" class="line-thin"/>
+    <line x1="400" y1="15" x2="550" y2="15" class="line-thin"/>
+    <line x1="400" y1="35" x2="550" y2="35" class="line-thin"/>
+    <line x1="400" y1="15" x2="400" y2="50" class="line-thin"/>
+
+    <text x="4" y="11" class="label">GX140 3in ANALOG FPV</text>
+    <text x="4" y="28" class="label-sm">Frame: GX140 140mm | AUW ~190g</text>
+    <text x="4" y="43" class="label-sm">FC: SpeedyBee F405 Mini | ESC: BLS 35A 4in1</text>
+
+    <text x="204" y="11" class="label-sm">DRAWN BY</text>
+    <text x="204" y="28" class="label">AI Design Eng.</text>
+
+    <text x="404" y="11" class="label-sm">DATE</text>
+    <text x="404" y="28" class="label">2026-06-12</text>
+    <text x="404" y="46" class="label-sm">SCALE: NTS</text>
+
+    <text x="554" y="11" class="label-sm">DWG NO</text>
+    <text x="554" y="28" class="label">GX140-ISO-01</text>
+
+    <text x="654" y="11" class="label-sm">REV</text>
+    <text x="654" y="28" class="label-lg">2.0</text>
+
+    <text x="715" y="11" class="label-sm">SHEET</text>
+    <text x="715" y="28" class="label">1 / 4</text>
   </g>
 
-  <!-- SECTION TITLE -->
-  <text x="30" y="30" class="title">GX140 3" ANALOG FPV — EXPLODED ISO ASSEMBLY</text>
-  <text x="30" y="46" class="subtitle">Rev 2.0 | Frame: GX140 140mm True-X | Stack: 20x20 | AUW ~190g</text>
+  <!-- ============ TITLE ============ -->
+  <text x="420" y="30" class="label-lg" text-anchor="middle">GX140 3in ANALOG FPV — EXPLODED ISO ASSEMBLY</text>
 
-  <!-- ============================================================ -->
-  <!-- LEGEND (top-right) -->
-  <!-- ============================================================ -->
-  <g transform="translate(900, 60)">
-    <rect x="0" y="0" width="270" height="200" rx="4" fill="#222" stroke="#444" stroke-width="0.5"/>
-    <text x="10" y="18" class="label" font-size="11">COMPONENT LEGEND</text>
-    <line x1="10" y1="24" x2="260" y2="24" stroke="#444" stroke-width="0.3"/>
+  <!-- ============ COMPONENT LEGEND (right side) ============ -->
+  <g transform="translate(600, 50)">
+    <rect x="0" y="0" width="210" height="130" fill="#f8f8f8" stroke="#000" stroke-width="0.5"/>
+    <text x="4" y="10" class="label" font-weight="bold">COMPONENT LEGEND</text>
 
-    <rect x="15" y="32" width="12" height="8" class="fc"/>
-    <text x="34" y="40" class="callout">FC — SpeedyBee F405 Mini</text>
-
-    <rect x="15" y="48" width="12" height="8" class="esc"/>
-    <text x="34" y="56" class="callout">ESC — BLS 35A 4in1</text>
-
-    <rect x="15" y="64" width="12" height="8" class="vtx"/>
-    <text x="34" y="72" class="callout">VTX — HGLRC Zeus 350mW</text>
-
-    <rect x="15" y="80" width="12" height="8" class="cam"/>
-    <text x="34" y="88" class="callout">CAM — Caddx Ant 1200TVL</text>
-
-    <rect x="15" y="96" width="12" height="8" class="rx"/>
-    <text x="34" y="104" class="callout">RX — SuperD ELRS Diversity</text>
-
-    <rect x="15" y="112" width="12" height="8" class="gps"/>
-    <text x="34" y="120" class="callout">GPS — Matek M10Q-5883 (opt)</text>
-
-    <rect x="15" y="128" width="12" height="8" class="bat"/>
-    <text x="34" y="136" class="callout">BAT — 2S 550mAh LiHV</text>
-
-    <rect x="15" y="144" width="12" height="8" class="motor"/>
-    <text x="34" y="152" class="callout">MOTOR — HGLRC Specter 1804</text>
-
-    <rect x="15" y="160" width="12" height="8" class="standoff"/>
-    <text x="34" y="168" class="callout">STANDOFF — M2 / M2.5 Nylon/Brass</text>
-
-    <rect x="15" y="176" width="12" height="8" class="tpu"/>
-    <text x="34" y="184" class="callout">3D PRINTED — TPU Mount</text>
+    <rect x="4" y="16" width="8" height="5" class="fc"/><text x="16" y="21" class="label-sm">FC — SpeedyBee F405 Mini</text>
+    <rect x="4" y="26" width="8" height="5" class="esc"/><text x="16" y="31" class="label-sm">ESC — BLS 35A 4in1</text>
+    <rect x="4" y="36" width="8" height="5" class="vtx"/><text x="16" y="41" class="label-sm">VTX — HGLRC Zeus 350mW</text>
+    <rect x="4" y="46" width="8" height="5" class="cam"/><text x="16" y="51" class="label-sm">CAM — Caddx Ant 1200TVL</text>
+    <rect x="4" y="56" width="8" height="5" class="rx"/><text x="16" y="61" class="label-sm">RX — SuperD ELRS 2.4G</text>
+    <rect x="4" y="66" width="8" height="5" class="gps"/><text x="16" y="71" class="label-sm">GPS — M10Q-5883 (opt)</text>
+    <rect x="4" y="76" width="8" height="5" class="bat"/><text x="16" y="81" class="label-sm">BAT — 2S 550mAh LiHV</text>
+    <rect x="4" y="86" width="8" height="5" class="motor"/><text x="16" y="91" class="label-sm">MOT — HGLRC Specter 1804</text>
+    <rect x="4" y="96" width="8" height="5" class="standoff"/><text x="16" y="101" class="label-sm">Nylon standoffs M2</text>
+    <rect x="4" y="106" width="8" height="5" class="tpu"/><text x="16" y="111" class="label-sm">TPU mount (3D print)</text>
+    <rect x="4" y="116" width="8" height="5" class="antenna"/><text x="16" y="121" class="label-sm">Antenna (SMA / U.FL)</text>
   </g>
 
-  <!-- ============================================================ -->
-  <!-- MAIN ASSEMBLY — Isometric Projection -->
-  <!-- ============================================================ -->
-  <g transform="translate(480, 420)">
+  <!-- ============ MAIN ISO VIEW ============ -->
+  <g transform="translate(340, 260)">
 
-    <!-- ========== LEVEL 0: BATTERY (bottom, -80px) ========== -->
-    <g transform="translate(0, 80)">
-      <!-- Battery body -->
-      <rect x="-40" y="-25" width="80" height="50" rx="6" class="bat" stroke-width="1"/>
-      <!-- Label stripe -->
-      <rect x="-35" y="-25" width="70" height="6" fill="#aa1818"/>
-      <text x="0" y="-11" class="label" font-size="7" text-anchor="middle">2S 550mAh LiHV</text>
-      <!-- XT30 connector -->
-      <rect x="-6" y="-32" width="12" height="7" rx="2" fill="#888" stroke="#666" stroke-width="0.5"/>
-      <!-- Wires -->
-      <line x1="-3" y1="-25" x2="-3" y2="-10" stroke="#cc2020" stroke-width="1.5"/>
-      <line x1="3" y1="-25" x2="3" y2="-10" stroke="#222" stroke-width="1.5"/>
-
-      <!-- Callout arrow -->
-      <line x1="-60" y1="-10" x2="-80" y2="-60" class="callout-line" marker-end="url(#arrow)"/>
-      <text x="-160" y="-65" class="callout">BATTERY</text>
-      <text x="-160" y="-54" class="callout" font-size="8">2S 550mAh LiHV XT30</text>
-      <text x="-160" y="-44" class="callout" font-size="8">Mounted under frame</text>
+    <!-- === LEVEL 0: BATTERY === -->
+    <g>
+      <rect x="-35" y="-22" width="70" height="44" rx="4" class="bat" stroke-width="1"/>
+      <text x="0" y="3" class="label-sm" text-anchor="middle">2S 550mAh</text>
+      <rect x="-8" y="-28" width="16" height="6" rx="1" fill="#888" stroke="#000" stroke-width="0.5"/>
+      <!-- leader -->
+      <line x1="-50" y1="0" x2="-75" y2="-30" class="line-thin" marker-end="url(#arrow)"/>
     </g>
 
-    <!-- ========== LEVEL 1: FRAME (center, 0px) ========== -->
+    <!-- === LEVEL 1: FRAME === -->
     <g>
       <!-- Center body -->
-      <path d="M-45,-35 L45,-35 L50,-30 L50,30 L45,35 L-45,35 L-50,30 L-50,-30 Z" class="frame"/>
-      <!-- Arms -->
-      <g class="arm">
-        <!-- Arm 1 (top-right, M1) -->
-        <polygon points="38,-25 100,-55 105,-45 42,-15"/>
-        <!-- Arm 2 (top-left, M2) -->
-        <polygon points="-38,-25 -100,-55 -105,-45 -42,-15"/>
-        <!-- Arm 3 (bottom-left, M3) -->
-        <polygon points="-38,25 -100,55 -105,45 -42,15"/>
-        <!-- Arm 4 (bottom-right, M4) -->
-        <polygon points="38,25 100,55 105,45 42,15"/>
-      </g>
-
-      <!-- Stack cutout -->
-      <rect x="-15" y="-15" width="30" height="30" rx="2" fill="#1a1a1e" stroke="#444" stroke-width="0.5"/>
-
-      <!-- Frame label -->
-      <text x="0" y="50" class="callout" text-anchor="middle" font-size="7">GX140 FRAME — 4mm CF, 2.5mm arms</text>
+      <rect x="-40" y="-30" width="80" height="60" rx="4" class="frame"/>
+      <!-- Arms (simplified ISO) -->
+      <polygon points="35,-20 85,-50 90,-40 40,-10" class="arm"/>
+      <polygon points="-35,-20 -85,-50 -90,-40 -40,-10" class="arm"/>
+      <polygon points="-35,20 -85,50 -90,40 -40,10" class="arm"/>
+      <polygon points="35,20 85,50 90,40 40,10" class="arm"/>
+      <!-- Stack opening -->
+      <rect x="-12" y="-12" width="24" height="24" rx="1" fill="#fff" stroke="#000" stroke-width="0.3"/>
     </g>
 
-    <!-- ========== LEVEL 2: ESC (40px up) ========== -->
-    <g transform="translate(0, -45)">
-      <rect x="-16" y="-16" width="32" height="32" rx="3" class="esc"/>
-      <!-- Mounting holes -->
-      <circle cx="-11" cy="-11" r="2" fill="#222"/>
-      <circle cx="11" cy="-11" r="2" fill="#222"/>
-      <circle cx="-11" cy="11" r="2" fill="#222"/>
-      <circle cx="11" cy="11" r="2" fill="#222"/>
-      <!-- MCU -->
+    <!-- === LEVEL 2: ESC === -->
+    <g transform="translate(0, -35)">
+      <rect x="-14" y="-14" width="28" height="28" rx="2" class="esc"/>
+      <circle cx="-9" cy="-9" r="1.5" fill="#fff"/>
+      <circle cx="9" cy="-9" r="1.5" fill="#fff"/>
+      <circle cx="-9" cy="9" r="1.5" fill="#fff"/>
+      <circle cx="9" cy="9" r="1.5" fill="#fff"/>
       <rect x="-3" y="-3" width="6" height="6" rx="1" fill="#111"/>
-      <!-- Motor pads -->
-      <rect x="-14" y="15" width="6" height="4" rx="0.5" fill="#cc8820"/>
-      <rect x="8" y="15" width="6" height="4" rx="0.5" fill="#cc8820"/>
-      <rect x="-14" y="-19" width="6" height="4" rx="0.5" fill="#cc8820"/>
-      <rect x="8" y="-19" width="6" height="4" rx="0.5" fill="#cc8820"/>
-
-      <text x="0" y="-22" class="callout" text-anchor="middle" font-size="7">ESC — BLS 35A 4in1</text>
     </g>
 
-    <!-- ========== STANDOFFS (between ESC and FC) ========== -->
+    <!-- === STANDOFFS === -->
     <g class="standoff">
-      <rect x="-12" y="-80" width="4" height="30" rx="2"/>
-      <rect x="8" y="-80" width="4" height="30" rx="2"/>
-      <rect x="-12" y="-50" width="4" height="30" rx="2"/>
-      <rect x="8" y="-50" width="4" height="30" rx="2"/>
+      <rect x="-10" y="-62" width="3.5" height="24" rx="1.5"/>
+      <rect x="6.5" y="-62" width="3.5" height="24" rx="1.5"/>
+      <rect x="-10" y="-38" width="3.5" height="24" rx="1.5"/>
+      <rect x="6.5" y="-38" width="3.5" height="24" rx="1.5"/>
     </g>
 
-    <!-- ========== LEVEL 3: FC (80px up) ========== -->
-    <g transform="translate(0, -88)">
-      <path d="M-16,-14 L16,-14 L16,14 L-16,14 Z" class="fc"/>
-      <!-- USB port -->
-      <rect x="-16" y="-5" width="5" height="10" rx="1" fill="#888"/>
-      <!-- Mounting holes -->
-      <circle cx="-11" cy="-11" r="2" fill="#222"/>
-      <circle cx="11" cy="-11" r="2" fill="#222"/>
-      <circle cx="-11" cy="11" r="2" fill="#222"/>
-      <circle cx="11" cy="11" r="2" fill="#222"/>
-      <!-- MCU -->
-      <rect x="2" y="-6" width="7" height="7" rx="1" fill="#111"/>
-      <!-- IMU -->
-      <rect x="-7" y="2" width="5" height="5" rx="0.8" fill="#1a1a2a"/>
-      <!-- LED -->
-      <circle cx="-5" cy="-8" r="1.2" fill="#ffcc00"/>
-
-      <text x="0" y="22" class="callout" text-anchor="middle" font-size="7">FC — SpeedyBee F405 Mini</text>
+    <!-- === LEVEL 3: FC === -->
+    <g transform="translate(0, -72)">
+      <path d="M-15,-12 L15,-12 L15,12 L-15,12 Z" class="fc"/>
+      <circle cx="-9" cy="-9" r="1.5" fill="#fff"/>
+      <circle cx="9" cy="-9" r="1.5" fill="#fff"/>
+      <circle cx="-9" cy="9" r="1.5" fill="#fff"/>
+      <circle cx="9" cy="9" r="1.5" fill="#fff"/>
+      <rect x="2" y="-5" width="6" height="6" rx="1" fill="#111"/>
+      <rect x="-14" y="-3" width="4" height="6" rx="0.5" fill="#ccc" stroke="#000" stroke-width="0.3"/>
     </g>
 
-    <!-- ========== LEVEL 4: VTX (front-right) ========== -->
-    <g transform="translate(35, -90)">
-      <rect x="-14" y="-12" width="28" height="24" rx="2" class="vtx"/>
-      <!-- SMA -->
-      <rect x="14" y="-4" width="8" height="8" rx="1" class="antenna"/>
-      <!-- Shield -->
-      <rect x="-6" y="-6" width="12" height="12" rx="1" fill="#1a1a2a"/>
-      <!-- Button -->
-      <circle cx="0" cy="10" r="1.5" fill="#444"/>
-
-      <!-- Callout -->
-      <line x1="22" y1="-12" x2="40" y2="-40" class="callout-line" marker-end="url(#arrow)"/>
-      <text x="42" y="-43" class="callout">VTX — HGLRC Zeus 350mW</text>
-      <text x="42" y="-33" class="callout" font-size="8">SmartAudio 2.1</text>
+    <!-- === LEVEL 4: VTX (rear) === -->
+    <g transform="translate(25, -80)">
+      <rect x="-12" y="-10" width="24" height="20" rx="2" class="vtx"/>
+      <rect x="12" y="-3" width="6" height="6" rx="1" class="antenna"/>
+      <rect x="-4" y="-4" width="8" height="8" rx="1" fill="#111"/>
+      <circle cx="0" cy="7" r="1.2" fill="#666"/>
     </g>
 
-    <!-- ========== LEVEL 4: CAMERA (front-left) ========== -->
-    <g transform="translate(-35, -92)">
-      <!-- TPU mount -->
-      <polygon points="-18,-10 18,-10 15,4 -15,4" class="tpu"/>
-      <!-- Camera body -->
-      <rect x="-12" y="-6" width="24" height="12" rx="2" class="cam"/>
-      <!-- Lens -->
-      <circle cx="8" cy="0" r="6" fill="#4a2a6a" stroke="#3a1a5a" stroke-width="0.5"/>
-      <circle cx="8" cy="0" r="3" fill="#6a3a9a"/>
-      <!-- Ribbon -->
-      <rect x="-16" y="-4" width="4" height="8" rx="0.5" fill="#111"/>
-
-      <!-- Callout -->
-      <line x1="-14" y1="-12" x2="-30" y2="-35" class="callout-line" marker-end="url(#arrow)"/>
-      <text x="-108" y="-38" class="callout">CAM — Caddx Ant 1200TVL</text>
-      <text x="-108" y="-28" class="callout" font-size="8">TPU wedge mount, 1.8mm lens</text>
+    <!-- === LEVEL 4: CAMERA (front) === -->
+    <g transform="translate(-30, -82)">
+      <polygon points="-14,-8 14,-8 12,3 -12,3" class="tpu"/>
+      <rect x="-10" y="-5" width="20" height="10" rx="2" class="cam"/>
+      <circle cx="6" cy="0" r="4.5" fill="#4a2a6a" stroke="#000" stroke-width="0.3"/>
+      <circle cx="6" cy="0" r="2.5" fill="#6a3a9a"/>
     </g>
 
-    <!-- ========== LEVEL 4: RX (rear) ========== -->
-    <g transform="translate(-20, -115)">
-      <path d="M-14,-8 L14,-8 L14,8 L0,12 L-14,8 Z" class="rx"/>
-      <!-- Shield -->
-      <rect x="-6" y="-4" width="12" height="7" rx="1" fill="#1a1a2a"/>
-      <!-- IPEX -->
-      <circle cx="5" cy="5" r="2" fill="#b8a04a"/>
-      <circle cx="-5" cy="5" r="2" fill="#b8a04a"/>
-      <!-- LED -->
-      <circle cx="0" cy="-6" r="1" fill="#00cc00"/>
-
-      <!-- Callout -->
-      <line x1="-18" y1="-10" x2="-35" y2="-30" class="callout-line" marker-end="url(#arrow)"/>
-      <text x="-118" y="-33" class="callout">RX — SuperD ELRS Diversity</text>
-      <text x="-118" y="-23" class="callout" font-size="8">CRSF 420k, 2.4GHz</text>
+    <!-- === LEVEL 4: RX (side) === -->
+    <g transform="translate(-20, -100)">
+      <path d="M-12,-6 L12,-6 L12,6 L0,10 L-12,6 Z" class="rx"/>
+      <rect x="-4" y="-3" width="8" height="5" rx="1" fill="#111"/>
+      <circle cx="5" cy="4" r="1.5" class="antenna"/>
+      <circle cx="-5" cy="4" r="1.5" class="antenna"/>
     </g>
 
-    <!-- ========== LEVEL 5: GPS (top mast) ========== -->
-    <g transform="translate(30, -130)">
-      <!-- Mast -->
-      <rect x="-2" y="0" width="4" height="15" class="standoff"/>
-      <!-- GPS board -->
-      <rect x="-16" y="-18" width="32" height="18" rx="2" class="gps"/>
-      <!-- Module -->
-      <rect x="-6" y="-14" width="12" height="10" rx="1" fill="#111"/>
-      <!-- Compass -->
-      <rect x="-2" y="-6" width="4" height="4" rx="0.5" fill="#2a2a3a"/>
-
-      <!-- Callout -->
-      <line x1="16" y1="-18" x2="35" y2="-35" class="callout-line" marker-end="url(#arrow)"/>
-      <text x="37" y="-38" class="callout">GPS — M10Q-5883 (optional)</text>
-      <text x="37" y="-28" class="callout" font-size="8">UART3 57600 + QMC5883L compass</text>
+    <!-- === LEVEL 5: GPS (mast) === -->
+    <g transform="translate(25, -120)">
+      <rect x="-1.5" y="0" width="3" height="12" class="standoff"/>
+      <rect x="-12" y="-14" width="24" height="14" rx="2" class="gps"/>
+      <rect x="-4" y="-11" width="8" height="8" rx="1" fill="#111"/>
     </g>
 
-    <!-- ========== MOTORS (4x at arm ends) ========== -->
-    <!-- M1 — Top-Right (Front-Left, CCW) -->
-    <g transform="translate(85, -60)">
-      <rect x="-10" y="-10" width="20" height="20" rx="3" class="motor"/>
-      <circle cx="0" cy="0" r="7" class="bell"/>
-      <circle cx="0" cy="0" r="2.5" fill="#888"/>
-      <text x="0" y="16" class="label" font-size="8" text-anchor="middle">M1</text>
-      <text x="0" y="24" class="callout" font-size="6" text-anchor="middle">FL CCW</text>
-      <!-- Prop -->
-      <g transform="translate(0, -15)" class="prop">
-        <line x1="0" y1="0" x2="30" y2="0" stroke="#444" stroke-width="1.5"/>
-        <line x1="0" y1="0" x2="-15" y2="26" stroke="#444" stroke-width="1.5"/>
-        <line x1="0" y1="0" x2="-15" y2="-26" stroke="#444" stroke-width="1.5"/>
-      </g>
+    <!-- === MOTORS (4x) === -->
+    <g transform="translate(75, -42)">
+      <rect x="-8" y="-8" width="16" height="16" rx="2" class="motor"/>
+      <circle cx="0" cy="0" r="5.5" class="bell"/>
+      <circle cx="0" cy="0" r="2" fill="#666"/>
+      <text x="0" y="13" class="label-sm" text-anchor="middle">M1 FL</text>
+    </g>
+    <g transform="translate(-75, -42)">
+      <rect x="-8" y="-8" width="16" height="16" rx="2" class="motor"/>
+      <circle cx="0" cy="0" r="5.5" class="bell"/>
+      <circle cx="0" cy="0" r="2" fill="#666"/>
+      <text x="0" y="13" class="label-sm" text-anchor="middle">M2 FR</text>
+    </g>
+    <g transform="translate(-75, 42)">
+      <rect x="-8" y="-8" width="16" height="16" rx="2" class="motor"/>
+      <circle cx="0" cy="0" r="5.5" class="bell"/>
+      <circle cx="0" cy="0" r="2" fill="#666"/>
+      <text x="0" y="13" class="label-sm" text-anchor="middle">M3 RL</text>
+    </g>
+    <g transform="translate(75, 42)">
+      <rect x="-8" y="-8" width="16" height="16" rx="2" class="motor"/>
+      <circle cx="0" cy="0" r="5.5" class="bell"/>
+      <circle cx="0" cy="0" r="2" fill="#666"/>
+      <text x="0" y="13" class="label-sm" text-anchor="middle">M4 RR</text>
     </g>
 
-    <!-- M2 — Top-Left (Front-Right, CW) -->
-    <g transform="translate(-85, -60)">
-      <rect x="-10" y="-10" width="20" height="20" rx="3" class="motor"/>
-      <circle cx="0" cy="0" r="7" class="bell"/>
-      <circle cx="0" cy="0" r="2.5" fill="#888"/>
-      <text x="0" y="16" class="label" font-size="8" text-anchor="middle">M2</text>
-      <text x="0" y="24" class="callout" font-size="6" text-anchor="middle">FR CW</text>
-      <!-- Prop -->
-      <g transform="translate(0, -15)" class="prop">
-        <line x1="0" y1="0" x2="30" y2="0" stroke="#444" stroke-width="1.5"/>
-        <line x1="0" y1="0" x2="-15" y2="-26" stroke="#444" stroke-width="1.5"/>
-        <line x1="0" y1="0" x2="-15" y2="26" stroke="#444" stroke-width="1.5"/>
-      </g>
+    <!-- === ANTENNAS === -->
+    <g transform="translate(55, -75)">
+      <rect x="-2" y="-10" width="4" height="10" rx="1" class="antenna"/>
+      <line x1="0" y1="-10" x2="0" y2="-28" stroke="#8a6a18" stroke-width="1.5"/>
     </g>
-
-    <!-- M3 — Bottom-Left (Rear-Left, CCW) -->
-    <g transform="translate(-85, 60)">
-      <rect x="-10" y="-10" width="20" height="20" rx="3" class="motor"/>
-      <circle cx="0" cy="0" r="7" class="bell"/>
-      <circle cx="0" cy="0" r="2.5" fill="#888"/>
-      <text x="0" y="16" class="label" font-size="8" text-anchor="middle">M3</text>
-      <text x="0" y="24" class="callout" font-size="6" text-anchor="middle">RL CCW</text>
-      <!-- Prop -->
-      <g transform="translate(0, -15)" class="prop">
-        <line x1="0" y1="0" x2="30" y2="0" stroke="#444" stroke-width="1.5"/>
-        <line x1="0" y1="0" x2="-15" y2="26" stroke="#444" stroke-width="1.5"/>
-        <line x1="0" y1="0" x2="-15" y2="-26" stroke="#444" stroke-width="1.5"/>
-      </g>
+    <g transform="translate(-80, -25)">
+      <rect x="-2" y="-10" width="4" height="10" rx="1" class="tpu"/>
+      <line x1="0" y1="-10" x2="0" y2="-30" stroke="#8a6a18" stroke-width="1.2"/>
     </g>
-
-    <!-- M4 — Bottom-Right (Rear-Right, CW) -->
-    <g transform="translate(85, 60)">
-      <rect x="-10" y="-10" width="20" height="20" rx="3" class="motor"/>
-      <circle cx="0" cy="0" r="7" class="bell"/>
-      <circle cx="0" cy="0" r="2.5" fill="#888"/>
-      <text x="0" y="16" class="label" font-size="8" text-anchor="middle">M4</text>
-      <text x="0" y="24" class="callout" font-size="6" text-anchor="middle">RR CW</text>
-      <!-- Prop -->
-      <g transform="translate(0, -15)" class="prop">
-        <line x1="0" y1="0" x2="30" y2="0" stroke="#444" stroke-width="1.5"/>
-        <line x1="0" y1="0" x2="-15" y2="-26" stroke="#444" stroke-width="1.5"/>
-        <line x1="0" y1="0" x2="-15" y2="26" stroke="#444" stroke-width="1.5"/>
-      </g>
+    <g transform="translate(80, 35)">
+      <line x1="-20" y1="0" x2="20" y2="0" stroke="#8a6a18" stroke-width="1.2"/>
     </g>
-
-    <!-- ========== ANTENNAS ========== -->
-    <!-- VTX Antenna (SMA, rear-right) -->
-    <g transform="translate(60, -90)">
-      <rect x="-3" y="-12" width="6" height="12" rx="2" class="antenna"/>
-      <line x1="0" y1="-12" x2="0" y2="-35" stroke="#8a5a10" stroke-width="2"/>
-      <circle cx="0" cy="-35" r="2" fill="#8a5a10"/>
-      <text x="8" y="-20" class="callout" font-size="6">VTX ANT</text>
-      <text x="8" y="-12" class="callout" font-size="5">Foxeer Lollipop RHCP</text>
-    </g>
-
-    <!-- RX Antenna 1 (vertical, left arm) -->
-    <g transform="translate(-100, -40)">
-      <rect x="-3" y="-12" width="6" height="12" rx="2" class="tpu"/>
-      <line x1="0" y1="-12" x2="0" y2="-40" stroke="#8a5a10" stroke-width="1.5"/>
-      <text x="6" y="-25" class="callout" font-size="6">RX ANT1 (VERT)</text>
-    </g>
-
-    <!-- RX Antenna 2 (horizontal, right arm) -->
-    <g transform="translate(100, 50)">
-      <line x1="-25" y1="0" x2="25" y2="0" stroke="#8a5a10" stroke-width="1.5"/>
-      <text x="30" y="3" class="callout" font-size="6">RX ANT2 (HORIZ)</text>
-    </g>
-
   </g>
 
-  <!-- ============================================================ -->
-  <!-- FOOTER -->
-  <!-- ============================================================ -->
-  <line x1="30" y1="860" x2="1170" y2="860" stroke="#444" stroke-width="0.5"/>
-  <text x="30" y="878" class="callout" font-size="8">DRAWING: GX140-BLOWOUT-ISO-REV2</text>
-  <text x="350" y="878" class="callout" font-size="8">DATE: 2026-06-12</text>
-  <text x="700" y="878" class="callout" font-size="8">SHEET 1 OF 4</text>
-  <text x="1000" y="878" class="callout" font-size="8">DRAWN BY: AI DESIGN ENGINEERING</text>
+  <!-- ============ CALLOUTS ============ -->
+  <g>
+    <line x1="295" y1="225" x2="240" y2="180" class="line-thin"/>
+    <text x="145" y="175" class="label-sm">EXP: 1 GPS — M10Q-5883 (top mast)</text>
 
+    <line x1="320" y1="200" x2="240" y2="200" class="line-thin"/>
+    <text x="145" y="195" class="label-sm">EXP: 2 RX — SuperD ELRS (side)</text>
+
+    <line x1="295" y1="185" x2="240" y2="210" class="line-thin"/>
+    <text x="145" y="215" class="label-sm">EXP: 3 VTX — Zeus 350mW (rear)</text>
+
+    <line x1="310" y1="175" x2="240" y2="230" class="line-thin"/>
+    <text x="145" y="235" class="label-sm">EXP: 4 FC — SpeedyBee F405 Mini</text>
+
+    <line x1="310" y1="170" x2="240" y2="250" class="line-thin"/>
+    <text x="145" y="255" class="label-sm">EXP: 5 Nylon standoffs M2×6mm</text>
+
+    <line x1="310" y1="165" x2="240" y2="270" class="line-thin"/>
+    <text x="145" y="275" class="label-sm">EXP: 6 ESC — BLS 35A 4in1</text>
+  </g>
+
+  <!-- NOTES -->
+  <text x="25" y="520" class="label-sm">NOTES: 1) ALL DIMS IN mm  2) STACK: 20×20mm PATTERN, M2 HARDWARE  3) BATTERY MOUNTED UNDER FRAME  4) 3D PRINTED TPU MOUNTS AS SHOWN</text>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 4 4" refX="4" refY="2" markerWidth="3" markerHeight="3" orient="auto">
+      <path d="M0,0 L4,2 L0,4 Z" fill="#000"/>
+    </marker>
+  </defs>
 </svg>
