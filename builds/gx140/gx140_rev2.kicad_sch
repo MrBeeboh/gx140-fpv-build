@@ -1,1343 +1,2685 @@
 (kicad_sch (version 20230121) (generator "claude_rev2")
 
+
+
   (uuid 0da7f58c-4bd8-48c3-bbae-a8d301f4b283)
+
+
 
   (paper "A3")
 
+
+
   (title_block
+
     (title "GX140 3in Analog FPV — Electrical Schematic")
+
     (date "2026-06-12")
+
     (rev "2.0")
+
     (company "GX140 Build — net-label point-to-point method")
+
     (comment 1 "Frame: GX140 140mm twin 20x20, 4mm carbon | AUW ~190g")
+
     (comment 2 "FC: SpeedyBee F405 Mini | ESC: BLS 35A 4in1 DShot600")
+
     (comment 3 "Motors: HGLRC Specter 1804 3500KV | Props: GEMFAN 3052")
+
     (comment 4 "VTX: Zeus 350mW | CAM: Caddx Ant | RX: SuperD ELRS | GPS: M10Q-5883 (opt)")
+
     (comment 5 "Rev 2.0: rebuilt connectivity — all nets by label, ERC-checkable")
+
   )
+
+
 
   (lib_symbols
+
     (symbol "grok:BATTERY_2S" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+
       (property "Reference" "BAT" (at 0 7.62 0) (effects (font (size 1.27 1.27))))
+
       (property "Value" "2S_550mAh_LiHV_XT30" (at 0 -7.62 0) (effects (font (size 1.27 1.27))))
+
       (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+
       (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+
       (symbol "BATTERY_2S_1_1"
+
         (rectangle (start -10.16 5.08) (end 10.16 -5.08)
+
           (stroke (width 0.254) (type default))
+
           (fill (type background))
+
         )
+
         (pin power_out line (at 15.24 1.27 180) (length 5.08)
+
           (name "VBAT+" (effects (font (size 1.27 1.27))))
+
           (number "1" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin power_out line (at 15.24 -1.27 180) (length 5.08)
+
           (name "VBAT-" (effects (font (size 1.27 1.27))))
+
           (number "2" (effects (font (size 1.27 1.27))))
+
         )
+
       )
+
     )
+
     (symbol "grok:FC_F405_MINI" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+
       (property "Reference" "FC" (at 0 17.78 0) (effects (font (size 1.27 1.27))))
+
       (property "Value" "SpeedyBee_F405_Mini_20x20" (at 0 -17.78 0) (effects (font (size 1.27 1.27))))
+
       (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+
       (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+
       (symbol "FC_F405_MINI_1_1"
+
         (rectangle (start -22.86 15.24) (end 22.86 -15.24)
+
           (stroke (width 0.254) (type default))
+
           (fill (type background))
+
         )
+
         (pin power_in line (at -27.94 12.7 0) (length 5.08)
+
           (name "VBAT" (effects (font (size 1.27 1.27))))
+
           (number "1" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin power_in line (at -27.94 10.16 0) (length 5.08)
+
           (name "GND" (effects (font (size 1.27 1.27))))
+
           (number "2" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin input line (at -27.94 7.62 0) (length 5.08)
+
           (name "CURR" (effects (font (size 1.27 1.27))))
+
           (number "3" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin output line (at -27.94 5.08 0) (length 5.08)
+
           (name "M1" (effects (font (size 1.27 1.27))))
+
           (number "4" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin output line (at -27.94 2.54 0) (length 5.08)
+
           (name "M2" (effects (font (size 1.27 1.27))))
+
           (number "5" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin output line (at -27.94 0.0 0) (length 5.08)
+
           (name "M3" (effects (font (size 1.27 1.27))))
+
           (number "6" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin output line (at -27.94 -2.54 0) (length 5.08)
+
           (name "M4" (effects (font (size 1.27 1.27))))
+
           (number "7" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin power_out line (at 27.94 12.7 180) (length 5.08)
+
           (name "5V" (effects (font (size 1.27 1.27))))
+
           (number "8" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin input line (at 27.94 10.16 180) (length 5.08)
+
           (name "VIN" (effects (font (size 1.27 1.27))))
+
           (number "9" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin output line (at 27.94 7.62 180) (length 5.08)
+
           (name "VOUT" (effects (font (size 1.27 1.27))))
+
           (number "10" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin output line (at 27.94 5.08 180) (length 5.08)
+
           (name "TX4" (effects (font (size 1.27 1.27))))
+
           (number "11" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin input line (at 27.94 2.54 180) (length 5.08)
+
           (name "RX4" (effects (font (size 1.27 1.27))))
+
           (number "12" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin output line (at 27.94 0.0 180) (length 5.08)
+
           (name "TX5" (effects (font (size 1.27 1.27))))
+
           (number "13" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin input line (at 27.94 -2.54 180) (length 5.08)
+
           (name "RX5" (effects (font (size 1.27 1.27))))
+
           (number "14" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin output line (at 27.94 -5.08 180) (length 5.08)
+
           (name "TX3" (effects (font (size 1.27 1.27))))
+
           (number "15" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin input line (at 27.94 -7.62 180) (length 5.08)
+
           (name "RX3" (effects (font (size 1.27 1.27))))
+
           (number "16" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin bidirectional line (at 27.94 -10.16 180) (length 5.08)
+
           (name "SDA" (effects (font (size 1.27 1.27))))
+
           (number "17" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin bidirectional line (at 27.94 -12.7 180) (length 5.08)
+
           (name "SCL" (effects (font (size 1.27 1.27))))
+
           (number "18" (effects (font (size 1.27 1.27))))
+
         )
+
       )
+
     )
+
     (symbol "grok:ESC_BLS35A_4IN1" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+
       (property "Reference" "ESC" (at 0 19.05 0) (effects (font (size 1.27 1.27))))
+
       (property "Value" "BLS_35A_4in1_20x20_DShot600" (at 0 -19.05 0) (effects (font (size 1.27 1.27))))
+
       (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+
       (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+
       (symbol "ESC_BLS35A_4IN1_1_1"
+
         (rectangle (start -22.86 16.51) (end 22.86 -16.51)
+
           (stroke (width 0.254) (type default))
+
           (fill (type background))
+
         )
+
         (pin power_in line (at -27.94 10.16 0) (length 5.08)
+
           (name "VBAT+" (effects (font (size 1.27 1.27))))
+
           (number "1" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin power_in line (at -27.94 7.62 0) (length 5.08)
+
           (name "VBAT-" (effects (font (size 1.27 1.27))))
+
           (number "2" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin input line (at -27.94 5.08 0) (length 5.08)
+
           (name "S1" (effects (font (size 1.27 1.27))))
+
           (number "3" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin input line (at -27.94 2.54 0) (length 5.08)
+
           (name "S2" (effects (font (size 1.27 1.27))))
+
           (number "4" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin input line (at -27.94 0.0 0) (length 5.08)
+
           (name "S3" (effects (font (size 1.27 1.27))))
+
           (number "5" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin input line (at -27.94 -2.54 0) (length 5.08)
+
           (name "S4" (effects (font (size 1.27 1.27))))
+
           (number "6" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin output line (at -27.94 -5.08 0) (length 5.08)
+
           (name "CURR" (effects (font (size 1.27 1.27))))
+
           (number "7" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin passive line (at 27.94 13.97 180) (length 5.08)
+
           (name "M1_A" (effects (font (size 1.27 1.27))))
+
           (number "8" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin passive line (at 27.94 11.43 180) (length 5.08)
+
           (name "M1_B" (effects (font (size 1.27 1.27))))
+
           (number "9" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin passive line (at 27.94 8.89 180) (length 5.08)
+
           (name "M1_C" (effects (font (size 1.27 1.27))))
+
           (number "10" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin passive line (at 27.94 6.35 180) (length 5.08)
+
           (name "M2_A" (effects (font (size 1.27 1.27))))
+
           (number "11" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin passive line (at 27.94 3.81 180) (length 5.08)
+
           (name "M2_B" (effects (font (size 1.27 1.27))))
+
           (number "12" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin passive line (at 27.94 1.27 180) (length 5.08)
+
           (name "M2_C" (effects (font (size 1.27 1.27))))
+
           (number "13" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin passive line (at 27.94 -1.27 180) (length 5.08)
+
           (name "M3_A" (effects (font (size 1.27 1.27))))
+
           (number "14" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin passive line (at 27.94 -3.81 180) (length 5.08)
+
           (name "M3_B" (effects (font (size 1.27 1.27))))
+
           (number "15" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin passive line (at 27.94 -6.35 180) (length 5.08)
+
           (name "M3_C" (effects (font (size 1.27 1.27))))
+
           (number "16" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin passive line (at 27.94 -8.89 180) (length 5.08)
+
           (name "M4_A" (effects (font (size 1.27 1.27))))
+
           (number "17" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin passive line (at 27.94 -11.43 180) (length 5.08)
+
           (name "M4_B" (effects (font (size 1.27 1.27))))
+
           (number "18" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin passive line (at 27.94 -13.97 180) (length 5.08)
+
           (name "M4_C" (effects (font (size 1.27 1.27))))
+
           (number "19" (effects (font (size 1.27 1.27))))
+
         )
+
       )
+
     )
+
     (symbol "grok:VTX_ZEUS350" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+
       (property "Reference" "VTX" (at 0 10.16 0) (effects (font (size 1.27 1.27))))
+
       (property "Value" "HGLRC_Zeus_350mW_SmartAudio" (at 0 -10.16 0) (effects (font (size 1.27 1.27))))
+
       (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+
       (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+
       (symbol "VTX_ZEUS350_1_1"
+
         (rectangle (start -17.78 7.62) (end 17.78 -7.62)
+
           (stroke (width 0.254) (type default))
+
           (fill (type background))
+
         )
+
         (pin power_in line (at -22.86 5.08 0) (length 5.08)
+
           (name "5V" (effects (font (size 1.27 1.27))))
+
           (number "1" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin power_in line (at -22.86 2.54 0) (length 5.08)
+
           (name "GND" (effects (font (size 1.27 1.27))))
+
           (number "2" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin input line (at -22.86 0.0 0) (length 5.08)
+
           (name "VID_IN" (effects (font (size 1.27 1.27))))
+
           (number "3" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin input line (at -22.86 -2.54 0) (length 5.08)
+
           (name "SA" (effects (font (size 1.27 1.27))))
+
           (number "4" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin passive line (at 22.86 0.0 180) (length 5.08)
+
           (name "ANT" (effects (font (size 1.27 1.27))))
+
           (number "5" (effects (font (size 1.27 1.27))))
+
         )
+
       )
+
     )
+
     (symbol "grok:CAM_CADDX_ANT" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+
       (property "Reference" "CAM" (at 0 7.62 0) (effects (font (size 1.27 1.27))))
+
       (property "Value" "Caddx_Ant_1200TVL" (at 0 -7.62 0) (effects (font (size 1.27 1.27))))
+
       (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+
       (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+
       (symbol "CAM_CADDX_ANT_1_1"
+
         (rectangle (start -15.24 5.08) (end 15.24 -5.08)
+
           (stroke (width 0.254) (type default))
+
           (fill (type background))
+
         )
+
         (pin power_in line (at -20.32 2.54 0) (length 5.08)
+
           (name "5V" (effects (font (size 1.27 1.27))))
+
           (number "1" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin power_in line (at -20.32 0.0 0) (length 5.08)
+
           (name "GND" (effects (font (size 1.27 1.27))))
+
           (number "2" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin output line (at 20.32 1.27 180) (length 5.08)
+
           (name "VID" (effects (font (size 1.27 1.27))))
+
           (number "3" (effects (font (size 1.27 1.27))))
+
         )
+
       )
+
     )
+
     (symbol "grok:RX_SUPERD_ELRS" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+
       (property "Reference" "RX" (at 0 11.43 0) (effects (font (size 1.27 1.27))))
+
       (property "Value" "BETAFPV_SuperD_ELRS_Diversity" (at 0 -11.43 0) (effects (font (size 1.27 1.27))))
+
       (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+
       (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+
       (symbol "RX_SUPERD_ELRS_1_1"
+
         (rectangle (start -17.78 8.89) (end 17.78 -8.89)
+
           (stroke (width 0.254) (type default))
+
           (fill (type background))
+
         )
+
         (pin power_in line (at -22.86 6.35 0) (length 5.08)
+
           (name "5V" (effects (font (size 1.27 1.27))))
+
           (number "1" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin power_in line (at -22.86 3.81 0) (length 5.08)
+
           (name "GND" (effects (font (size 1.27 1.27))))
+
           (number "2" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin input line (at -22.86 1.27 0) (length 5.08)
+
           (name "RX" (effects (font (size 1.27 1.27))))
+
           (number "3" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin output line (at -22.86 -1.27 0) (length 5.08)
+
           (name "TX" (effects (font (size 1.27 1.27))))
+
           (number "4" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin passive line (at 22.86 3.81 180) (length 5.08)
+
           (name "ANT1" (effects (font (size 1.27 1.27))))
+
           (number "5" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin passive line (at 22.86 1.27 180) (length 5.08)
+
           (name "ANT2" (effects (font (size 1.27 1.27))))
+
           (number "6" (effects (font (size 1.27 1.27))))
+
         )
+
       )
+
     )
+
     (symbol "grok:GPS_M10Q_5883" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+
       (property "Reference" "GPS" (at 0 11.43 0) (effects (font (size 1.27 1.27))))
+
       (property "Value" "Matek_M10Q-5883_(opt)" (at 0 -11.43 0) (effects (font (size 1.27 1.27))))
+
       (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+
       (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+
       (symbol "GPS_M10Q_5883_1_1"
+
         (rectangle (start -17.78 8.89) (end 17.78 -8.89)
+
           (stroke (width 0.254) (type default))
+
           (fill (type background))
+
         )
+
         (pin power_in line (at -22.86 6.35 0) (length 5.08)
+
           (name "5V" (effects (font (size 1.27 1.27))))
+
           (number "1" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin power_in line (at -22.86 3.81 0) (length 5.08)
+
           (name "GND" (effects (font (size 1.27 1.27))))
+
           (number "2" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin input line (at -22.86 1.27 0) (length 5.08)
+
           (name "RX" (effects (font (size 1.27 1.27))))
+
           (number "3" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin output line (at -22.86 -1.27 0) (length 5.08)
+
           (name "TX" (effects (font (size 1.27 1.27))))
+
           (number "4" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin bidirectional line (at -22.86 -3.81 0) (length 5.08)
+
           (name "SDA" (effects (font (size 1.27 1.27))))
+
           (number "5" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin bidirectional line (at -22.86 -6.35 0) (length 5.08)
+
           (name "SCL" (effects (font (size 1.27 1.27))))
+
           (number "6" (effects (font (size 1.27 1.27))))
+
         )
+
       )
+
     )
+
     (symbol "grok:MOTOR_1804" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+
       (property "Reference" "M" (at 0 7.62 0) (effects (font (size 1.27 1.27))))
+
       (property "Value" "Specter_1804_3500KV" (at 0 -7.62 0) (effects (font (size 1.27 1.27))))
+
       (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+
       (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+
       (symbol "MOTOR_1804_1_1"
+
         (rectangle (start -11.43 5.08) (end 11.43 -5.08)
+
           (stroke (width 0.254) (type default))
+
           (fill (type background))
+
         )
+
         (pin passive line (at -16.51 2.54 0) (length 5.08)
+
           (name "A" (effects (font (size 1.27 1.27))))
+
           (number "1" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin passive line (at -16.51 0.0 0) (length 5.08)
+
           (name "B" (effects (font (size 1.27 1.27))))
+
           (number "2" (effects (font (size 1.27 1.27))))
+
         )
+
         (pin passive line (at -16.51 -2.54 0) (length 5.08)
+
           (name "C" (effects (font (size 1.27 1.27))))
+
           (number "3" (effects (font (size 1.27 1.27))))
+
         )
+
       )
+
     )
+
     (symbol "grok:ANTENNA" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+
       (property "Reference" "AE" (at 0 2.55 0) (effects (font (size 1.27 1.27))))
+
       (property "Value" "ANT" (at 0 -2.55 0) (effects (font (size 1.27 1.27))))
+
       (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+
       (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+
       (symbol "ANTENNA_1_1"
+
         (rectangle (start -0.01 0.01) (end 0.01 -0.01)
+
           (stroke (width 0.254) (type default))
+
           (fill (type background))
+
         )
+
         (polyline (pts (xy -2.54 0) (xy 2.54 0)) (stroke (width 0.254) (type default)) (fill (type none)))
+
         (polyline (pts (xy -2.54 0) (xy 0 -3.81)) (stroke (width 0.254) (type default)) (fill (type none)))
+
         (polyline (pts (xy 2.54 0) (xy 0 -3.81)) (stroke (width 0.254) (type default)) (fill (type none)))
+
         (polyline (pts (xy 0 0) (xy 0 3.81)) (stroke (width 0.254) (type default)) (fill (type none)))
+
         (pin passive line (at -7.62 -3.81 0) (length 5.08)
+
           (name "FEED" (effects (font (size 1.27 1.27))))
+
           (number "1" (effects (font (size 1.27 1.27))))
+
         )
+
       )
+
     )
+
   )
 
-  (symbol (lib_id "grok:BATTERY_2S") (at 50.8 88.9 0) (unit 1)
+
+
+  (symbol (lib_id "grok:BATTERY_2S") (at 10.80 88.9 0) (unit 1)
+
     (in_bom yes) (on_board yes) (dnp no)
+
     (uuid 2930fd8f-e6ae-4217-96b8-627cb2896a00)
+
     (property "Reference" "BAT1" (at 50.8 81.28 0) (effects (font (size 1.27 1.27))))
+
     (property "Value" "2S_550mAh_LiHV_XT30" (at 50.8 96.52000000000001 0) (effects (font (size 1.27 1.27))))
+
     (property "Footprint" "" (at 50.8 88.9 0) (effects (font (size 1.27 1.27)) hide))
+
     (property "Datasheet" "" (at 50.8 88.9 0) (effects (font (size 1.27 1.27)) hide))
+
     (pin "1" (uuid 8322f405-9b2b-4503-9b6b-3253284ce849))
+
     (pin "2" (uuid 03c6d379-a415-4a86-9c85-239bfbcdb44d))
+
     (instances
+
       (project "gx140_rev2"
+
         (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "BAT1") (unit 1))
+
       )
+
     )
-  )
-  (symbol (lib_id "grok:ESC_BLS35A_4IN1") (at 127.0 88.9 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid d707ddb7-5fdf-4a5e-a9d3-c4d1e8a0b915)
-    (property "Reference" "ESC1" (at 127.0 69.85 0) (effects (font (size 1.27 1.27))))
-    (property "Value" "BLS_35A_4in1_20x20_DShot600" (at 127.0 107.95000000000002 0) (effects (font (size 1.27 1.27))))
-    (property "Footprint" "" (at 127.0 88.9 0) (effects (font (size 1.27 1.27)) hide))
-    (property "Datasheet" "" (at 127.0 88.9 0) (effects (font (size 1.27 1.27)) hide))
-    (pin "1" (uuid 2ce3ba88-5cc9-4c89-bb55-dfb1c3372127))
-    (pin "2" (uuid b2d78c2a-b178-4284-8231-0e32228d2cf0))
-    (pin "3" (uuid 88d1981d-a6b1-4c98-b7da-2010deec4bcc))
-    (pin "4" (uuid 1ddc5d7d-1bc9-446b-9cc7-3bd99c215d38))
-    (pin "5" (uuid bd59ef08-84ee-4373-8d4a-18789ce91cd0))
-    (pin "6" (uuid 994bfdd8-b448-4355-9c7c-2958cac2eee6))
-    (pin "7" (uuid 59457ebc-507b-4466-ac88-fc538fc97421))
-    (pin "8" (uuid b72eb768-ad2b-4f4a-b9ff-3ce545bdf45a))
-    (pin "9" (uuid 66f75607-ebdd-43ff-9267-953504a2cdf4))
-    (pin "10" (uuid 5258f4df-7548-4ea9-acdd-c52095b90015))
-    (pin "11" (uuid b523ceb7-eb7d-49e4-8808-f8bc6f2d8f5a))
-    (pin "12" (uuid 6c8532bc-c8ac-44ce-ad48-ace098bd5131))
-    (pin "13" (uuid 500a93cc-54b7-4307-b1ea-c612ecf2aa49))
-    (pin "14" (uuid 514ff1b7-3fa5-481a-9c2a-40b7e671995a))
-    (pin "15" (uuid 3316f62a-82de-43a8-a7d7-42abed96cdf8))
-    (pin "16" (uuid be3fc75d-9968-4dad-b569-1f65eebfb18e))
-    (pin "17" (uuid df7288e5-9c98-4540-84ef-033b6d9c0d7c))
-    (pin "18" (uuid 2cd14c62-9b5e-4168-9c60-4429eecf826f))
-    (pin "19" (uuid 077aa21a-5c44-4be5-9400-e260e5e0bb7c))
-    (instances
-      (project "gx140_rev2"
-        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "ESC1") (unit 1))
-      )
-    )
-  )
-  (symbol (lib_id "grok:MOTOR_1804") (at 220.98 66.04 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid aeb2b2a3-de4d-4cd4-9696-79b5f66c0bd5)
-    (property "Reference" "M1" (at 220.98 58.42000000000001 0) (effects (font (size 1.27 1.27))))
-    (property "Value" "Specter_1804_FL_CCW" (at 220.98 73.66000000000001 0) (effects (font (size 1.27 1.27))))
-    (property "Footprint" "" (at 220.98 66.04 0) (effects (font (size 1.27 1.27)) hide))
-    (property "Datasheet" "" (at 220.98 66.04 0) (effects (font (size 1.27 1.27)) hide))
-    (pin "1" (uuid 3a77bb4e-abd4-4019-bb16-15a2a8c24b0c))
-    (pin "2" (uuid f62b116d-158c-43d5-8624-b7a517833728))
-    (pin "3" (uuid c7a21afc-be28-4dab-b6f5-1253139e1e8a))
-    (instances
-      (project "gx140_rev2"
-        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "M1") (unit 1))
-      )
-    )
-  )
-  (symbol (lib_id "grok:MOTOR_1804") (at 220.98 86.36 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid e893c820-f8be-44f5-b655-b83d6ba6e42d)
-    (property "Reference" "M2" (at 220.98 78.74 0) (effects (font (size 1.27 1.27))))
-    (property "Value" "Specter_1804_FR_CW" (at 220.98 93.98 0) (effects (font (size 1.27 1.27))))
-    (property "Footprint" "" (at 220.98 86.36 0) (effects (font (size 1.27 1.27)) hide))
-    (property "Datasheet" "" (at 220.98 86.36 0) (effects (font (size 1.27 1.27)) hide))
-    (pin "1" (uuid 137386ee-9b71-44fa-8a2f-880787d13d3c))
-    (pin "2" (uuid 78d89a2e-9679-4328-a44c-71195f9d9772))
-    (pin "3" (uuid d287db95-80e7-4c3e-9a18-b300ed1bafd4))
-    (instances
-      (project "gx140_rev2"
-        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "M2") (unit 1))
-      )
-    )
-  )
-  (symbol (lib_id "grok:MOTOR_1804") (at 220.98 106.68 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid a69d2adc-555d-4c83-8895-5607598ff6be)
-    (property "Reference" "M3" (at 220.98 99.06 0) (effects (font (size 1.27 1.27))))
-    (property "Value" "Specter_1804_RL_CCW" (at 220.98 114.30000000000001 0) (effects (font (size 1.27 1.27))))
-    (property "Footprint" "" (at 220.98 106.68 0) (effects (font (size 1.27 1.27)) hide))
-    (property "Datasheet" "" (at 220.98 106.68 0) (effects (font (size 1.27 1.27)) hide))
-    (pin "1" (uuid 1e3d6bdb-779e-4b99-8a9b-9792c330ed6c))
-    (pin "2" (uuid 69974d7e-5744-4648-9de1-1d4cb0e7c2cb))
-    (pin "3" (uuid 8eed8b3e-34b7-44a4-8bb4-9aebcf167be5))
-    (instances
-      (project "gx140_rev2"
-        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "M3") (unit 1))
-      )
-    )
-  )
-  (symbol (lib_id "grok:MOTOR_1804") (at 220.98 127.0 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid 736a72f3-74cf-432e-8a63-5a6cdbaf1036)
-    (property "Reference" "M4" (at 220.98 119.38 0) (effects (font (size 1.27 1.27))))
-    (property "Value" "Specter_1804_RR_CW" (at 220.98 134.62 0) (effects (font (size 1.27 1.27))))
-    (property "Footprint" "" (at 220.98 127.0 0) (effects (font (size 1.27 1.27)) hide))
-    (property "Datasheet" "" (at 220.98 127.0 0) (effects (font (size 1.27 1.27)) hide))
-    (pin "1" (uuid e226614f-b607-454f-8b74-7894e59a9536))
-    (pin "2" (uuid 91ee750c-e64f-4bde-bc19-8b76c4ff4724))
-    (pin "3" (uuid 81b8675b-8a21-4b18-ad32-daa60861030d))
-    (instances
-      (project "gx140_rev2"
-        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "M4") (unit 1))
-      )
-    )
-  )
-  (symbol (lib_id "grok:FC_F405_MINI") (at 127.0 175.26 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid 34ed4066-833f-4eb1-b3d4-f78dbf8e085c)
-    (property "Reference" "FC1" (at 127.0 157.48 0) (effects (font (size 1.27 1.27))))
-    (property "Value" "SpeedyBee_F405_Mini_20x20" (at 127.0 193.04 0) (effects (font (size 1.27 1.27))))
-    (property "Footprint" "" (at 127.0 175.26 0) (effects (font (size 1.27 1.27)) hide))
-    (property "Datasheet" "" (at 127.0 175.26 0) (effects (font (size 1.27 1.27)) hide))
-    (pin "1" (uuid effbffd8-d3f5-4468-b3b3-d0ede0aa424b))
-    (pin "2" (uuid 4a207059-5a3e-4501-98c0-fcb9a6c14715))
-    (pin "3" (uuid e95291e5-0446-4fb4-9587-fd8f5fd37b8e))
-    (pin "4" (uuid 5d9e3ba7-ccca-42dc-b690-998a667aa44c))
-    (pin "5" (uuid 1b7040fb-cfef-476e-9e35-a55ab773b175))
-    (pin "6" (uuid a7549bdc-6fca-4296-8855-70b48dec82e5))
-    (pin "7" (uuid a4ede3a1-4805-442c-a021-0fb0e1ef5a83))
-    (pin "8" (uuid 50e1e479-2335-4af1-ad06-14947593b505))
-    (pin "9" (uuid ffa14e60-3b8b-405a-a587-6a2dec08f4b7))
-    (pin "10" (uuid 91e9a6fb-5ba3-40b7-863e-91283578e80d))
-    (pin "11" (uuid d005dbaf-0c81-4cff-8fd4-2b34cb7aaaf8))
-    (pin "12" (uuid a0b6d2c2-2bf1-4ba6-a81f-1a648fe7a522))
-    (pin "13" (uuid 6609cd97-2726-465d-bad4-3f1e65b31df7))
-    (pin "14" (uuid a85e6338-6104-4b29-9a9a-c47910718564))
-    (pin "15" (uuid 13677dbc-9aa3-44d0-aed8-83683d38b437))
-    (pin "16" (uuid 7118de6b-3bc1-43c5-bd33-7a7fce8b8575))
-    (pin "17" (uuid 56f7a7d9-24db-41e2-a639-05a139cac7a8))
-    (pin "18" (uuid 3b747d31-0424-4aff-9805-f02e5fc7a0c0))
-    (instances
-      (project "gx140_rev2"
-        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "FC1") (unit 1))
-      )
-    )
-  )
-  (symbol (lib_id "grok:VTX_ZEUS350") (at 281.94 148.59 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid b9e856b2-7e37-45bd-a9d9-29eeddf1d8d0)
-    (property "Reference" "VTX1" (at 281.94 138.43 0) (effects (font (size 1.27 1.27))))
-    (property "Value" "HGLRC_Zeus_350mW_SmartAudio" (at 281.94 158.75 0) (effects (font (size 1.27 1.27))))
-    (property "Footprint" "" (at 281.94 148.59 0) (effects (font (size 1.27 1.27)) hide))
-    (property "Datasheet" "" (at 281.94 148.59 0) (effects (font (size 1.27 1.27)) hide))
-    (pin "1" (uuid bced02fe-782c-4ff3-97c5-9c9426769c12))
-    (pin "2" (uuid 99c482a7-c553-4c6f-a6f5-113dd51d86e4))
-    (pin "3" (uuid 35b1b71c-11b8-418b-bdfb-8634dfdde326))
-    (pin "4" (uuid 84eb0864-ce35-469c-b12e-c5f6039cae0a))
-    (pin "5" (uuid c7363973-d944-454b-8d6f-3877f0ce174f))
-    (instances
-      (project "gx140_rev2"
-        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "VTX1") (unit 1))
-      )
-    )
-  )
-  (symbol (lib_id "grok:CAM_CADDX_ANT") (at 281.94 175.26 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid 709c0e68-0e68-471e-ac7b-bcb10acd1301)
-    (property "Reference" "CAM1" (at 281.94 167.64 0) (effects (font (size 1.27 1.27))))
-    (property "Value" "Caddx_Ant_1200TVL" (at 281.94 182.88 0) (effects (font (size 1.27 1.27))))
-    (property "Footprint" "" (at 281.94 175.26 0) (effects (font (size 1.27 1.27)) hide))
-    (property "Datasheet" "" (at 281.94 175.26 0) (effects (font (size 1.27 1.27)) hide))
-    (pin "1" (uuid efb7d81d-6e56-4d15-9fec-a62549092820))
-    (pin "2" (uuid c8c9a1d2-d7f7-4b1e-8cdf-4cda26ec5a2c))
-    (pin "3" (uuid 724882ff-55d5-4bdd-8740-1f332423df0a))
-    (instances
-      (project "gx140_rev2"
-        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "CAM1") (unit 1))
-      )
-    )
-  )
-  (symbol (lib_id "grok:RX_SUPERD_ELRS") (at 281.94 200.66 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid cf79bf8d-9573-42dd-ac15-3c9b171d265b)
-    (property "Reference" "RX1" (at 281.94 189.23 0) (effects (font (size 1.27 1.27))))
-    (property "Value" "BETAFPV_SuperD_ELRS_Diversity" (at 281.94 212.09 0) (effects (font (size 1.27 1.27))))
-    (property "Footprint" "" (at 281.94 200.66 0) (effects (font (size 1.27 1.27)) hide))
-    (property "Datasheet" "" (at 281.94 200.66 0) (effects (font (size 1.27 1.27)) hide))
-    (pin "1" (uuid a50a9928-2f98-4cbd-b826-6266cfd426f7))
-    (pin "2" (uuid dbeb39c5-39b4-47bb-8af3-0088494c46aa))
-    (pin "3" (uuid 84f1a3cd-7355-4e98-aa3a-264342a816bd))
-    (pin "4" (uuid 76f882ef-8232-4c49-9fca-c58b50bfc7b1))
-    (pin "5" (uuid ba44df4f-004e-42d6-a85c-7ee917fa6f5e))
-    (pin "6" (uuid ff0c4a45-8d70-4096-88d6-98e85af9465a))
-    (instances
-      (project "gx140_rev2"
-        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "RX1") (unit 1))
-      )
-    )
-  )
-  (symbol (lib_id "grok:GPS_M10Q_5883") (at 281.94 231.14 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid cd49a3a1-9788-4adb-b133-0b4e2431c19d)
-    (property "Reference" "GPS1" (at 281.94 219.71 0) (effects (font (size 1.27 1.27))))
-    (property "Value" "Matek_M10Q-5883_(opt)" (at 281.94 242.56999999999996 0) (effects (font (size 1.27 1.27))))
-    (property "Footprint" "" (at 281.94 231.14 0) (effects (font (size 1.27 1.27)) hide))
-    (property "Datasheet" "" (at 281.94 231.14 0) (effects (font (size 1.27 1.27)) hide))
-    (pin "1" (uuid 4fb73995-09ad-4060-939d-39060b3ffaca))
-    (pin "2" (uuid 6976bcf6-87db-4eb3-acef-3028a0e2992f))
-    (pin "3" (uuid a1a4fb46-857f-4de4-8859-f35f844d7b93))
-    (pin "4" (uuid 9b7ef1fb-45ae-4b91-a286-94d966f54b7a))
-    (pin "5" (uuid 0fc54a68-5e8b-43be-9a39-387f9aeadfb8))
-    (pin "6" (uuid 0b4020af-f6db-4b73-843c-a6ad63a569b7))
-    (instances
-      (project "gx140_rev2"
-        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "GPS1") (unit 1))
-      )
-    )
-  )
-  (symbol (lib_id "grok:ANTENNA") (at 355.6 144.78 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid a2c59c15-67b4-4798-a7ca-f274101cda96)
-    (property "Reference" "AE1" (at 355.6 142.23000000000002 0) (effects (font (size 1.27 1.27))))
-    (property "Value" "SMA_Foxeer_Lollipop_RHCP" (at 355.6 147.32999999999998 0) (effects (font (size 1.27 1.27))))
-    (property "Footprint" "" (at 355.6 144.78 0) (effects (font (size 1.27 1.27)) hide))
-    (property "Datasheet" "" (at 355.6 144.78 0) (effects (font (size 1.27 1.27)) hide))
-    (pin "1" (uuid 6f81484b-8c2e-46db-93ae-c5dcfad627b7))
-    (instances
-      (project "gx140_rev2"
-        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "AE1") (unit 1))
-      )
-    )
-  )
-  (symbol (lib_id "grok:ANTENNA") (at 355.6 196.85 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid 99e9b47f-12ff-4b7f-b57b-ff7ca8606281)
-    (property "Reference" "AE2" (at 355.6 194.3 0) (effects (font (size 1.27 1.27))))
-    (property "Value" "ANT1_vert_L_standoff" (at 355.6 199.39999999999998 0) (effects (font (size 1.27 1.27))))
-    (property "Footprint" "" (at 355.6 196.85 0) (effects (font (size 1.27 1.27)) hide))
-    (property "Datasheet" "" (at 355.6 196.85 0) (effects (font (size 1.27 1.27)) hide))
-    (pin "1" (uuid d9b45e53-d1ae-4231-9390-6587b4aa6a5a))
-    (instances
-      (project "gx140_rev2"
-        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "AE2") (unit 1))
-      )
-    )
-  )
-  (symbol (lib_id "grok:ANTENNA") (at 355.6 207.01 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid 0023fc90-4352-46a4-84d7-dc0e565d720e)
-    (property "Reference" "AE3" (at 355.6 204.46 0) (effects (font (size 1.27 1.27))))
-    (property "Value" "ANT2_horiz_top_plate" (at 355.6 209.55999999999997 0) (effects (font (size 1.27 1.27))))
-    (property "Footprint" "" (at 355.6 207.01 0) (effects (font (size 1.27 1.27)) hide))
-    (property "Datasheet" "" (at 355.6 207.01 0) (effects (font (size 1.27 1.27)) hide))
-    (pin "1" (uuid 249d5288-d13f-435f-8ece-b06efb1cc8e4))
-    (instances
-      (project "gx140_rev2"
-        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "AE3") (unit 1))
-      )
-    )
-  )
-  (wire (pts (xy 66.04 87.63) (xy 71.12 87.63))
-    (stroke (width 0) (type default)) (uuid 5750123d-659e-4861-a58d-0bbe3ad5be77)
-  )
-  (wire (pts (xy 66.04 90.17) (xy 71.12 90.17))
-    (stroke (width 0) (type default)) (uuid 9392dea9-eccd-4c4e-b5a2-22507044cea4)
-  )
-  (wire (pts (xy 93.98 78.74) (xy 99.06 78.74))
-    (stroke (width 0) (type default)) (uuid 1740c70d-f5f5-423c-9992-5437af32d809)
-  )
-  (wire (pts (xy 93.98 81.28) (xy 99.06 81.28))
-    (stroke (width 0) (type default)) (uuid 3953a33d-7922-49e5-80c8-44444d119f93)
-  )
-  (wire (pts (xy 93.98 83.82) (xy 99.06 83.82))
-    (stroke (width 0) (type default)) (uuid 605a4ebe-4c97-47dd-81c4-970eba2d942c)
-  )
-  (wire (pts (xy 93.98 86.36) (xy 99.06 86.36))
-    (stroke (width 0) (type default)) (uuid 9e571b90-6324-4e21-9ce7-aae74d3f888e)
-  )
-  (wire (pts (xy 93.98 88.9) (xy 99.06 88.9))
-    (stroke (width 0) (type default)) (uuid 38fd7a86-9817-46d8-9197-7a67719a716b)
-  )
-  (wire (pts (xy 93.98 91.44) (xy 99.06 91.44))
-    (stroke (width 0) (type default)) (uuid 7739767f-d8c1-4bf7-a79e-1accd7ef704b)
-  )
-  (wire (pts (xy 93.98 93.98) (xy 99.06 93.98))
-    (stroke (width 0) (type default)) (uuid f10f212c-f5bc-4545-b967-23259191f9bd)
-  )
-  (wire (pts (xy 154.94 74.93) (xy 160.02 74.93))
-    (stroke (width 0) (type default)) (uuid 19efcbef-bb7c-4586-84eb-0301e2073a5f)
-  )
-  (wire (pts (xy 154.94 77.47) (xy 160.02 77.47))
-    (stroke (width 0) (type default)) (uuid 845a9d26-2326-48f1-8007-0645e84e7185)
-  )
-  (wire (pts (xy 154.94 80.01) (xy 160.02 80.01))
-    (stroke (width 0) (type default)) (uuid 856c4731-2c83-4cd4-8971-94311f2451ee)
-  )
-  (wire (pts (xy 154.94 82.55) (xy 160.02 82.55))
-    (stroke (width 0) (type default)) (uuid 4b8fb630-be74-4a21-9939-73f4c06dcd6d)
-  )
-  (wire (pts (xy 154.94 85.09) (xy 160.02 85.09))
-    (stroke (width 0) (type default)) (uuid 4829cf71-0328-4faf-897e-d5bf60bd4998)
-  )
-  (wire (pts (xy 154.94 87.63) (xy 160.02 87.63))
-    (stroke (width 0) (type default)) (uuid 55c29e6a-0700-49c4-8191-540f2a65b39a)
-  )
-  (wire (pts (xy 154.94 90.17) (xy 160.02 90.17))
-    (stroke (width 0) (type default)) (uuid a494ddc8-4bcc-46dc-89fa-f0ba6eb04e39)
-  )
-  (wire (pts (xy 154.94 92.71) (xy 160.02 92.71))
-    (stroke (width 0) (type default)) (uuid 40cde57d-88d2-45fa-a1e9-ce53b5e16e6b)
-  )
-  (wire (pts (xy 154.94 95.25) (xy 160.02 95.25))
-    (stroke (width 0) (type default)) (uuid e85c72a5-af69-4f70-8193-747e8579d0ec)
-  )
-  (wire (pts (xy 154.94 97.79) (xy 160.02 97.79))
-    (stroke (width 0) (type default)) (uuid e782392a-cf7e-4cdf-8387-0c0ade9858c1)
-  )
-  (wire (pts (xy 154.94 100.33) (xy 160.02 100.33))
-    (stroke (width 0) (type default)) (uuid 4e6a5a64-e685-40d2-9bf6-4d8329352cc5)
-  )
-  (wire (pts (xy 154.94 102.87) (xy 160.02 102.87))
-    (stroke (width 0) (type default)) (uuid a9094a6d-44b4-48d3-a4a8-ff89382b5c3f)
-  )
-  (wire (pts (xy 199.39 63.5) (xy 204.47 63.5))
-    (stroke (width 0) (type default)) (uuid 77744a5c-b5f6-4221-befa-2fb2f17ba490)
-  )
-  (wire (pts (xy 199.39 66.04) (xy 204.47 66.04))
-    (stroke (width 0) (type default)) (uuid d6863662-a5bb-446e-bd12-d04655ea68f8)
-  )
-  (wire (pts (xy 199.39 68.58) (xy 204.47 68.58))
-    (stroke (width 0) (type default)) (uuid f44aec25-27e4-423c-ab38-efbe50018738)
-  )
-  (wire (pts (xy 199.39 83.82) (xy 204.47 83.82))
-    (stroke (width 0) (type default)) (uuid 752dfc9f-72b3-412b-95a9-8a10d9f04412)
-  )
-  (wire (pts (xy 199.39 86.36) (xy 204.47 86.36))
-    (stroke (width 0) (type default)) (uuid 2323ab38-6bdb-47d0-9697-2ba39eb135b2)
-  )
-  (wire (pts (xy 199.39 88.9) (xy 204.47 88.9))
-    (stroke (width 0) (type default)) (uuid 1a123a4e-9e2e-457f-b9c8-584cf420e370)
-  )
-  (wire (pts (xy 199.39 104.14) (xy 204.47 104.14))
-    (stroke (width 0) (type default)) (uuid 31988162-5b6a-42bc-a3fd-8faa70525c81)
-  )
-  (wire (pts (xy 199.39 106.68) (xy 204.47 106.68))
-    (stroke (width 0) (type default)) (uuid 00de93ae-e412-4184-bb2d-6577b4850916)
-  )
-  (wire (pts (xy 199.39 109.22) (xy 204.47 109.22))
-    (stroke (width 0) (type default)) (uuid 07c5e59e-7cb9-44b0-b264-698b8a032776)
-  )
-  (wire (pts (xy 199.39 124.46) (xy 204.47 124.46))
-    (stroke (width 0) (type default)) (uuid 55a62ec8-f33d-4bb5-be39-95640ae996e2)
-  )
-  (wire (pts (xy 199.39 127.0) (xy 204.47 127.0))
-    (stroke (width 0) (type default)) (uuid b7f872aa-5c4c-4dbe-807b-f421f1a8be21)
-  )
-  (wire (pts (xy 199.39 129.54) (xy 204.47 129.54))
-    (stroke (width 0) (type default)) (uuid bda77aee-b953-48f9-b036-0d47e374fe5b)
-  )
-  (wire (pts (xy 93.98 162.56) (xy 99.06 162.56))
-    (stroke (width 0) (type default)) (uuid 66699281-76a1-48b8-b949-1b7bffae8195)
-  )
-  (wire (pts (xy 93.98 165.1) (xy 99.06 165.1))
-    (stroke (width 0) (type default)) (uuid e6f4d6f8-8b51-49a9-9327-23566bd248dc)
-  )
-  (wire (pts (xy 93.98 167.64) (xy 99.06 167.64))
-    (stroke (width 0) (type default)) (uuid 93e17f6c-6be3-4a33-a4f5-6d498abdaa30)
-  )
-  (wire (pts (xy 93.98 170.18) (xy 99.06 170.18))
-    (stroke (width 0) (type default)) (uuid 1d2d2ed0-cfba-44e0-a278-c171202f4623)
-  )
-  (wire (pts (xy 93.98 172.72) (xy 99.06 172.72))
-    (stroke (width 0) (type default)) (uuid e39e08d4-7a34-440d-a47c-382e8e8827a7)
-  )
-  (wire (pts (xy 93.98 175.26) (xy 99.06 175.26))
-    (stroke (width 0) (type default)) (uuid afc4d2a0-4990-4bf3-8204-ba6fe076ba7a)
-  )
-  (wire (pts (xy 93.98 177.8) (xy 99.06 177.8))
-    (stroke (width 0) (type default)) (uuid 2229d3ab-877b-47fd-9cec-6c11f4e5fe60)
-  )
-  (wire (pts (xy 154.94 162.56) (xy 160.02 162.56))
-    (stroke (width 0) (type default)) (uuid 4795565e-6558-471a-af7d-f0ec190be691)
-  )
-  (wire (pts (xy 154.94 165.1) (xy 160.02 165.1))
-    (stroke (width 0) (type default)) (uuid 30a66a84-8174-4f70-ac2d-1ee18527fa78)
-  )
-  (wire (pts (xy 154.94 167.64) (xy 160.02 167.64))
-    (stroke (width 0) (type default)) (uuid e1b84776-e1fb-4b89-a0dc-b94bd741a735)
-  )
-  (wire (pts (xy 154.94 170.18) (xy 160.02 170.18))
-    (stroke (width 0) (type default)) (uuid e8ac0429-6bae-481d-8f56-dd3b5edae6b5)
-  )
-  (wire (pts (xy 154.94 175.26) (xy 160.02 175.26))
-    (stroke (width 0) (type default)) (uuid e92a3f5b-3e63-45d0-ad45-fb571ad36c95)
-  )
-  (wire (pts (xy 154.94 177.8) (xy 160.02 177.8))
-    (stroke (width 0) (type default)) (uuid 7199a917-722a-4039-a893-a3091403f6d8)
-  )
-  (wire (pts (xy 154.94 180.34) (xy 160.02 180.34))
-    (stroke (width 0) (type default)) (uuid f761abba-c831-4d6a-ad16-4ec25df694fa)
-  )
-  (wire (pts (xy 154.94 182.88) (xy 160.02 182.88))
-    (stroke (width 0) (type default)) (uuid d2a46225-9f0c-427d-891f-9e6ad60b2309)
-  )
-  (wire (pts (xy 154.94 185.42) (xy 160.02 185.42))
-    (stroke (width 0) (type default)) (uuid db943bbc-0431-4a59-b56f-2218599277a9)
-  )
-  (wire (pts (xy 154.94 187.96) (xy 160.02 187.96))
-    (stroke (width 0) (type default)) (uuid 718bd2ba-d6ae-4232-b934-e9dfa722fd5c)
-  )
-  (wire (pts (xy 254.0 143.51) (xy 259.08 143.51))
-    (stroke (width 0) (type default)) (uuid 272c4041-3fcc-4d49-8db1-70a1c50bbde8)
-  )
-  (wire (pts (xy 254.0 146.05) (xy 259.08 146.05))
-    (stroke (width 0) (type default)) (uuid 96f5fe0b-b7c0-4291-91f1-14e1b8aa9c39)
-  )
-  (wire (pts (xy 254.0 148.59) (xy 259.08 148.59))
-    (stroke (width 0) (type default)) (uuid 8842f46a-438b-455f-b2a8-387dcd5358e1)
-  )
-  (wire (pts (xy 254.0 151.13) (xy 259.08 151.13))
-    (stroke (width 0) (type default)) (uuid 671baf93-be24-43b3-af47-487d30c254eb)
-  )
-  (wire (pts (xy 304.8 148.59) (xy 309.88 148.59))
-    (stroke (width 0) (type default)) (uuid d6481615-37cc-44a7-8f26-012adef34fe5)
-  )
-  (wire (pts (xy 256.54 172.72) (xy 261.62 172.72))
-    (stroke (width 0) (type default)) (uuid ebade9bb-a9da-4ab1-8115-7d38080d0a29)
-  )
-  (wire (pts (xy 256.54 175.26) (xy 261.62 175.26))
-    (stroke (width 0) (type default)) (uuid a6942093-503f-4cf4-ac17-eb7ab3f2adf2)
-  )
-  (wire (pts (xy 302.26 173.99) (xy 307.34 173.99))
-    (stroke (width 0) (type default)) (uuid 9cf9181b-9061-4464-b1b2-722c70e66294)
-  )
-  (wire (pts (xy 254.0 194.31) (xy 259.08 194.31))
-    (stroke (width 0) (type default)) (uuid 733e5814-fec3-45cb-a500-de5dc83e8124)
-  )
-  (wire (pts (xy 254.0 196.85) (xy 259.08 196.85))
-    (stroke (width 0) (type default)) (uuid 9bcac3bb-3f67-428d-a5ea-161cc1b6d9c3)
-  )
-  (wire (pts (xy 254.0 199.39) (xy 259.08 199.39))
-    (stroke (width 0) (type default)) (uuid 6570354a-428d-418b-b1c1-a81919c6f01d)
-  )
-  (wire (pts (xy 254.0 201.93) (xy 259.08 201.93))
-    (stroke (width 0) (type default)) (uuid 778b1df6-e2fe-4adb-80a4-28d98e034f88)
-  )
-  (wire (pts (xy 304.8 196.85) (xy 309.88 196.85))
-    (stroke (width 0) (type default)) (uuid 773adb7f-0f73-4eb2-9b46-7382db000bd2)
-  )
-  (wire (pts (xy 304.8 199.39) (xy 309.88 199.39))
-    (stroke (width 0) (type default)) (uuid 0f62e4db-aee2-43b3-bbb8-45672e5dddad)
-  )
-  (wire (pts (xy 254.0 224.79) (xy 259.08 224.79))
-    (stroke (width 0) (type default)) (uuid 96211438-5306-42e7-802b-f59fb5293165)
-  )
-  (wire (pts (xy 254.0 227.33) (xy 259.08 227.33))
-    (stroke (width 0) (type default)) (uuid 6218b1d7-dede-4f0b-825c-d9bffba5304c)
-  )
-  (wire (pts (xy 254.0 229.87) (xy 259.08 229.87))
-    (stroke (width 0) (type default)) (uuid 0b3d8ee4-6db7-446a-90f8-c4e62c6233cb)
-  )
-  (wire (pts (xy 254.0 232.41) (xy 259.08 232.41))
-    (stroke (width 0) (type default)) (uuid a79033f9-3b22-4209-9ae0-5190364e50e3)
-  )
-  (wire (pts (xy 254.0 234.95) (xy 259.08 234.95))
-    (stroke (width 0) (type default)) (uuid cc26e506-2df3-42d6-aa26-4fa95444077d)
-  )
-  (wire (pts (xy 254.0 237.49) (xy 259.08 237.49))
-    (stroke (width 0) (type default)) (uuid 0403321b-f5b8-45a4-880b-0fe71918441c)
-  )
-  (wire (pts (xy 342.9 148.59) (xy 347.98 148.59))
-    (stroke (width 0) (type default)) (uuid 646239eb-d574-424f-9d1d-a5b1672757e6)
-  )
-  (wire (pts (xy 342.9 200.66) (xy 347.98 200.66))
-    (stroke (width 0) (type default)) (uuid aa327293-061a-4c1d-9382-fa03cbe75521)
-  )
-  (wire (pts (xy 342.9 210.82) (xy 347.98 210.82))
-    (stroke (width 0) (type default)) (uuid 9bf1bf7c-acfe-4d3f-937c-5df2aeb5a092)
-  )
-  (label "VBAT" (at 71.12 87.63 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid abc6b19e-6702-463c-a899-bc573a522d35)
-  )
-  (label "GND" (at 71.12 90.17 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 152815c2-1158-48e5-8874-eedeee8cc7eb)
-  )
-  (label "VBAT" (at 93.98 78.74 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 19e9cdc3-d41e-4b7e-b11f-717c6e42d59a)
-  )
-  (label "GND" (at 93.98 81.28 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid c90dcfdf-1dfb-4530-8b87-fce515ad39d6)
-  )
-  (label "FC_M1_TO_ESC_S1" (at 93.98 83.82 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 30735159-b216-41e3-aabc-7ef093f07c2a)
-  )
-  (label "FC_M2_TO_ESC_S2" (at 93.98 86.36 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid d3ff3c87-dc08-4b0a-b404-1de1024bcdcb)
-  )
-  (label "FC_M3_TO_ESC_S3" (at 93.98 88.9 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 927b7675-281a-436a-a9f3-b70c8a8669a8)
-  )
-  (label "FC_M4_TO_ESC_S4" (at 93.98 91.44 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid a5732860-36ec-446f-935e-62af0d545529)
-  )
-  (label "ESC_CURR_TO_FC" (at 93.98 93.98 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid ca7783bd-b678-4946-9c5a-531f05cd083e)
-  )
-  (label "M1_A" (at 160.02 74.93 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid ee8bb171-fd80-4025-a271-03d2eef2b5c1)
-  )
-  (label "M1_B" (at 160.02 77.47 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid c0881938-7d90-4afb-83af-16e22baac6bc)
-  )
-  (label "M1_C" (at 160.02 80.01 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 0de6dca7-023a-4cfd-9f2e-f2e289857694)
-  )
-  (label "M2_A" (at 160.02 82.55 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 5a2db59d-7459-47d7-8b3c-c0c3d068afba)
-  )
-  (label "M2_B" (at 160.02 85.09 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid c74a9cb9-e9e9-4ace-832b-21a991323a57)
-  )
-  (label "M2_C" (at 160.02 87.63 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 4fb1b73c-20d6-4736-bd14-22b05faa2f57)
-  )
-  (label "M3_A" (at 160.02 90.17 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid a84076bf-9459-4d8c-a105-23fd72ee7377)
-  )
-  (label "M3_B" (at 160.02 92.71 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 59637083-7de7-4ea4-9f83-8608eae96382)
-  )
-  (label "M3_C" (at 160.02 95.25 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 2d4138f0-3520-416d-b740-ad4fcccdbaed)
-  )
-  (label "M4_A" (at 160.02 97.79 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid acbc070a-5e63-4631-bd4e-c85da298f165)
-  )
-  (label "M4_B" (at 160.02 100.33 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 22a34978-626b-4cd6-9dd0-dd910a20bbf0)
-  )
-  (label "M4_C" (at 160.02 102.87 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 113fca44-9f92-434d-aa5d-17512abf03f2)
-  )
-  (label "M1_A" (at 199.39 63.5 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 5f74cba3-8292-4eb3-b133-bfa1e56f23db)
-  )
-  (label "M1_B" (at 199.39 66.04 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid e569716c-5707-4552-b182-42eefdb959f8)
-  )
-  (label "M1_C" (at 199.39 68.58 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid e7511947-b7ca-4d6e-b4c6-30d5eabaf7bd)
-  )
-  (label "M2_A" (at 199.39 83.82 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 0c5bb490-8cff-4ba9-ae45-bf4e174aca27)
-  )
-  (label "M2_B" (at 199.39 86.36 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 8a17d168-1d5d-46af-abad-7a6f47b6a6fe)
-  )
-  (label "M2_C" (at 199.39 88.9 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid c283f573-ccb2-4359-83fa-6177ce5a5ef5)
-  )
-  (label "M3_A" (at 199.39 104.14 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 83550bbc-667d-4805-884f-9c8bc2eb1be5)
-  )
-  (label "M3_B" (at 199.39 106.68 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid f89b88f8-0e26-4dcc-8329-8a177d6a03bc)
-  )
-  (label "M3_C" (at 199.39 109.22 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 9f89be56-ae0e-43b6-893f-aab7bcd73227)
-  )
-  (label "M4_A" (at 199.39 124.46 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid d5eeb280-718c-4d68-9f61-06330b90b511)
-  )
-  (label "M4_B" (at 199.39 127.0 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid dbb984b2-ed8b-44a2-9bb7-27cecd69a98b)
-  )
-  (label "M4_C" (at 199.39 129.54 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 5e5fb5d5-c66a-4607-bc74-78ccd962d436)
-  )
-  (label "VBAT" (at 93.98 162.56 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid ecc05be5-70f2-4db8-a423-543a72edb259)
-  )
-  (label "GND" (at 93.98 165.1 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 10489625-ef52-42ee-a045-fd060f7ffa8c)
-  )
-  (label "ESC_CURR_TO_FC" (at 93.98 167.64 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid b99f3f63-c99a-4ab6-ad85-33add8dc4913)
-  )
-  (label "FC_M1_TO_ESC_S1" (at 93.98 170.18 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid b74c87bc-6594-41c2-b561-9236b786cbe5)
-  )
-  (label "FC_M2_TO_ESC_S2" (at 93.98 172.72 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid ae1e6af7-cbaf-42d9-b7c3-9e8b902c6176)
-  )
-  (label "FC_M3_TO_ESC_S3" (at 93.98 175.26 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid edf4bdfc-000c-46cc-b313-0703cb547eb4)
-  )
-  (label "FC_M4_TO_ESC_S4" (at 93.98 177.8 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 8de72092-21c1-422d-a431-0f90976af1a6)
-  )
-  (label "5V" (at 160.02 162.56 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 2e443f01-0a4f-4d4e-8d1e-b27ab033b9d4)
-  )
-  (label "CAM_VID_TO_FC_VIN" (at 160.02 165.1 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid fdb0319a-718d-4916-902e-5af5eed42c92)
-  )
-  (label "FC_VOUT_TO_VTX_VID" (at 160.02 167.64 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 33d58d86-2f33-4085-b413-3413bd011448)
-  )
-  (label "FC_TX4_TO_VTX_SA" (at 160.02 170.18 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid c144c907-4295-4b9c-a1da-d056ee885126)
-  )
-  (label "FC_TX5_TO_RX_CRSF" (at 160.02 175.26 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid d73caf1a-45de-4275-aaad-279a8b8bc404)
-  )
-  (label "FC_RX5_FROM_RX_CRSF" (at 160.02 177.8 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 3cead607-1184-40d0-8431-a831cb13f3dc)
-  )
-  (label "FC_TX3_TO_GPS_RX" (at 160.02 180.34 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid a37f4904-dccb-4d5f-b248-530ed5293309)
-  )
-  (label "FC_RX3_FROM_GPS_TX" (at 160.02 182.88 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid cca0e5eb-35e9-425b-bbd9-17c32044aabf)
-  )
-  (label "I2C_SDA" (at 160.02 185.42 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid c609e074-0a1a-4ad2-8d81-fe4bcb26ee8e)
-  )
-  (label "I2C_SCL" (at 160.02 187.96 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 64d434f5-572a-40ce-b4b4-060d8da91067)
-  )
-  (label "5V" (at 254.0 143.51 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 49561446-913e-4c07-b449-b2ff37ebeaef)
-  )
-  (label "GND" (at 254.0 146.05 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 33c82719-ff3c-41ab-ba05-55f1647bc9b7)
-  )
-  (label "FC_VOUT_TO_VTX_VID" (at 254.0 148.59 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid e0897efb-59b6-4005-9f98-130bef01f174)
-  )
-  (label "FC_TX4_TO_VTX_SA" (at 254.0 151.13 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid ede70389-0d2a-4c2f-8b2a-a46b428fa06a)
-  )
-  (label "VTX_ANT" (at 309.88 148.59 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 07e111a3-4648-48d5-8919-a8fa588c49b1)
-  )
-  (label "5V" (at 256.54 172.72 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 6f7e9cf7-bb9f-4544-8d91-a54b26d9461f)
-  )
-  (label "GND" (at 256.54 175.26 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid f669f828-cdcc-4900-bdde-e44a9367cf47)
-  )
-  (label "CAM_VID_TO_FC_VIN" (at 307.34 173.99 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid cdc2ea44-40cd-43c4-b2a9-ca753bc6d6c5)
-  )
-  (label "5V" (at 254.0 194.31 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid c20fffcf-848c-4fd7-afd0-1990922031d8)
-  )
-  (label "GND" (at 254.0 196.85 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid dd219ba9-1e78-4e4e-badc-58c131c9b094)
-  )
-  (label "FC_TX5_TO_RX_CRSF" (at 254.0 199.39 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid fa16bacf-bd99-41cd-bd06-797c586cb37a)
-  )
-  (label "FC_RX5_FROM_RX_CRSF" (at 254.0 201.93 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 25238e7c-01de-430e-bfe3-583c8de1c5c2)
-  )
-  (label "RX_ANT1" (at 309.88 196.85 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid e051655b-577a-4dbf-9906-715f22abb6bf)
-  )
-  (label "RX_ANT2" (at 309.88 199.39 0)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 56f38f10-2b43-484c-9a10-445ce54813cc)
-  )
-  (label "5V" (at 254.0 224.79 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid db11e245-6e28-42a3-9256-f22736054998)
-  )
-  (label "GND" (at 254.0 227.33 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 6c68e884-4e6a-4baa-86b0-12af26fceb43)
-  )
-  (label "FC_TX3_TO_GPS_RX" (at 254.0 229.87 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 518b9977-9452-4b78-85ea-0cb4fe050e64)
-  )
-  (label "FC_RX3_FROM_GPS_TX" (at 254.0 232.41 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 3a34ebdb-8610-47f6-be42-7544da70f37d)
-  )
-  (label "I2C_SDA" (at 254.0 234.95 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 4f85785c-1084-40c0-ba31-35430ba73a7e)
-  )
-  (label "I2C_SCL" (at 254.0 237.49 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid d7cac862-5ab0-4b36-b56a-ffda9d0fbcd7)
-  )
-  (label "VTX_ANT" (at 342.9 148.59 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 8c5aea77-bddd-4ca0-84c3-23ee2462e32c)
-  )
-  (label "RX_ANT1" (at 342.9 200.66 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid d565812f-71f1-4cd7-a31c-b2295fb9fb21)
-  )
-  (label "RX_ANT2" (at 342.9 210.82 0)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 3413d5cd-200f-4151-af80-8009d6ec0e45)
-  )
-  (no_connect (at 154.94 172.72) (uuid b25aaeed-9aaf-479e-a347-2aa4d5d7cbd5))
-  (text "GX140 3in ANALOG FPV — ELECTRICAL SCHEMATIC (Rev 2.0)" (at 25.4 22.86 0)
-    (effects (font (size 2.54 2.54)) (justify left bottom))
-    (uuid d546bf39-9e73-4267-9939-96b37dbf5c47)
-  )
-  (text "METHOD: point-to-point by net label. Every conductor breaks out at the device pin." (at 25.4 29.21 0)
-    (effects (font (size 1.6 1.6)) (justify left bottom))
-    (uuid aad0a6e5-ec3d-4238-bcba-b443cf4dc96e)
-  )
-  (text "Match net names to find the far end. No routed runs, no crossings, no junction ambiguity." (at 25.4 32.51 0)
-    (effects (font (size 1.6 1.6)) (justify left bottom))
-    (uuid c7f153f5-9d5f-42c2-87ea-a624e8022b2c)
-  )
-  (text "=== POWER TREE ===" (at 25.4 38.1 0)
-    (effects (font (size 1.778 1.778)) (justify left bottom))
-    (uuid 4a5f310f-0ed8-4885-ac6a-81d4cc32fec3)
-  )
-  (text "BAT XT30 -> ESC VBAT pads (22AWG). FC powered via ESC 8-pin harness (VBAT/GND/CURR/S1-S4)." (at 25.4 41.91 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid af722aa5-158a-4a38-ba2f-99b75f2e46ff)
-  )
-  (text "FC internal 5V/3A BEC -> 5V net -> VTX, CAM, RX, GPS." (at 25.4 44.96 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid a210277f-407d-4e6f-9066-9b77dfadcb57)
-  )
-  (text "=== UART MAP (F405 Mini) ===" (at 25.4 50.55 0)
-    (effects (font (size 1.778 1.778)) (justify left bottom))
-    (uuid 2f3c6ebd-ee9c-4c69-9d17-6fd210199ba6)
-  )
-  (text "UART3: GPS 57600 (TX3_GPS / RX3_GPS) | UART4: SmartAudio 2.1 (TX4 only, RX4 = N/C)" (at 25.4 54.36 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid a725f137-43bc-4e64-843b-edd5047c422a)
-  )
-  (text "UART5: ELRS CRSF 420k (TX5_CRSF -> RX.RX, RX.TX -> RX5_CRSF) | I2C: QMC5883L compass" (at 25.4 57.41 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 42d46924-b2c1-4a6f-93f6-f28d072b6610)
-  )
-  (text "=== VIDEO PATH (corrected) ===" (at 25.4 63.0 0)
-    (effects (font (size 1.778 1.778)) (justify left bottom))
-    (uuid 7c7d2243-4add-4e82-8d20-bbcc45f45fd6)
-  )
-  (text "CAM.VID -> FC.VIN (CAM_VIDEO) -> AT7456E OSD -> FC.VOUT -> VTX.VID_IN (VTX_VIDEO)." (at 25.4 66.81 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 7e005c7b-4ddc-445d-a75e-6e3b988129fc)
-  )
-  (text "Grok rev1 bypassed the OSD: camera direct to VTX = no Betaflight OSD overlay." (at 25.4 69.86 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 6bfa2361-8b1a-4291-b27f-c3a4f74c77ad)
-  )
-  (text "=== WIRING ===" (at 25.4 246.38 0)
-    (effects (font (size 1.778 1.778)) (justify left bottom))
-    (uuid 090deb54-27f0-4b51-9f30-10a425cea7c3)
-  )
-  (text "22AWG: VBAT, GND, motor phase | 26AWG: UART, DShot, video | 28AWG: I2C" (at 25.4 250.19 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 175ab255-92e3-4d90-9bcf-65df98999a90)
-  )
-  (text "JST-SH 1.0mm: CAM | JST-GH 1.25mm: GPS | XT30: battery | Heat shrink all joints" (at 25.4 253.24 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid ac91e7b4-f2df-4fad-a9ed-cfb03a4a1656)
-  )
-  (text "=== SAFETY ===" (at 25.4 258.83 0)
-    (effects (font (size 1.778 1.778)) (justify left bottom))
-    (uuid 12b64083-c063-41df-8e29-d77799b1f40f)
-  )
-  (text "Smoke stopper (ShortSaver) MANDATORY first power-up | Props OFF for motor direction test" (at 25.4 262.64 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 794bdb96-4286-4dbb-aa8a-ffba5b3a7afd)
-  )
-  (text "Continuity check VBAT-GND before battery | Verify motor order/direction in Betaflight Motors tab" (at 25.4 265.69 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 0d5ac5d3-b99c-4ba1-ab73-13da5b568f11)
-  )
-  (text "=== STACK ASSEMBLY (bottom to top) ===" (at 167.64 60.96 0)
-    (effects (font (size 1.778 1.778)) (justify left bottom))
-    (uuid f1111111-2222-3333-4444-555555555555)
-  )
-  (text "1.Bottom 2mm  2.Main 4mm CF  3.ESC 4in1  4.M2x6 standoffs" (at 167.64 64.77 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid f2222222-3333-4444-5555-666666666666)
-  )
-  (text "5.FC F405 Mini  6.VTX Zeus(rear)  7.CAM Caddx Ant(front,TPU)" (at 167.64 67.82 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid f3333333-4444-5555-6666-777777777777)
-  )
-  (text "8.RX SuperD(side,tape)  9.GPS(mast,opt)  10.BAT 2S(under,2x20mm strap)" (at 167.64 70.87 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid f4444444-5555-6666-7777-888888888888)
-  )
-  (text "=== TORQUE ===" (at 167.64 78.74 0)
-    (effects (font (size 1.778 1.778)) (justify left bottom))
-    (uuid f5555555-6666-7777-8888-999999999999)
-  )
-  (text "Motor M2x5: 0.25 N-m(Loctite243)  Stack M2 nylon: 0.15 N-m" (at 167.64 82.55 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid f6666666-7777-8888-9999-aaaaaaaaaaaa)
-  )
-  (text "Top M2.5x10: 0.35 N-m  Bottom M2.5x12: 0.40 N-m  Prop nut: hand+1/4" (at 167.64 85.6 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid f7777777-8888-9999-aaaa-bbbbbbbbbbbb)
-  )
-  (text "=== REVERSE WIRE TAGS ===" (at 167.64 90.42 0)
-    (effects (font (size 1.778 1.778)) (justify left bottom))
-    (uuid f8888888-9999-aaaa-bbbb-cccccccccccc)
-  )
-  (text "Tag at DESTINATION end: -> DST:PIN <- SRC:COMP.PIN  Ex: -> VTX.VID_IN <- FC.VOUT" (at 167.64 94.23 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid f9999999-aaaa-bbbb-cccc-dddddddddddd)
-  )
-  (text "1.5mm heat shrink tag, 10mm from pad, text reads toward component" (at 167.64 97.28 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid faaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee)
-  )
-  (text "=== WIRE SCHEDULE ===" (at 167.64 102.11 0)
-    (effects (font (size 1.778 1.778)) (justify left bottom))
-    (uuid fbbbbbbb-cccc-dddd-eeee-ffffffffffff)
-  )
-  (text "PWR: BAT->ESC VBAT+/- 22AWG  |  BAT->FC VBAT/GND 22AWG" (at 167.64 105.92 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid fccccccc-dddd-eeee-ffff-aaaaaaaaaaaa)
-  )
-  (text "ARM: ESC M1-4 A/B/C -> M1-4 A/B/C  22AWG  25-55mm" (at 167.64 108.97 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid fddddddd-eeee-ffff-aaaa-bbbbbbbbbbbb)
-  )
-  (text "HARN: ESC 8-pin -> FC VBAT/GND/CURR/S1-4  26AWG" (at 167.64 112.02 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid feeeeeee-ffff-aaaa-bbbb-cccccccccccc)
-  )
-  (text "5V: FC 5V/GND -> VTX/CAM/RX/GPS  26AWG  35-80mm" (at 167.64 115.07 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid ffffffff-aaaa-bbbb-cccc-dddddddddddd)
-  )
-  (text "VID: CAM->FC.VIN(OSD)->FC.VOUT->VTX  26AWG" (at 167.64 118.12 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee)
-  )
-  (text "UART: TX4->SA  TX5->RX.RX  RX5<-RX.TX  TX3->GPS.RX  RX3<-GPS.TX  26AWG" (at 167.64 121.17 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid bbbbbbbb-cccc-dddd-eeee-ffffffffffff)
-  )
-  (text "I2C: SDA/SCL FC<->GPS compass  28AWG" (at 167.64 124.22 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid cccccccc-dddd-eeee-ffff-aaaaaaaaaaaa)
-  )
-  (text "=== BATTERY ===" (at 25.4 271.78 0)
-    (effects (font (size 1.778 1.778)) (justify left bottom))
-    (uuid dddddddd-eeee-ffff-aaaa-bbbbbbbbbbbb)
-  )
-  (text "2S 550mAh LiHV XT30. Under bottom plate, 2x20mm straps." (at 25.4 275.59 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid eeeeeeee-ffff-aaaa-bbbb-cccccccccccc)
-  )
-  (text "=== ANTENNAS ===" (at 25.4 280.16 0)
-    (effects (font (size 1.778 1.778)) (justify left bottom))
-    (uuid ffffffff-aaaa-bbbb-cccc-dddddddddddd)
-  )
-  (text "VTX: Foxeer Lollipop RHCP SMA(rear)  RX: 2x dipoles 90-deg apart" (at 25.4 283.97 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee)
-  )
-  (text "RX ANT1: Vertical L-standoff(left arm)  ANT2: Horizontal(top plate)" (at 25.4 287.02 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid bbbbbbbb-cccc-dddd-eeee-ffffffffffff)
-  )
-  (text "=== BETAFLIGHT ===" (at 25.4 291.84 0)
-    (effects (font (size 1.778 1.778)) (justify left bottom))
-    (uuid cccccccc-dddd-eeee-ffff-aaaaaaaaaaaa)
-  )
-  (text "UART3: GPS 57600  UART4: SmartAudio auto  UART5: CRSF 420k" (at 25.4 295.65 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid dddddddd-eeee-ffff-aaaa-bbbbbbbbbbbb)
-  )
-  (text "DShot600 | RX: CRSF | Gyro update: 8k/8k" (at 25.4 298.7 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid eeeeeeee-ffff-aaaa-bbbb-cccccccccccc)
+
   )
 
-  (text "MOTOR PHASE WIRING: 3 conductors per motor (A/B/C)." (at 167.64 46.99 0)
+  (symbol (lib_id "grok:ESC_BLS35A_4IN1") (at 87.00 88.9 0) (unit 1)
+
+    (in_bom yes) (on_board yes) (dnp no)
+
+    (uuid d707ddb7-5fdf-4a5e-a9d3-c4d1e8a0b915)
+
+    (property "Reference" "ESC1" (at 127.0 69.85 0) (effects (font (size 1.27 1.27))))
+
+    (property "Value" "BLS_35A_4in1_20x20_DShot600" (at 127.0 107.95000000000002 0) (effects (font (size 1.27 1.27))))
+
+    (property "Footprint" "" (at 127.0 88.9 0) (effects (font (size 1.27 1.27)) hide))
+
+    (property "Datasheet" "" (at 127.0 88.9 0) (effects (font (size 1.27 1.27)) hide))
+
+    (pin "1" (uuid 2ce3ba88-5cc9-4c89-bb55-dfb1c3372127))
+
+    (pin "2" (uuid b2d78c2a-b178-4284-8231-0e32228d2cf0))
+
+    (pin "3" (uuid 88d1981d-a6b1-4c98-b7da-2010deec4bcc))
+
+    (pin "4" (uuid 1ddc5d7d-1bc9-446b-9cc7-3bd99c215d38))
+
+    (pin "5" (uuid bd59ef08-84ee-4373-8d4a-18789ce91cd0))
+
+    (pin "6" (uuid 994bfdd8-b448-4355-9c7c-2958cac2eee6))
+
+    (pin "7" (uuid 59457ebc-507b-4466-ac88-fc538fc97421))
+
+    (pin "8" (uuid b72eb768-ad2b-4f4a-b9ff-3ce545bdf45a))
+
+    (pin "9" (uuid 66f75607-ebdd-43ff-9267-953504a2cdf4))
+
+    (pin "10" (uuid 5258f4df-7548-4ea9-acdd-c52095b90015))
+
+    (pin "11" (uuid b523ceb7-eb7d-49e4-8808-f8bc6f2d8f5a))
+
+    (pin "12" (uuid 6c8532bc-c8ac-44ce-ad48-ace098bd5131))
+
+    (pin "13" (uuid 500a93cc-54b7-4307-b1ea-c612ecf2aa49))
+
+    (pin "14" (uuid 514ff1b7-3fa5-481a-9c2a-40b7e671995a))
+
+    (pin "15" (uuid 3316f62a-82de-43a8-a7d7-42abed96cdf8))
+
+    (pin "16" (uuid be3fc75d-9968-4dad-b569-1f65eebfb18e))
+
+    (pin "17" (uuid df7288e5-9c98-4540-84ef-033b6d9c0d7c))
+
+    (pin "18" (uuid 2cd14c62-9b5e-4168-9c60-4429eecf826f))
+
+    (pin "19" (uuid 077aa21a-5c44-4be5-9400-e260e5e0bb7c))
+
+    (instances
+
+      (project "gx140_rev2"
+
+        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "ESC1") (unit 1))
+
+      )
+
+    )
+
+  )
+
+  (symbol (lib_id "grok:MOTOR_1804") (at 180.98 66.04 0) (unit 1)
+
+    (in_bom yes) (on_board yes) (dnp no)
+
+    (uuid aeb2b2a3-de4d-4cd4-9696-79b5f66c0bd5)
+
+    (property "Reference" "M1" (at 220.98 58.42000000000001 0) (effects (font (size 1.27 1.27))))
+
+    (property "Value" "Specter_1804_FL_CCW" (at 220.98 73.66000000000001 0) (effects (font (size 1.27 1.27))))
+
+    (property "Footprint" "" (at 220.98 66.04 0) (effects (font (size 1.27 1.27)) hide))
+
+    (property "Datasheet" "" (at 220.98 66.04 0) (effects (font (size 1.27 1.27)) hide))
+
+    (pin "1" (uuid 3a77bb4e-abd4-4019-bb16-15a2a8c24b0c))
+
+    (pin "2" (uuid f62b116d-158c-43d5-8624-b7a517833728))
+
+    (pin "3" (uuid c7a21afc-be28-4dab-b6f5-1253139e1e8a))
+
+    (instances
+
+      (project "gx140_rev2"
+
+        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "M1") (unit 1))
+
+      )
+
+    )
+
+  )
+
+  (symbol (lib_id "grok:MOTOR_1804") (at 180.98 86.36 0) (unit 1)
+
+    (in_bom yes) (on_board yes) (dnp no)
+
+    (uuid e893c820-f8be-44f5-b655-b83d6ba6e42d)
+
+    (property "Reference" "M2" (at 220.98 78.74 0) (effects (font (size 1.27 1.27))))
+
+    (property "Value" "Specter_1804_FR_CW" (at 220.98 93.98 0) (effects (font (size 1.27 1.27))))
+
+    (property "Footprint" "" (at 220.98 86.36 0) (effects (font (size 1.27 1.27)) hide))
+
+    (property "Datasheet" "" (at 220.98 86.36 0) (effects (font (size 1.27 1.27)) hide))
+
+    (pin "1" (uuid 137386ee-9b71-44fa-8a2f-880787d13d3c))
+
+    (pin "2" (uuid 78d89a2e-9679-4328-a44c-71195f9d9772))
+
+    (pin "3" (uuid d287db95-80e7-4c3e-9a18-b300ed1bafd4))
+
+    (instances
+
+      (project "gx140_rev2"
+
+        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "M2") (unit 1))
+
+      )
+
+    )
+
+  )
+
+  (symbol (lib_id "grok:MOTOR_1804") (at 180.98 106.68 0) (unit 1)
+
+    (in_bom yes) (on_board yes) (dnp no)
+
+    (uuid a69d2adc-555d-4c83-8895-5607598ff6be)
+
+    (property "Reference" "M3" (at 220.98 99.06 0) (effects (font (size 1.27 1.27))))
+
+    (property "Value" "Specter_1804_RL_CCW" (at 220.98 114.30000000000001 0) (effects (font (size 1.27 1.27))))
+
+    (property "Footprint" "" (at 220.98 106.68 0) (effects (font (size 1.27 1.27)) hide))
+
+    (property "Datasheet" "" (at 220.98 106.68 0) (effects (font (size 1.27 1.27)) hide))
+
+    (pin "1" (uuid 1e3d6bdb-779e-4b99-8a9b-9792c330ed6c))
+
+    (pin "2" (uuid 69974d7e-5744-4648-9de1-1d4cb0e7c2cb))
+
+    (pin "3" (uuid 8eed8b3e-34b7-44a4-8bb4-9aebcf167be5))
+
+    (instances
+
+      (project "gx140_rev2"
+
+        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "M3") (unit 1))
+
+      )
+
+    )
+
+  )
+
+  (symbol (lib_id "grok:MOTOR_1804") (at 180.98 127.0 0) (unit 1)
+
+    (in_bom yes) (on_board yes) (dnp no)
+
+    (uuid 736a72f3-74cf-432e-8a63-5a6cdbaf1036)
+
+    (property "Reference" "M4" (at 220.98 119.38 0) (effects (font (size 1.27 1.27))))
+
+    (property "Value" "Specter_1804_RR_CW" (at 220.98 134.62 0) (effects (font (size 1.27 1.27))))
+
+    (property "Footprint" "" (at 220.98 127.0 0) (effects (font (size 1.27 1.27)) hide))
+
+    (property "Datasheet" "" (at 220.98 127.0 0) (effects (font (size 1.27 1.27)) hide))
+
+    (pin "1" (uuid e226614f-b607-454f-8b74-7894e59a9536))
+
+    (pin "2" (uuid 91ee750c-e64f-4bde-bc19-8b76c4ff4724))
+
+    (pin "3" (uuid 81b8675b-8a21-4b18-ad32-daa60861030d))
+
+    (instances
+
+      (project "gx140_rev2"
+
+        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "M4") (unit 1))
+
+      )
+
+    )
+
+  )
+
+  (symbol (lib_id "grok:FC_F405_MINI") (at 87.00 175.26 0) (unit 1)
+
+    (in_bom yes) (on_board yes) (dnp no)
+
+    (uuid 34ed4066-833f-4eb1-b3d4-f78dbf8e085c)
+
+    (property "Reference" "FC1" (at 127.0 157.48 0) (effects (font (size 1.27 1.27))))
+
+    (property "Value" "SpeedyBee_F405_Mini_20x20" (at 127.0 193.04 0) (effects (font (size 1.27 1.27))))
+
+    (property "Footprint" "" (at 127.0 175.26 0) (effects (font (size 1.27 1.27)) hide))
+
+    (property "Datasheet" "" (at 127.0 175.26 0) (effects (font (size 1.27 1.27)) hide))
+
+    (pin "1" (uuid effbffd8-d3f5-4468-b3b3-d0ede0aa424b))
+
+    (pin "2" (uuid 4a207059-5a3e-4501-98c0-fcb9a6c14715))
+
+    (pin "3" (uuid e95291e5-0446-4fb4-9587-fd8f5fd37b8e))
+
+    (pin "4" (uuid 5d9e3ba7-ccca-42dc-b690-998a667aa44c))
+
+    (pin "5" (uuid 1b7040fb-cfef-476e-9e35-a55ab773b175))
+
+    (pin "6" (uuid a7549bdc-6fca-4296-8855-70b48dec82e5))
+
+    (pin "7" (uuid a4ede3a1-4805-442c-a021-0fb0e1ef5a83))
+
+    (pin "8" (uuid 50e1e479-2335-4af1-ad06-14947593b505))
+
+    (pin "9" (uuid ffa14e60-3b8b-405a-a587-6a2dec08f4b7))
+
+    (pin "10" (uuid 91e9a6fb-5ba3-40b7-863e-91283578e80d))
+
+    (pin "11" (uuid d005dbaf-0c81-4cff-8fd4-2b34cb7aaaf8))
+
+    (pin "12" (uuid a0b6d2c2-2bf1-4ba6-a81f-1a648fe7a522))
+
+    (pin "13" (uuid 6609cd97-2726-465d-bad4-3f1e65b31df7))
+
+    (pin "14" (uuid a85e6338-6104-4b29-9a9a-c47910718564))
+
+    (pin "15" (uuid 13677dbc-9aa3-44d0-aed8-83683d38b437))
+
+    (pin "16" (uuid 7118de6b-3bc1-43c5-bd33-7a7fce8b8575))
+
+    (pin "17" (uuid 56f7a7d9-24db-41e2-a639-05a139cac7a8))
+
+    (pin "18" (uuid 3b747d31-0424-4aff-9805-f02e5fc7a0c0))
+
+    (instances
+
+      (project "gx140_rev2"
+
+        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "FC1") (unit 1))
+
+      )
+
+    )
+
+  )
+
+  (symbol (lib_id "grok:VTX_ZEUS350") (at 241.94 148.59 0) (unit 1)
+
+    (in_bom yes) (on_board yes) (dnp no)
+
+    (uuid b9e856b2-7e37-45bd-a9d9-29eeddf1d8d0)
+
+    (property "Reference" "VTX1" (at 281.94 138.43 0) (effects (font (size 1.27 1.27))))
+
+    (property "Value" "HGLRC_Zeus_350mW_SmartAudio" (at 281.94 158.75 0) (effects (font (size 1.27 1.27))))
+
+    (property "Footprint" "" (at 281.94 148.59 0) (effects (font (size 1.27 1.27)) hide))
+
+    (property "Datasheet" "" (at 281.94 148.59 0) (effects (font (size 1.27 1.27)) hide))
+
+    (pin "1" (uuid bced02fe-782c-4ff3-97c5-9c9426769c12))
+
+    (pin "2" (uuid 99c482a7-c553-4c6f-a6f5-113dd51d86e4))
+
+    (pin "3" (uuid 35b1b71c-11b8-418b-bdfb-8634dfdde326))
+
+    (pin "4" (uuid 84eb0864-ce35-469c-b12e-c5f6039cae0a))
+
+    (pin "5" (uuid c7363973-d944-454b-8d6f-3877f0ce174f))
+
+    (instances
+
+      (project "gx140_rev2"
+
+        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "VTX1") (unit 1))
+
+      )
+
+    )
+
+  )
+
+  (symbol (lib_id "grok:CAM_CADDX_ANT") (at 241.94 175.26 0) (unit 1)
+
+    (in_bom yes) (on_board yes) (dnp no)
+
+    (uuid 709c0e68-0e68-471e-ac7b-bcb10acd1301)
+
+    (property "Reference" "CAM1" (at 281.94 167.64 0) (effects (font (size 1.27 1.27))))
+
+    (property "Value" "Caddx_Ant_1200TVL" (at 281.94 182.88 0) (effects (font (size 1.27 1.27))))
+
+    (property "Footprint" "" (at 281.94 175.26 0) (effects (font (size 1.27 1.27)) hide))
+
+    (property "Datasheet" "" (at 281.94 175.26 0) (effects (font (size 1.27 1.27)) hide))
+
+    (pin "1" (uuid efb7d81d-6e56-4d15-9fec-a62549092820))
+
+    (pin "2" (uuid c8c9a1d2-d7f7-4b1e-8cdf-4cda26ec5a2c))
+
+    (pin "3" (uuid 724882ff-55d5-4bdd-8740-1f332423df0a))
+
+    (instances
+
+      (project "gx140_rev2"
+
+        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "CAM1") (unit 1))
+
+      )
+
+    )
+
+  )
+
+  (symbol (lib_id "grok:RX_SUPERD_ELRS") (at 241.94 200.66 0) (unit 1)
+
+    (in_bom yes) (on_board yes) (dnp no)
+
+    (uuid cf79bf8d-9573-42dd-ac15-3c9b171d265b)
+
+    (property "Reference" "RX1" (at 281.94 189.23 0) (effects (font (size 1.27 1.27))))
+
+    (property "Value" "BETAFPV_SuperD_ELRS_Diversity" (at 281.94 212.09 0) (effects (font (size 1.27 1.27))))
+
+    (property "Footprint" "" (at 281.94 200.66 0) (effects (font (size 1.27 1.27)) hide))
+
+    (property "Datasheet" "" (at 281.94 200.66 0) (effects (font (size 1.27 1.27)) hide))
+
+    (pin "1" (uuid a50a9928-2f98-4cbd-b826-6266cfd426f7))
+
+    (pin "2" (uuid dbeb39c5-39b4-47bb-8af3-0088494c46aa))
+
+    (pin "3" (uuid 84f1a3cd-7355-4e98-aa3a-264342a816bd))
+
+    (pin "4" (uuid 76f882ef-8232-4c49-9fca-c58b50bfc7b1))
+
+    (pin "5" (uuid ba44df4f-004e-42d6-a85c-7ee917fa6f5e))
+
+    (pin "6" (uuid ff0c4a45-8d70-4096-88d6-98e85af9465a))
+
+    (instances
+
+      (project "gx140_rev2"
+
+        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "RX1") (unit 1))
+
+      )
+
+    )
+
+  )
+
+  (symbol (lib_id "grok:GPS_M10Q_5883") (at 241.94 231.14 0) (unit 1)
+
+    (in_bom yes) (on_board yes) (dnp no)
+
+    (uuid cd49a3a1-9788-4adb-b133-0b4e2431c19d)
+
+    (property "Reference" "GPS1" (at 281.94 219.71 0) (effects (font (size 1.27 1.27))))
+
+    (property "Value" "Matek_M10Q-5883_(opt)" (at 281.94 242.56999999999996 0) (effects (font (size 1.27 1.27))))
+
+    (property "Footprint" "" (at 281.94 231.14 0) (effects (font (size 1.27 1.27)) hide))
+
+    (property "Datasheet" "" (at 281.94 231.14 0) (effects (font (size 1.27 1.27)) hide))
+
+    (pin "1" (uuid 4fb73995-09ad-4060-939d-39060b3ffaca))
+
+    (pin "2" (uuid 6976bcf6-87db-4eb3-acef-3028a0e2992f))
+
+    (pin "3" (uuid a1a4fb46-857f-4de4-8859-f35f844d7b93))
+
+    (pin "4" (uuid 9b7ef1fb-45ae-4b91-a286-94d966f54b7a))
+
+    (pin "5" (uuid 0fc54a68-5e8b-43be-9a39-387f9aeadfb8))
+
+    (pin "6" (uuid 0b4020af-f6db-4b73-843c-a6ad63a569b7))
+
+    (instances
+
+      (project "gx140_rev2"
+
+        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "GPS1") (unit 1))
+
+      )
+
+    )
+
+  )
+
+  (symbol (lib_id "grok:ANTENNA") (at 315.60 144.78 0) (unit 1)
+
+    (in_bom yes) (on_board yes) (dnp no)
+
+    (uuid a2c59c15-67b4-4798-a7ca-f274101cda96)
+
+    (property "Reference" "AE1" (at 355.6 142.23000000000002 0) (effects (font (size 1.27 1.27))))
+
+    (property "Value" "SMA_Foxeer_Lollipop_RHCP" (at 355.6 147.32999999999998 0) (effects (font (size 1.27 1.27))))
+
+    (property "Footprint" "" (at 355.6 144.78 0) (effects (font (size 1.27 1.27)) hide))
+
+    (property "Datasheet" "" (at 355.6 144.78 0) (effects (font (size 1.27 1.27)) hide))
+
+    (pin "1" (uuid 6f81484b-8c2e-46db-93ae-c5dcfad627b7))
+
+    (instances
+
+      (project "gx140_rev2"
+
+        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "AE1") (unit 1))
+
+      )
+
+    )
+
+  )
+
+  (symbol (lib_id "grok:ANTENNA") (at 315.60 196.85 0) (unit 1)
+
+    (in_bom yes) (on_board yes) (dnp no)
+
+    (uuid 99e9b47f-12ff-4b7f-b57b-ff7ca8606281)
+
+    (property "Reference" "AE2" (at 355.6 194.3 0) (effects (font (size 1.27 1.27))))
+
+    (property "Value" "ANT1_vert_L_standoff" (at 355.6 199.39999999999998 0) (effects (font (size 1.27 1.27))))
+
+    (property "Footprint" "" (at 355.6 196.85 0) (effects (font (size 1.27 1.27)) hide))
+
+    (property "Datasheet" "" (at 355.6 196.85 0) (effects (font (size 1.27 1.27)) hide))
+
+    (pin "1" (uuid d9b45e53-d1ae-4231-9390-6587b4aa6a5a))
+
+    (instances
+
+      (project "gx140_rev2"
+
+        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "AE2") (unit 1))
+
+      )
+
+    )
+
+  )
+
+  (symbol (lib_id "grok:ANTENNA") (at 315.60 207.01 0) (unit 1)
+
+    (in_bom yes) (on_board yes) (dnp no)
+
+    (uuid 0023fc90-4352-46a4-84d7-dc0e565d720e)
+
+    (property "Reference" "AE3" (at 355.6 204.46 0) (effects (font (size 1.27 1.27))))
+
+    (property "Value" "ANT2_horiz_top_plate" (at 355.6 209.55999999999997 0) (effects (font (size 1.27 1.27))))
+
+    (property "Footprint" "" (at 355.6 207.01 0) (effects (font (size 1.27 1.27)) hide))
+
+    (property "Datasheet" "" (at 355.6 207.01 0) (effects (font (size 1.27 1.27)) hide))
+
+    (pin "1" (uuid 249d5288-d13f-435f-8ece-b06efb1cc8e4))
+
+    (instances
+
+      (project "gx140_rev2"
+
+        (path "/0da7f58c-4bd8-48c3-bbae-a8d301f4b283" (reference "AE3") (unit 1))
+
+      )
+
+    )
+
+  )
+
+  (wire (pts (xy 26.04 87.63) (xy 31.12 87.63))
+
+    (stroke (width 0) (type default)) (uuid 5750123d-659e-4861-a58d-0bbe3ad5be77)
+
+  )
+
+  (wire (pts (xy 26.04 90.17) (xy 31.12 90.17))
+
+    (stroke (width 0) (type default)) (uuid 9392dea9-eccd-4c4e-b5a2-22507044cea4)
+
+  )
+
+  (wire (pts (xy 53.98 78.74) (xy 59.06 78.74))
+
+    (stroke (width 0) (type default)) (uuid 1740c70d-f5f5-423c-9992-5437af32d809)
+
+  )
+
+  (wire (pts (xy 53.98 81.28) (xy 59.06 81.28))
+
+    (stroke (width 0) (type default)) (uuid 3953a33d-7922-49e5-80c8-44444d119f93)
+
+  )
+
+  (wire (pts (xy 53.98 83.82) (xy 59.06 83.82))
+
+    (stroke (width 0) (type default)) (uuid 605a4ebe-4c97-47dd-81c4-970eba2d942c)
+
+  )
+
+  (wire (pts (xy 53.98 86.36) (xy 59.06 86.36))
+
+    (stroke (width 0) (type default)) (uuid 9e571b90-6324-4e21-9ce7-aae74d3f888e)
+
+  )
+
+  (wire (pts (xy 53.98 88.9) (xy 59.06 88.9))
+
+    (stroke (width 0) (type default)) (uuid 38fd7a86-9817-46d8-9197-7a67719a716b)
+
+  )
+
+  (wire (pts (xy 53.98 91.44) (xy 59.06 91.44))
+
+    (stroke (width 0) (type default)) (uuid 7739767f-d8c1-4bf7-a79e-1accd7ef704b)
+
+  )
+
+  (wire (pts (xy 53.98 93.98) (xy 59.06 93.98))
+
+    (stroke (width 0) (type default)) (uuid f10f212c-f5bc-4545-b967-23259191f9bd)
+
+  )
+
+  (wire (pts (xy 114.94 74.93) (xy 120.02 74.93))
+
+    (stroke (width 0) (type default)) (uuid 19efcbef-bb7c-4586-84eb-0301e2073a5f)
+
+  )
+
+  (wire (pts (xy 114.94 77.47) (xy 120.02 77.47))
+
+    (stroke (width 0) (type default)) (uuid 845a9d26-2326-48f1-8007-0645e84e7185)
+
+  )
+
+  (wire (pts (xy 114.94 80.01) (xy 120.02 80.01))
+
+    (stroke (width 0) (type default)) (uuid 856c4731-2c83-4cd4-8971-94311f2451ee)
+
+  )
+
+  (wire (pts (xy 114.94 82.55) (xy 120.02 82.55))
+
+    (stroke (width 0) (type default)) (uuid 4b8fb630-be74-4a21-9939-73f4c06dcd6d)
+
+  )
+
+  (wire (pts (xy 114.94 85.09) (xy 120.02 85.09))
+
+    (stroke (width 0) (type default)) (uuid 4829cf71-0328-4faf-897e-d5bf60bd4998)
+
+  )
+
+  (wire (pts (xy 114.94 87.63) (xy 120.02 87.63))
+
+    (stroke (width 0) (type default)) (uuid 55c29e6a-0700-49c4-8191-540f2a65b39a)
+
+  )
+
+  (wire (pts (xy 114.94 90.17) (xy 120.02 90.17))
+
+    (stroke (width 0) (type default)) (uuid a494ddc8-4bcc-46dc-89fa-f0ba6eb04e39)
+
+  )
+
+  (wire (pts (xy 114.94 92.71) (xy 120.02 92.71))
+
+    (stroke (width 0) (type default)) (uuid 40cde57d-88d2-45fa-a1e9-ce53b5e16e6b)
+
+  )
+
+  (wire (pts (xy 114.94 95.25) (xy 120.02 95.25))
+
+    (stroke (width 0) (type default)) (uuid e85c72a5-af69-4f70-8193-747e8579d0ec)
+
+  )
+
+  (wire (pts (xy 114.94 97.79) (xy 120.02 97.79))
+
+    (stroke (width 0) (type default)) (uuid e782392a-cf7e-4cdf-8387-0c0ade9858c1)
+
+  )
+
+  (wire (pts (xy 114.94 100.33) (xy 120.02 100.33))
+
+    (stroke (width 0) (type default)) (uuid 4e6a5a64-e685-40d2-9bf6-4d8329352cc5)
+
+  )
+
+  (wire (pts (xy 114.94 102.87) (xy 120.02 102.87))
+
+    (stroke (width 0) (type default)) (uuid a9094a6d-44b4-48d3-a4a8-ff89382b5c3f)
+
+  )
+
+  (wire (pts (xy 159.39 63.5) (xy 164.47 63.5))
+
+    (stroke (width 0) (type default)) (uuid 77744a5c-b5f6-4221-befa-2fb2f17ba490)
+
+  )
+
+  (wire (pts (xy 159.39 66.04) (xy 164.47 66.04))
+
+    (stroke (width 0) (type default)) (uuid d6863662-a5bb-446e-bd12-d04655ea68f8)
+
+  )
+
+  (wire (pts (xy 159.39 68.58) (xy 164.47 68.58))
+
+    (stroke (width 0) (type default)) (uuid f44aec25-27e4-423c-ab38-efbe50018738)
+
+  )
+
+  (wire (pts (xy 159.39 83.82) (xy 164.47 83.82))
+
+    (stroke (width 0) (type default)) (uuid 752dfc9f-72b3-412b-95a9-8a10d9f04412)
+
+  )
+
+  (wire (pts (xy 159.39 86.36) (xy 164.47 86.36))
+
+    (stroke (width 0) (type default)) (uuid 2323ab38-6bdb-47d0-9697-2ba39eb135b2)
+
+  )
+
+  (wire (pts (xy 159.39 88.9) (xy 164.47 88.9))
+
+    (stroke (width 0) (type default)) (uuid 1a123a4e-9e2e-457f-b9c8-584cf420e370)
+
+  )
+
+  (wire (pts (xy 159.39 104.14) (xy 164.47 104.14))
+
+    (stroke (width 0) (type default)) (uuid 31988162-5b6a-42bc-a3fd-8faa70525c81)
+
+  )
+
+  (wire (pts (xy 159.39 106.68) (xy 164.47 106.68))
+
+    (stroke (width 0) (type default)) (uuid 00de93ae-e412-4184-bb2d-6577b4850916)
+
+  )
+
+  (wire (pts (xy 159.39 109.22) (xy 164.47 109.22))
+
+    (stroke (width 0) (type default)) (uuid 07c5e59e-7cb9-44b0-b264-698b8a032776)
+
+  )
+
+  (wire (pts (xy 159.39 124.46) (xy 164.47 124.46))
+
+    (stroke (width 0) (type default)) (uuid 55a62ec8-f33d-4bb5-be39-95640ae996e2)
+
+  )
+
+  (wire (pts (xy 159.39 127.0) (xy 164.47 127.0))
+
+    (stroke (width 0) (type default)) (uuid b7f872aa-5c4c-4dbe-807b-f421f1a8be21)
+
+  )
+
+  (wire (pts (xy 159.39 129.54) (xy 164.47 129.54))
+
+    (stroke (width 0) (type default)) (uuid bda77aee-b953-48f9-b036-0d47e374fe5b)
+
+  )
+
+  (wire (pts (xy 53.98 162.56) (xy 59.06 162.56))
+
+    (stroke (width 0) (type default)) (uuid 66699281-76a1-48b8-b949-1b7bffae8195)
+
+  )
+
+  (wire (pts (xy 53.98 165.1) (xy 59.06 165.1))
+
+    (stroke (width 0) (type default)) (uuid e6f4d6f8-8b51-49a9-9327-23566bd248dc)
+
+  )
+
+  (wire (pts (xy 53.98 167.64) (xy 59.06 167.64))
+
+    (stroke (width 0) (type default)) (uuid 93e17f6c-6be3-4a33-a4f5-6d498abdaa30)
+
+  )
+
+  (wire (pts (xy 53.98 170.18) (xy 59.06 170.18))
+
+    (stroke (width 0) (type default)) (uuid 1d2d2ed0-cfba-44e0-a278-c171202f4623)
+
+  )
+
+  (wire (pts (xy 53.98 172.72) (xy 59.06 172.72))
+
+    (stroke (width 0) (type default)) (uuid e39e08d4-7a34-440d-a47c-382e8e8827a7)
+
+  )
+
+  (wire (pts (xy 53.98 175.26) (xy 59.06 175.26))
+
+    (stroke (width 0) (type default)) (uuid afc4d2a0-4990-4bf3-8204-ba6fe076ba7a)
+
+  )
+
+  (wire (pts (xy 53.98 177.8) (xy 59.06 177.8))
+
+    (stroke (width 0) (type default)) (uuid 2229d3ab-877b-47fd-9cec-6c11f4e5fe60)
+
+  )
+
+  (wire (pts (xy 114.94 162.56) (xy 120.02 162.56))
+
+    (stroke (width 0) (type default)) (uuid 4795565e-6558-471a-af7d-f0ec190be691)
+
+  )
+
+  (wire (pts (xy 114.94 165.1) (xy 120.02 165.1))
+
+    (stroke (width 0) (type default)) (uuid 30a66a84-8174-4f70-ac2d-1ee18527fa78)
+
+  )
+
+  (wire (pts (xy 114.94 167.64) (xy 120.02 167.64))
+
+    (stroke (width 0) (type default)) (uuid e1b84776-e1fb-4b89-a0dc-b94bd741a735)
+
+  )
+
+  (wire (pts (xy 114.94 170.18) (xy 120.02 170.18))
+
+    (stroke (width 0) (type default)) (uuid e8ac0429-6bae-481d-8f56-dd3b5edae6b5)
+
+  )
+
+  (wire (pts (xy 114.94 175.26) (xy 120.02 175.26))
+
+    (stroke (width 0) (type default)) (uuid e92a3f5b-3e63-45d0-ad45-fb571ad36c95)
+
+  )
+
+  (wire (pts (xy 114.94 177.8) (xy 120.02 177.8))
+
+    (stroke (width 0) (type default)) (uuid 7199a917-722a-4039-a893-a3091403f6d8)
+
+  )
+
+  (wire (pts (xy 114.94 180.34) (xy 120.02 180.34))
+
+    (stroke (width 0) (type default)) (uuid f761abba-c831-4d6a-ad16-4ec25df694fa)
+
+  )
+
+  (wire (pts (xy 114.94 182.88) (xy 120.02 182.88))
+
+    (stroke (width 0) (type default)) (uuid d2a46225-9f0c-427d-891f-9e6ad60b2309)
+
+  )
+
+  (wire (pts (xy 114.94 185.42) (xy 120.02 185.42))
+
+    (stroke (width 0) (type default)) (uuid db943bbc-0431-4a59-b56f-2218599277a9)
+
+  )
+
+  (wire (pts (xy 114.94 187.96) (xy 120.02 187.96))
+
+    (stroke (width 0) (type default)) (uuid 718bd2ba-d6ae-4232-b934-e9dfa722fd5c)
+
+  )
+
+  (wire (pts (xy 214.00 143.51) (xy 219.08 143.51))
+
+    (stroke (width 0) (type default)) (uuid 272c4041-3fcc-4d49-8db1-70a1c50bbde8)
+
+  )
+
+  (wire (pts (xy 214.00 146.05) (xy 219.08 146.05))
+
+    (stroke (width 0) (type default)) (uuid 96f5fe0b-b7c0-4291-91f1-14e1b8aa9c39)
+
+  )
+
+  (wire (pts (xy 214.00 148.59) (xy 219.08 148.59))
+
+    (stroke (width 0) (type default)) (uuid 8842f46a-438b-455f-b2a8-387dcd5358e1)
+
+  )
+
+  (wire (pts (xy 214.00 151.13) (xy 219.08 151.13))
+
+    (stroke (width 0) (type default)) (uuid 671baf93-be24-43b3-af47-487d30c254eb)
+
+  )
+
+  (wire (pts (xy 264.80 148.59) (xy 269.88 148.59))
+
+    (stroke (width 0) (type default)) (uuid d6481615-37cc-44a7-8f26-012adef34fe5)
+
+  )
+
+  (wire (pts (xy 216.54 172.72) (xy 221.62 172.72))
+
+    (stroke (width 0) (type default)) (uuid ebade9bb-a9da-4ab1-8115-7d38080d0a29)
+
+  )
+
+  (wire (pts (xy 216.54 175.26) (xy 221.62 175.26))
+
+    (stroke (width 0) (type default)) (uuid a6942093-503f-4cf4-ac17-eb7ab3f2adf2)
+
+  )
+
+  (wire (pts (xy 262.26 173.99) (xy 267.34 173.99))
+
+    (stroke (width 0) (type default)) (uuid 9cf9181b-9061-4464-b1b2-722c70e66294)
+
+  )
+
+  (wire (pts (xy 214.00 194.31) (xy 219.08 194.31))
+
+    (stroke (width 0) (type default)) (uuid 733e5814-fec3-45cb-a500-de5dc83e8124)
+
+  )
+
+  (wire (pts (xy 214.00 196.85) (xy 219.08 196.85))
+
+    (stroke (width 0) (type default)) (uuid 9bcac3bb-3f67-428d-a5ea-161cc1b6d9c3)
+
+  )
+
+  (wire (pts (xy 214.00 199.39) (xy 219.08 199.39))
+
+    (stroke (width 0) (type default)) (uuid 6570354a-428d-418b-b1c1-a81919c6f01d)
+
+  )
+
+  (wire (pts (xy 214.00 201.93) (xy 219.08 201.93))
+
+    (stroke (width 0) (type default)) (uuid 778b1df6-e2fe-4adb-80a4-28d98e034f88)
+
+  )
+
+  (wire (pts (xy 264.80 196.85) (xy 269.88 196.85))
+
+    (stroke (width 0) (type default)) (uuid 773adb7f-0f73-4eb2-9b46-7382db000bd2)
+
+  )
+
+  (wire (pts (xy 264.80 199.39) (xy 269.88 199.39))
+
+    (stroke (width 0) (type default)) (uuid 0f62e4db-aee2-43b3-bbb8-45672e5dddad)
+
+  )
+
+  (wire (pts (xy 214.00 224.79) (xy 219.08 224.79))
+
+    (stroke (width 0) (type default)) (uuid 96211438-5306-42e7-802b-f59fb5293165)
+
+  )
+
+  (wire (pts (xy 214.00 227.33) (xy 219.08 227.33))
+
+    (stroke (width 0) (type default)) (uuid 6218b1d7-dede-4f0b-825c-d9bffba5304c)
+
+  )
+
+  (wire (pts (xy 214.00 229.87) (xy 219.08 229.87))
+
+    (stroke (width 0) (type default)) (uuid 0b3d8ee4-6db7-446a-90f8-c4e62c6233cb)
+
+  )
+
+  (wire (pts (xy 214.00 232.41) (xy 219.08 232.41))
+
+    (stroke (width 0) (type default)) (uuid a79033f9-3b22-4209-9ae0-5190364e50e3)
+
+  )
+
+  (wire (pts (xy 214.00 234.95) (xy 219.08 234.95))
+
+    (stroke (width 0) (type default)) (uuid cc26e506-2df3-42d6-aa26-4fa95444077d)
+
+  )
+
+  (wire (pts (xy 214.00 237.49) (xy 219.08 237.49))
+
+    (stroke (width 0) (type default)) (uuid 0403321b-f5b8-45a4-880b-0fe71918441c)
+
+  )
+
+  (wire (pts (xy 302.90 148.59) (xy 307.98 148.59))
+
+    (stroke (width 0) (type default)) (uuid 646239eb-d574-424f-9d1d-a5b1672757e6)
+
+  )
+
+  (wire (pts (xy 302.90 200.66) (xy 307.98 200.66))
+
+    (stroke (width 0) (type default)) (uuid aa327293-061a-4c1d-9382-fa03cbe75521)
+
+  )
+
+  (wire (pts (xy 302.90 210.82) (xy 307.98 210.82))
+
+    (stroke (width 0) (type default)) (uuid 9bf1bf7c-acfe-4d3f-937c-5df2aeb5a092)
+
+  )
+
+  (label "VBAT" (at 31.12 87.63 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid abc6b19e-6702-463c-a899-bc573a522d35)
+
+  )
+
+  (label "GND" (at 31.12 90.17 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid 152815c2-1158-48e5-8874-eedeee8cc7eb)
+
+  )
+
+  (label "VBAT" (at 53.98 78.74 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid 19e9cdc3-d41e-4b7e-b11f-717c6e42d59a)
+
+  )
+
+  (label "GND" (at 53.98 81.28 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid c90dcfdf-1dfb-4530-8b87-fce515ad39d6)
+
+  )
+
+  (label "FC_M1_TO_ESC_S1" (at 53.98 83.82 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid 30735159-b216-41e3-aabc-7ef093f07c2a)
+
+  )
+
+  (label "FC_M2_TO_ESC_S2" (at 53.98 86.36 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid d3ff3c87-dc08-4b0a-b404-1de1024bcdcb)
+
+  )
+
+  (label "FC_M3_TO_ESC_S3" (at 53.98 88.9 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid 927b7675-281a-436a-a9f3-b70c8a8669a8)
+
+  )
+
+  (label "FC_M4_TO_ESC_S4" (at 53.98 91.44 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid a5732860-36ec-446f-935e-62af0d545529)
+
+  )
+
+  (label "ESC_CURR_TO_FC" (at 53.98 93.98 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid ca7783bd-b678-4946-9c5a-531f05cd083e)
+
+  )
+
+  (label "M1_A" (at 120.02 74.93 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid ee8bb171-fd80-4025-a271-03d2eef2b5c1)
+
+  )
+
+  (label "M1_B" (at 120.02 77.47 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid c0881938-7d90-4afb-83af-16e22baac6bc)
+
+  )
+
+  (label "M1_C" (at 120.02 80.01 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid 0de6dca7-023a-4cfd-9f2e-f2e289857694)
+
+  )
+
+  (label "M2_A" (at 120.02 82.55 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid 5a2db59d-7459-47d7-8b3c-c0c3d068afba)
+
+  )
+
+  (label "M2_B" (at 120.02 85.09 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid c74a9cb9-e9e9-4ace-832b-21a991323a57)
+
+  )
+
+  (label "M2_C" (at 120.02 87.63 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid 4fb1b73c-20d6-4736-bd14-22b05faa2f57)
+
+  )
+
+  (label "M3_A" (at 120.02 90.17 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid a84076bf-9459-4d8c-a105-23fd72ee7377)
+
+  )
+
+  (label "M3_B" (at 120.02 92.71 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid 59637083-7de7-4ea4-9f83-8608eae96382)
+
+  )
+
+  (label "M3_C" (at 120.02 95.25 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid 2d4138f0-3520-416d-b740-ad4fcccdbaed)
+
+  )
+
+  (label "M4_A" (at 120.02 97.79 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid acbc070a-5e63-4631-bd4e-c85da298f165)
+
+  )
+
+  (label "M4_B" (at 120.02 100.33 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid 22a34978-626b-4cd6-9dd0-dd910a20bbf0)
+
+  )
+
+  (label "M4_C" (at 120.02 102.87 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid 113fca44-9f92-434d-aa5d-17512abf03f2)
+
+  )
+
+  (label "M1_A" (at 159.39 63.5 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid 5f74cba3-8292-4eb3-b133-bfa1e56f23db)
+
+  )
+
+  (label "M1_B" (at 159.39 66.04 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid e569716c-5707-4552-b182-42eefdb959f8)
+
+  )
+
+  (label "M1_C" (at 159.39 68.58 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid e7511947-b7ca-4d6e-b4c6-30d5eabaf7bd)
+
+  )
+
+  (label "M2_A" (at 159.39 83.82 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid 0c5bb490-8cff-4ba9-ae45-bf4e174aca27)
+
+  )
+
+  (label "M2_B" (at 159.39 86.36 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid 8a17d168-1d5d-46af-abad-7a6f47b6a6fe)
+
+  )
+
+  (label "M2_C" (at 159.39 88.9 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid c283f573-ccb2-4359-83fa-6177ce5a5ef5)
+
+  )
+
+  (label "M3_A" (at 159.39 104.14 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid 83550bbc-667d-4805-884f-9c8bc2eb1be5)
+
+  )
+
+  (label "M3_B" (at 159.39 106.68 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid f89b88f8-0e26-4dcc-8329-8a177d6a03bc)
+
+  )
+
+  (label "M3_C" (at 159.39 109.22 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid 9f89be56-ae0e-43b6-893f-aab7bcd73227)
+
+  )
+
+  (label "M4_A" (at 159.39 124.46 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid d5eeb280-718c-4d68-9f61-06330b90b511)
+
+  )
+
+  (label "M4_B" (at 159.39 127.0 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid dbb984b2-ed8b-44a2-9bb7-27cecd69a98b)
+
+  )
+
+  (label "M4_C" (at 159.39 129.54 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid 5e5fb5d5-c66a-4607-bc74-78ccd962d436)
+
+  )
+
+  (label "VBAT" (at 53.98 162.56 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid ecc05be5-70f2-4db8-a423-543a72edb259)
+
+  )
+
+  (label "GND" (at 53.98 165.1 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid 10489625-ef52-42ee-a045-fd060f7ffa8c)
+
+  )
+
+  (label "ESC_CURR_TO_FC" (at 53.98 167.64 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid b99f3f63-c99a-4ab6-ad85-33add8dc4913)
+
+  )
+
+  (label "FC_M1_TO_ESC_S1" (at 53.98 170.18 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid b74c87bc-6594-41c2-b561-9236b786cbe5)
+
+  )
+
+  (label "FC_M2_TO_ESC_S2" (at 53.98 172.72 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid ae1e6af7-cbaf-42d9-b7c3-9e8b902c6176)
+
+  )
+
+  (label "FC_M3_TO_ESC_S3" (at 53.98 175.26 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid edf4bdfc-000c-46cc-b313-0703cb547eb4)
+
+  )
+
+  (label "FC_M4_TO_ESC_S4" (at 53.98 177.8 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid 8de72092-21c1-422d-a431-0f90976af1a6)
+
+  )
+
+  (label "5V" (at 120.02 162.56 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid 2e443f01-0a4f-4d4e-8d1e-b27ab033b9d4)
+
+  )
+
+  (label "CAM_VID_TO_FC_VIN" (at 120.02 165.1 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid fdb0319a-718d-4916-902e-5af5eed42c92)
+
+  )
+
+  (label "FC_VOUT_TO_VTX_VID" (at 120.02 167.64 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid 33d58d86-2f33-4085-b413-3413bd011448)
+
+  )
+
+  (label "FC_TX4_TO_VTX_SA" (at 120.02 170.18 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid c144c907-4295-4b9c-a1da-d056ee885126)
+
+  )
+
+  (label "FC_TX5_TO_RX_CRSF" (at 120.02 175.26 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid d73caf1a-45de-4275-aaad-279a8b8bc404)
+
+  )
+
+  (label "FC_RX5_FROM_RX_CRSF" (at 120.02 177.8 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid 3cead607-1184-40d0-8431-a831cb13f3dc)
+
+  )
+
+  (label "FC_TX3_TO_GPS_RX" (at 120.02 180.34 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid a37f4904-dccb-4d5f-b248-530ed5293309)
+
+  )
+
+  (label "FC_RX3_FROM_GPS_TX" (at 120.02 182.88 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid cca0e5eb-35e9-425b-bbd9-17c32044aabf)
+
+  )
+
+  (label "I2C_SDA" (at 120.02 185.42 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid c609e074-0a1a-4ad2-8d81-fe4bcb26ee8e)
+
+  )
+
+  (label "I2C_SCL" (at 120.02 187.96 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid 64d434f5-572a-40ce-b4b4-060d8da91067)
+
+  )
+
+  (label "5V" (at 214.00 143.51 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid 49561446-913e-4c07-b449-b2ff37ebeaef)
+
+  )
+
+  (label "GND" (at 214.00 146.05 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid 33c82719-ff3c-41ab-ba05-55f1647bc9b7)
+
+  )
+
+  (label "FC_VOUT_TO_VTX_VID" (at 214.00 148.59 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid e0897efb-59b6-4005-9f98-130bef01f174)
+
+  )
+
+  (label "FC_TX4_TO_VTX_SA" (at 214.00 151.13 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid ede70389-0d2a-4c2f-8b2a-a46b428fa06a)
+
+  )
+
+  (label "VTX_ANT" (at 269.88 148.59 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid 07e111a3-4648-48d5-8919-a8fa588c49b1)
+
+  )
+
+  (label "5V" (at 216.54 172.72 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid 6f7e9cf7-bb9f-4544-8d91-a54b26d9461f)
+
+  )
+
+  (label "GND" (at 216.54 175.26 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid f669f828-cdcc-4900-bdde-e44a9367cf47)
+
+  )
+
+  (label "CAM_VID_TO_FC_VIN" (at 267.34 173.99 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid cdc2ea44-40cd-43c4-b2a9-ca753bc6d6c5)
+
+  )
+
+  (label "5V" (at 214.00 194.31 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid c20fffcf-848c-4fd7-afd0-1990922031d8)
+
+  )
+
+  (label "GND" (at 214.00 196.85 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid dd219ba9-1e78-4e4e-badc-58c131c9b094)
+
+  )
+
+  (label "FC_TX5_TO_RX_CRSF" (at 214.00 199.39 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid fa16bacf-bd99-41cd-bd06-797c586cb37a)
+
+  )
+
+  (label "FC_RX5_FROM_RX_CRSF" (at 214.00 201.93 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid 25238e7c-01de-430e-bfe3-583c8de1c5c2)
+
+  )
+
+  (label "RX_ANT1" (at 269.88 196.85 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid e051655b-577a-4dbf-9906-715f22abb6bf)
+
+  )
+
+  (label "RX_ANT2" (at 269.88 199.39 0)
+
+    (effects (font (size 1.27 1.27)) (justify left))
+
+    (uuid 56f38f10-2b43-484c-9a10-445ce54813cc)
+
+  )
+
+  (label "5V" (at 214.00 224.79 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid db11e245-6e28-42a3-9256-f22736054998)
+
+  )
+
+  (label "GND" (at 214.00 227.33 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid 6c68e884-4e6a-4baa-86b0-12af26fceb43)
+
+  )
+
+  (label "FC_TX3_TO_GPS_RX" (at 214.00 229.87 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid 518b9977-9452-4b78-85ea-0cb4fe050e64)
+
+  )
+
+  (label "FC_RX3_FROM_GPS_TX" (at 214.00 232.41 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid 3a34ebdb-8610-47f6-be42-7544da70f37d)
+
+  )
+
+  (label "I2C_SDA" (at 214.00 234.95 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid 4f85785c-1084-40c0-ba31-35430ba73a7e)
+
+  )
+
+  (label "I2C_SCL" (at 214.00 237.49 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid d7cac862-5ab0-4b36-b56a-ffda9d0fbcd7)
+
+  )
+
+  (label "VTX_ANT" (at 302.90 148.59 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid 8c5aea77-bddd-4ca0-84c3-23ee2462e32c)
+
+  )
+
+  (label "RX_ANT1" (at 302.90 200.66 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid d565812f-71f1-4cd7-a31c-b2295fb9fb21)
+
+  )
+
+  (label "RX_ANT2" (at 302.90 210.82 0)
+
+    (effects (font (size 1.27 1.27)) (justify right))
+
+    (uuid 3413d5cd-200f-4151-af80-8009d6ec0e45)
+
+  )
+
+  (no_connect (at 114.94 172.72) (uuid b25aaeed-9aaf-479e-a347-2aa4d5d7cbd5))
+
+  (text "GX140 3in ANALOG FPV — ELECTRICAL SCHEMATIC (Rev 2.0)" (at 25.4 22.86 0)
+
+    (effects (font (size 2.54 2.54)) (justify left bottom))
+
+    (uuid d546bf39-9e73-4267-9939-96b37dbf5c47)
+
+  )
+
+  (text "METHOD: point-to-point by net label. Every conductor breaks out at the device pin." (at 25.4 29.21 0)
+
+    (effects (font (size 1.6 1.6)) (justify left bottom))
+
+    (uuid aad0a6e5-ec3d-4238-bcba-b443cf4dc96e)
+
+  )
+
+  (text "Match net names to find the far end. No routed runs, no crossings, no junction ambiguity." (at 25.4 32.51 0)
+
+    (effects (font (size 1.6 1.6)) (justify left bottom))
+
+    (uuid c7f153f5-9d5f-42c2-87ea-a624e8022b2c)
+
+  )
+
+  (text "=== POWER TREE ===" (at 335 38.1 0)
+
     (effects (font (size 1.778 1.778)) (justify left bottom))
-    (uuid e2deea6e-6fee-47db-b48d-ed661e3e9c2c)
+
+    (uuid 4a5f310f-0ed8-4885-ac6a-81d4cc32fec3)
+
   )
-  (text "Swap any two phases to reverse direction. M1 FL CCW | M2 FR CW | M3 RL CCW | M4 RR CW." (at 167.64 50.8 0)
+
+  (text "BAT XT30 -> ESC VBAT pads (22AWG). FC powered via ESC 8-pin harness (VBAT/GND/CURR/S1-S4)." (at 335 41.91 0)
+
     (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 92d7fb00-2c97-4796-a5f1-c8087856193e)
+
+    (uuid af722aa5-158a-4a38-ba2f-99b75f2e46ff)
+
   )
+
+  (text "FC internal 5V/3A BEC -> 5V net -> VTX, CAM, RX, GPS." (at 335 44.96 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid a210277f-407d-4e6f-9066-9b77dfadcb57)
+
+  )
+
+  (text "=== UART MAP (F405 Mini) ===" (at 335 50.55 0)
+
+    (effects (font (size 1.778 1.778)) (justify left bottom))
+
+    (uuid 2f3c6ebd-ee9c-4c69-9d17-6fd210199ba6)
+
+  )
+
+  (text "UART3: GPS 57600 (TX3_GPS / RX3_GPS) | UART4: SmartAudio 2.1 (TX4 only, RX4 = N/C)" (at 335 54.36 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid a725f137-43bc-4e64-843b-edd5047c422a)
+
+  )
+
+  (text "UART5: ELRS CRSF 420k (TX5_CRSF -> RX.RX, RX.TX -> RX5_CRSF) | I2C: QMC5883L compass" (at 335 57.41 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid 42d46924-b2c1-4a6f-93f6-f28d072b6610)
+
+  )
+
+  (text "=== VIDEO PATH (corrected) ===" (at 335 63.0 0)
+
+    (effects (font (size 1.778 1.778)) (justify left bottom))
+
+    (uuid 7c7d2243-4add-4e82-8d20-bbcc45f45fd6)
+
+  )
+
+  (text "CAM.VID -> FC.VIN (CAM_VIDEO) -> AT7456E OSD -> FC.VOUT -> VTX.VID_IN (VTX_VIDEO)." (at 335 66.81 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid 7e005c7b-4ddc-445d-a75e-6e3b988129fc)
+
+  )
+
+  (text "Grok rev1 bypassed the OSD: camera direct to VTX = no Betaflight OSD overlay." (at 335 69.86 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid 6bfa2361-8b1a-4291-b27f-c3a4f74c77ad)
+
+  )
+
+  (text "=== WIRING ===" (at 335 246.38 0)
+
+    (effects (font (size 1.778 1.778)) (justify left bottom))
+
+    (uuid 090deb54-27f0-4b51-9f30-10a425cea7c3)
+
+  )
+
+  (text "22AWG: VBAT, GND, motor phase | 26AWG: UART, DShot, video | 28AWG: I2C" (at 335 250.19 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid 175ab255-92e3-4d90-9bcf-65df98999a90)
+
+  )
+
+  (text "JST-SH 1.0mm: CAM | JST-GH 1.25mm: GPS | XT30: battery | Heat shrink all joints" (at 335 253.24 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid ac91e7b4-f2df-4fad-a9ed-cfb03a4a1656)
+
+  )
+
+  (text "=== SAFETY ===" (at 335 258.83 0)
+
+    (effects (font (size 1.778 1.778)) (justify left bottom))
+
+    (uuid 12b64083-c063-41df-8e29-d77799b1f40f)
+
+  )
+
+  (text "Smoke stopper (ShortSaver) MANDATORY first power-up | Props OFF for motor direction test" (at 335 262.64 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid 794bdb96-4286-4dbb-aa8a-ffba5b3a7afd)
+
+  )
+
+  (text "Continuity check VBAT-GND before battery | Verify motor order/direction in Betaflight Motors tab" (at 335 265.69 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid 0d5ac5d3-b99c-4ba1-ab73-13da5b568f11)
+
+  )
+
+  (text "=== STACK ASSEMBLY (bottom to top) ===" (at 360 60.96 0)
+
+    (effects (font (size 1.778 1.778)) (justify left bottom))
+
+    (uuid f1111111-2222-3333-4444-555555555555)
+
+  )
+
+  (text "1.Bottom 2mm  2.Main 4mm CF  3.ESC 4in1  4.M2x6 standoffs" (at 360 64.77 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid f2222222-3333-4444-5555-666666666666)
+
+  )
+
+  (text "5.FC F405 Mini  6.VTX Zeus(rear)  7.CAM Caddx Ant(front,TPU)" (at 360 67.82 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid f3333333-4444-5555-6666-777777777777)
+
+  )
+
+  (text "8.RX SuperD(side,tape)  9.GPS(mast,opt)  10.BAT 2S(under,2x20mm strap)" (at 360 70.87 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid f4444444-5555-6666-7777-888888888888)
+
+  )
+
+  (text "=== TORQUE ===" (at 360 78.74 0)
+
+    (effects (font (size 1.778 1.778)) (justify left bottom))
+
+    (uuid f5555555-6666-7777-8888-999999999999)
+
+  )
+
+  (text "Motor M2x5: 0.25 N-m(Loctite243)  Stack M2 nylon: 0.15 N-m" (at 360 82.55 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid f6666666-7777-8888-9999-aaaaaaaaaaaa)
+
+  )
+
+  (text "Top M2.5x10: 0.35 N-m  Bottom M2.5x12: 0.40 N-m  Prop nut: hand+1/4" (at 360 85.6 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid f7777777-8888-9999-aaaa-bbbbbbbbbbbb)
+
+  )
+
+  (text "=== REVERSE WIRE TAGS ===" (at 360 90.42 0)
+
+    (effects (font (size 1.778 1.778)) (justify left bottom))
+
+    (uuid f8888888-9999-aaaa-bbbb-cccccccccccc)
+
+  )
+
+  (text "Tag at DESTINATION end: -> DST:PIN <- SRC:COMP.PIN  Ex: -> VTX.VID_IN <- FC.VOUT" (at 360 94.23 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid f9999999-aaaa-bbbb-cccc-dddddddddddd)
+
+  )
+
+  (text "1.5mm heat shrink tag, 10mm from pad, text reads toward component" (at 360 97.28 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid faaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee)
+
+  )
+
+  (text "=== WIRE SCHEDULE ===" (at 360 102.11 0)
+
+    (effects (font (size 1.778 1.778)) (justify left bottom))
+
+    (uuid fbbbbbbb-cccc-dddd-eeee-ffffffffffff)
+
+  )
+
+  (text "PWR: BAT->ESC VBAT+/- 22AWG  |  BAT->FC VBAT/GND 22AWG" (at 360 105.92 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid fccccccc-dddd-eeee-ffff-aaaaaaaaaaaa)
+
+  )
+
+  (text "ARM: ESC M1-4 A/B/C -> M1-4 A/B/C  22AWG  25-55mm" (at 360 108.97 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid fddddddd-eeee-ffff-aaaa-bbbbbbbbbbbb)
+
+  )
+
+  (text "HARN: ESC 8-pin -> FC VBAT/GND/CURR/S1-4  26AWG" (at 360 112.02 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid feeeeeee-ffff-aaaa-bbbb-cccccccccccc)
+
+  )
+
+  (text "5V: FC 5V/GND -> VTX/CAM/RX/GPS  26AWG  35-80mm" (at 360 115.07 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid ffffffff-aaaa-bbbb-cccc-dddddddddddd)
+
+  )
+
+  (text "VID: CAM->FC.VIN(OSD)->FC.VOUT->VTX  26AWG" (at 360 118.12 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee)
+
+  )
+
+  (text "UART: TX4->SA  TX5->RX.RX  RX5<-RX.TX  TX3->GPS.RX  RX3<-GPS.TX  26AWG" (at 360 121.17 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid bbbbbbbb-cccc-dddd-eeee-ffffffffffff)
+
+  )
+
+  (text "I2C: SDA/SCL FC<->GPS compass  28AWG" (at 360 124.22 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid cccccccc-dddd-eeee-ffff-aaaaaaaaaaaa)
+
+  )
+
+  (text "=== BATTERY ===" (at 335 271.78 0)
+
+    (effects (font (size 1.778 1.778)) (justify left bottom))
+
+    (uuid dddddddd-eeee-ffff-aaaa-bbbbbbbbbbbb)
+
+  )
+
+  (text "2S 550mAh LiHV XT30. Under bottom plate, 2x20mm straps." (at 335 275.59 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid eeeeeeee-ffff-aaaa-bbbb-cccccccccccc)
+
+  )
+
+  (text "=== ANTENNAS ===" (at 335 280.16 0)
+
+    (effects (font (size 1.778 1.778)) (justify left bottom))
+
+    (uuid ffffffff-aaaa-bbbb-cccc-dddddddddddd)
+
+  )
+
+  (text "VTX: Foxeer Lollipop RHCP SMA(rear)  RX: 2x dipoles 90-deg apart" (at 335 283.97 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee)
+
+  )
+
+  (text "RX ANT1: Vertical L-standoff(left arm)  ANT2: Horizontal(top plate)" (at 335 287.02 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid bbbbbbbb-cccc-dddd-eeee-ffffffffffff)
+
+  )
+
+  (text "=== BETAFLIGHT ===" (at 335 291.84 0)
+
+    (effects (font (size 1.778 1.778)) (justify left bottom))
+
+    (uuid cccccccc-dddd-eeee-ffff-aaaaaaaaaaaa)
+
+  )
+
+  (text "UART3: GPS 57600  UART4: SmartAudio auto  UART5: CRSF 420k" (at 335 295.65 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid dddddddd-eeee-ffff-aaaa-bbbbbbbbbbbb)
+
+  )
+
+  (text "DShot600 | RX: CRSF | Gyro update: 8k/8k" (at 335 298.7 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid eeeeeeee-ffff-aaaa-bbbb-cccccccccccc)
+
+  )
+
+
+
+  (text "MOTOR PHASE WIRING: 3 conductors per motor (A/B/C)." (at 360 46.99 0)
+
+    (effects (font (size 1.778 1.778)) (justify left bottom))
+
+    (uuid e2deea6e-6fee-47db-b48d-ed661e3e9c2c)
+
+  )
+
+  (text "Swap any two phases to reverse direction. M1 FL CCW | M2 FR CW | M3 RL CCW | M4 RR CW." (at 360 50.8 0)
+
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+
+    (uuid 92d7fb00-2c97-4796-a5f1-c8087856193e)
+
+  )
+
+
 
   (sheet_instances
+
     (path "/" (page "1"))
+
   )
+
 )
