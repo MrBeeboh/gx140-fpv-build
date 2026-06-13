@@ -1,0 +1,37 @@
+=== Downloading datasheets and manuals ===
+
+rk3566_ds: 000 0B
+
+rk3588_trm1: 000 0B
+
+betaflight_cli: 200 38732B
+
+betaflight_msp: 200 223647B
+
+speedybee_btnano: 404 74569B
+
+speedybee_f405: 404 74597B
+
+radxa_rock5c: 404 146B
+
+radxa_rock5c_brief: 404 146B
+
+radxa_zero3w_brief: 404 146B
+
+radxa_zero3w_schematic: 404 146B
+
+khadas_vim4_specs: 404 146B
+
+khadas_vim4_datasheet: 404 146B
+
+matek_m10q_5883: 404 1163B
+
+matek_h743_wlite: 404 1163B
+
+matek_pdb_hex: 404 1163B
+
+matek_3901l0x: 404 1163B
+
+walksnail_avatar_pro: 200 809324B
+
+walksnail_goggles_x: 200 809324B

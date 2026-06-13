@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Nginx directory listing with search, sorting, and theme support">
+    <meta name="color-scheme" content="light dark">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; worker-src 'self';">
+    <title>radxa downlad</title>
+    <link rel="stylesheet" href="/Nginx-Fancyindex/styles.css?v=20260409-1">
+</head>
+
+<body class="theme-light has-topbar">
+    <!--
+header.html
+© Radxa Computer (Shenzhen) Co.,Ltd.
+Theme modified by Radxa, based on Nginx-Fancyindex-Theme by Naereen (MIT License)
+-->
+
+    <!-- ===== Radxa Global Topbar ===== -->
+    <header class="radxa-topbar" role="banner">
+        <div class="radxa-topbar-inner">
+            <a class="radxa-topbar-logo" href="https://radxa.com/" target="_blank" rel="noopener">
+                <img src="/Nginx-Fancyindex/radxa-logo.svg" alt="Radxa" height="42">
+            </a>
+            <nav class="radxa-topbar-nav" aria-label="Radxa navigation">
+                <a href="https://radxa.com/" target="_blank" rel="noopener">Home</a>
+                <a href="https://radxa.com/products" target="_blank" rel="noopener">Products</a>
+                <a href="https://radxa.com/news" target="_blank" rel="noopener">Blog</a>
+                <a href="https://radxa.com/services" target="_blank" rel="noopener">Services</a>
+                <a href="https://docs.radxa.com/en/welcome" target="_blank" rel="noopener">Documentation</a>
+                <a href="https://radxa.com/community" target="_blank" rel="noopener">Support</a>
+                <a href="https://radxa.com/about" target="_blank" rel="noopener">About</a>
+            </nav>
+        </div>
+    </header>
+    <!-- ============================= -->
+
+    <div id="raw_include_HEADER_md"></div>
+    <h1>/rock5/5c/</h1>
+<table id="list"><thead><tr><th style="width:55%"><a href="?C=N&amp;O=A">File Name</a>&nbsp;<a href="?C=N&amp;O=D">&nbsp;&darr;&nbsp;</a></th><th style="width:20%"><a href="?C=S&amp;O=A">File Size</a>&nbsp;<a href="?C=S&amp;O=D">&nbsp;&darr;&nbsp;</a></th><th style="width:25%"><a href="?C=M&amp;O=A">Date</a>&nbsp;<a href="?C=M&amp;O=D">&nbsp;&darr;&nbsp;</a></th></tr></thead>
+<tbody><tr><td class="link"><a href="../">Parent directory/</a></td><td class="size">-</td><td class="date">-</td></tr>
+<tr><td class="link"><a href="compliance/" title="compliance">compliance/</a></td><td class="size">-</td><td class="date">2024-Sep-30 02:37</td></tr>
+<tr><td class="link"><a href="docs/" title="docs">docs/</a></td><td class="size">-</td><td class="date">2024-Mar-24 11:42</td></tr>
+<tr><td class="link"><a href="images/" title="images">images/</a></td><td class="size">-</td><td class="date">2024-Jun-03 03:32</td></tr>
+</tbody></table><div id="raw_include_README_md"></div>
+<footer class="preview-footer" aria-label="Site footer navigation">
+    <div class="preview-footer-inner">
+        <section class="preview-footer-col" aria-label="Radxa links">
+            <h2>Radxa</h2>
+            <a href="https://radxa.com/" target="_blank" rel="noopener">Home</a>
+            <a href="https://radxa.com/products" target="_blank" rel="noopener">Products</a>
+            <a href="https://radxa.com/news" target="_blank" rel="noopener">Blog</a>
+            <a href="https://radxa.com/services" target="_blank" rel="noopener">Services</a>
+            <a href="https://radxa.com/community" target="_blank" rel="noopener">Community</a>
+        </section>
+        <section class="preview-footer-col" aria-label="Support links">
+            <h2>Support</h2>
+            <a href="https://docs.radxa.com/en/welcome" target="_blank" rel="noopener">Docs</a>
+            <a href="https://wiki.radxa.com/" target="_blank" rel="noopener">Wiki</a>
+            <a href="https://forum.radxa.com/" target="_blank" rel="noopener">Forum</a>
+            <a href="https://github.com/radxa" target="_blank" rel="noopener">Github</a>
+            <a href="https://dl.radxa.com/" target="_blank" rel="noopener">Downloads</a>
+        </section>
+        <section class="preview-footer-col" aria-label="About links">
+            <h2>About</h2>
+            <a href="https://radxa.com/about" target="_blank" rel="noopener">About Radxa</a>
+            <a href="https://radxa.com/about#contact" target="_blank" rel="noopener">Contact Us</a>
+            <a href="https://radxa.com/about#distributors" target="_blank" rel="noopener">About Distributors</a>
+        </section>
+    </div>
+</footer>
+<script src="/Nginx-Fancyindex/addNginxFancyIndexForm.js?v=20260413-1" defer></script>
+<script src="/Nginx-Fancyindex/showdown.min.js"></script>
+<script src="/Nginx-Fancyindex/purify.min.js"></script>
+<script>
+    (function () {
+        'use strict';
+
+        // Wait for required libraries to be available
+        if (typeof showdown === 'undefined') {
+            console.warn('Showdown library not loaded, markdown rendering disabled');
+            return;
+        }
+
+        if (typeof DOMPurify === 'undefined') {
+            console.warn('DOMPurify library not loaded, markdown rendering disabled for security');
+            return;
+        }
+
+        const converter = new showdown.Converter({ tables: true });
+
+        function findListingLink(name) {
+            const links = document.querySelectorAll('#list tbody tr td a');
+            return Array.from(links).find(link => link.textContent.trim() === name) || null;
+        }
+
+        function removeElement(element) {
+            element?.remove();
+        }
+
+        function renderMarkdown(targetId, source) {
+            const target = document.getElementById(targetId);
+            if (!target || !findListingLink(source)) {
+                removeElement(target);
+                return;
+            }
+
+            // Show loading state
+            target.innerHTML = '<p class="markdown-loading" style="color: var(--muted); font-style: italic; padding: 1rem;">Loading...</p>';
+
+            fetch(source)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(text => {
+                    const normalized = text.replace(/\n[ ]*/g, '\n');
+                    const html = converter.makeHtml(normalized);
+                    // Sanitize HTML with DOMPurify before inserting
+                    const clean = DOMPurify.sanitize(html, {
+                        ALLOWED_TAGS: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'br', 'strong', 'em', 'u', 'code', 'pre', 'a', 'ul', 'ol', 'li', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'blockquote', 'hr', 'img'],
+                        ALLOWED_ATTR: ['href', 'src', 'alt', 'title', 'class', 'id', 'width', 'height', 'loading']
+                    });
+                    target.innerHTML = clean;
+                })
+                .catch(() => {
+                    removeElement(target);
+                });
+        }
+
+        renderMarkdown('raw_include_HEADER_md', 'HEADER.md');
+        renderMarkdown('raw_include_README_md', 'README.md');
+    }());
+</script>
+</body>
+
+</html>
+<!--
+footer.html
+© 2015-18, Lilian Besson (Naereen) and contributors,
+open-sourced under the MIT License, https://lbesson.mit-license.org/
+hosted on GitHub, https://GitHub.com/Naereen/Nginx-Fancyindex-Theme
+-->
