@@ -1,5 +1,0 @@
-(kicad_project (version 7)
-  (paper "A3") (title "GX140 3in Analog FPV") (date "2025-12-12") (rev "1.0")
-  (company "GROK FPV Drone Engineering")
-  (schematic_files (0 "gx140_final.kicad_sch"))
-)
